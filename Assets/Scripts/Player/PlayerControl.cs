@@ -32,9 +32,9 @@ public class PlayerControl : MonoBehaviour
     public float terminalVelocity = -10f;
 
     [Header("Raycasting")]
-    [Tooltip("The layer that is raycasted onto when checking if grounded.\nRemember to set the layer on ground objects")]
+    [Tooltip("The layer that is raycasted onto when checking if grounded.\nRemember to set the layer on ground objects.")]
     public LayerMask groundLayer;
-    [Tooltip("The distance from the ground at which the player is counted as 'grounded'")]
+    [Tooltip("The distance from the ground at which the player is counted as 'grounded'.")]
     public float groundedDistance = 0.01f;
     private bool isGrounded = false;
 
@@ -54,8 +54,10 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        //Update active device (may have changed)
         device = InputManager.ActiveDevice;
 
+        //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
 
         //Get inputs every frame
@@ -119,7 +121,9 @@ public class PlayerControl : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * 100, Color.red);
 
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
+            {
                 return true;
+            }
         }
 
         //Otherwise, player is not grounded
