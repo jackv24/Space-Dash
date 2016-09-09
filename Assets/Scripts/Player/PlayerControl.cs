@@ -2,6 +2,7 @@
 using System.Collections;
 using InControl;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControl : MonoBehaviour
 {
     //Input
@@ -42,6 +43,11 @@ public class PlayerControl : MonoBehaviour
     public float raysStartX = -0.5f;
     public float raysEndX = 0.5f;
     public int rayAmount = 3;
+
+    //Moving platform support
+    private Transform currentPlatform;
+    private Vector2 lastPlatformPos;
+    private Vector2 platformPosDelta;
 
     //Reference to the player's rigidbody
     private Rigidbody2D body;
@@ -96,6 +102,17 @@ public class PlayerControl : MonoBehaviour
             moveVector.y = jumpForce;
         }
 
+        //Move with moving platforms
+        if (currentPlatform)
+        {
+            platformPosDelta = (Vector2)currentPlatform.position - lastPlatformPos;
+            lastPlatformPos = currentPlatform.position;
+            //Y movement is handled by physics already
+            platformPosDelta.y = 0;
+
+            body.position += platformPosDelta;
+        }
+
         //Set velocity after moveVector is set
         body.velocity = moveVector;
     }
@@ -122,9 +139,18 @@ public class PlayerControl : MonoBehaviour
 
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
             {
+                //Update current platform
+                if (hits[i].transform != currentPlatform)
+                {
+                    currentPlatform = hits[i].transform;
+                    lastPlatformPos = currentPlatform.position;
+                }
+
                 return true;
             }
         }
+
+        currentPlatform = null;
 
         //Otherwise, player is not grounded
         return false;

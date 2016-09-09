@@ -41,7 +41,7 @@ public class MovingPlatformEditor : Editor
 
         EditorGUILayout.Space();
         //Display travel time as a read-only label
-        EditorGUILayout.LabelField(new GUIContent("Travel Time", "How long the platform takes to move from start to the end position."), new GUIContent(travelTime.ToString()));
+        EditorGUILayout.LabelField(new GUIContent("Travel Time", "How long the platform takes to move from start to the end position."), new GUIContent(travelTime.ToString() + " seconds"));
     }
 
 }

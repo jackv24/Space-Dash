@@ -1,51 +1,60 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovingPlatform : MonoBehaviour
 {
     //Offset from position to move to and from
     [Tooltip("The linear path on which the platform moves.")]
-    public Vector2 offset;
+    public Vector2 offset = new Vector2(2, 1);
 
     //Position in world of offset
     private Vector2 EndPosition { get { return offset + startPos; } }
     //Where the platofrm started
     private Vector2 startPos;
+    private Vector2 targetPos;
 
     [Space()]
     [Tooltip("How fast the platform moves.")]
-    public float moveSpeed = 1f;
+    public float moveSpeed = 2f;
     [Tooltip("How long to wait once the platform has reached the end of the path, before moving back.")]
     public float waitTime = 2f;
+
+    private float travelTime;
+
+    private Rigidbody2D body;
+
+    void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
         //Cache start position
         startPos = transform.position;
 
-        //Start movement
-        StartCoroutine("Move", waitTime);
+        travelTime = offset.magnitude / moveSpeed;
+
+        StartCoroutine("Switch");
     }
 
-    IEnumerator Move(float delay)
+    void FixedUpdate()
     {
-        //Where to move to
-        Vector3 target = EndPosition;
+        //Move towards target
+        body.MovePosition(Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.fixedDeltaTime));
+    }
 
+    IEnumerator Switch()
+    {
+        //Makes it move back and forth
         while (true)
         {
-            yield return new WaitForSeconds(delay);
+            targetPos = EndPosition;
+            yield return new WaitForSeconds(travelTime + waitTime);
 
-            while (transform.position != target)
-            {
-                //Move towards target over time
-                transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-
-                yield return new WaitForEndOfFrame();
-            }
-
-            //Switch target between startPos and end pos
-            target = ((Vector2)transform.position == EndPosition) ? startPos : EndPosition;
+            targetPos = startPos;
+            yield return new WaitForSeconds(travelTime + waitTime);
         }
     }
 
