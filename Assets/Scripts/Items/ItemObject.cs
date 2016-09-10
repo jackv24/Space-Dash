@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ItemObject : MonoBehaviour
 {
-    //The itemdata object that this gameobject represents
+    [Tooltip("The ItemData object that this GameObject represents.")]
     public ItemData itemData;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -14,7 +14,7 @@ public class ItemObject : MonoBehaviour
         if (inventory && itemData)
         {
             //Add this item to the inventory
-            inventory.items.Add(itemData);
+            inventory.Add(itemData);
 
             //Destroy gameobject in world
             Destroy(gameObject);

@@ -5,6 +5,12 @@ public class LockableDoor : MonoBehaviour
 {
     [Tooltip("The item that the player must have to open this door. If left empty, the door will open unconditionally.")]
     public ItemData requiredItem;
+    [Tooltip("The amount of this item that the door requires to open.")]
+    public int amount = 1;
+
+    [Space()]
+    [Tooltip("Should this item be removed from the inventory?")]
+    public bool consumeItem = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,8 +23,13 @@ public class LockableDoor : MonoBehaviour
             if (requiredItem)
             {
                 //...only open if inventory has item
-                if (inventory.items.Contains(requiredItem))
+                if (inventory.HasItem(requiredItem, amount))
+                {
+                    if (consumeItem)
+                        inventory.Remove(requiredItem, amount);
+
                     gameObject.SetActive(false);
+                }
             }
             else
             {

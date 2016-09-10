@@ -4,5 +4,7 @@ using System.Collections;
 [CreateAssetMenu(fileName = "NewItem", menuName = "Data/Item")]
 public class ItemData : ScriptableObject
 {
-    //Currently no item data
+    //The name to display for this item
+    [Header("Item Properties")]
+    public string displayName = "ITEM";
 }
