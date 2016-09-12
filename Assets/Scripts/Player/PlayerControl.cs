@@ -12,10 +12,18 @@ public class PlayerControl : MonoBehaviour
     [Header("Movement")]
     //How fast the player can move horizontally
     public float moveSpeed = 10f;
+
     //How fast the player reaches it's move speed
     [Range(0f, 1f)]
     [Tooltip("How quickly the player reaches it's move speed. Set to 1 for instantly.")]
     public float acceleration = 0.75f;
+    public enum AutoRunDirection
+    {
+        Left, Right, None
+    }
+    [Space()]
+    [Tooltip("Simulates axis input to make the player automatically move in the specified direction.")]
+    public AutoRunDirection autoRun = AutoRunDirection.None;
 
     //The impulse force applied to make the player jump
     [Space()]
@@ -75,8 +83,14 @@ public class PlayerControl : MonoBehaviour
                 shouldJump = true;
         }
 
+        //Autorun simulates axis input
+        if (autoRun == AutoRunDirection.Right)
+            inputX = 1;
+        else if (autoRun == AutoRunDirection.Left)
+            inputX = -1;
         //Get X movement inputs (clamped)
-        inputX = Mathf.Clamp(device.DPadX + device.LeftStickX, -1f, 1f);
+        else
+            inputX = Mathf.Clamp(device.DPadX + device.LeftStickX, -1f, 1f);
     }
 
     //Update with the physics engine (since it is using a rigidbody)
