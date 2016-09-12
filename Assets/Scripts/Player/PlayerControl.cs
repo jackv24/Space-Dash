@@ -53,6 +53,10 @@ public class PlayerControl : MonoBehaviour
     public int rayAmount = 3;
 
     //Moving platform support
+    [Space()]
+    [Tooltip("The tag that moving platforms use.")]
+    public string platformTag = "MovingPlatform";
+
     private Transform currentPlatform;
     private Vector2 lastPlatformPos;
     private Vector2 platformPosDelta;
@@ -154,7 +158,7 @@ public class PlayerControl : MonoBehaviour
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
             {
                 //Update current platform
-                if (hits[i].transform != currentPlatform)
+                if (hits[i].transform != currentPlatform && hits[i].collider.tag == platformTag)
                 {
                     currentPlatform = hits[i].transform;
                     lastPlatformPos = currentPlatform.position;
