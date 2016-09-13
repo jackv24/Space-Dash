@@ -1,4 +1,4 @@
-﻿Shader "Custom/TransitionImageEffect"
+﻿Shader "Custom/Image Effects/TransitionImageEffect"
 {
 	Properties
 	{
