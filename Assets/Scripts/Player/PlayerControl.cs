@@ -43,6 +43,7 @@ public class PlayerControl : MonoBehaviour
     [Header("Raycasting")]
     [Tooltip("The layer that is raycasted onto when checking if grounded.\nRemember to set the layer on ground objects.")]
     public LayerMask groundLayer;
+
     [Tooltip("The distance from the ground at which the player is counted as 'grounded'.")]
     public float groundedDistance = 0.01f;
     private bool isGrounded = false;
@@ -77,6 +78,9 @@ public class PlayerControl : MonoBehaviour
 
         //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
+
+        if (isGrounded)
+            jumpsLeft = jumpAmount;
 
         //Get inputs every frame
         if (device.Action1.WasPressed)
@@ -177,7 +181,6 @@ public class PlayerControl : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         //Reset jumps the player lands on ground
-        if (isGrounded)
-            jumpsLeft = jumpAmount;
+        
     }
 }
