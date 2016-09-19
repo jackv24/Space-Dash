@@ -98,7 +98,7 @@ public class PlayerControl : MonoBehaviour
             inputX = -1;
         //Get X movement inputs (clamped)
         else
-            inputX = Mathf.Clamp(device.DPadX + device.LeftStickX, -1f, 1f);
+            inputX = Mathf.Clamp(device.DPadX + device.LeftStick.X, -1f, 1f);
     }
 
     //Update with the physics engine (since it is using a rigidbody)
