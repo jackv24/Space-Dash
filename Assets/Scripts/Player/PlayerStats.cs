@@ -47,5 +47,8 @@ public class PlayerStats : MonoBehaviour
 
         //Reset position
         transform.position = initialPosition;
+
+        //Reset health
+        currentHealth = maxHealth;
     }
 }

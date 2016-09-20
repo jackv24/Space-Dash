@@ -23,15 +23,15 @@ public class CameraFollow : MonoBehaviour
     [Header("Follow Ahead")]
     public bool followAhead = true;
     public float distanceAhead = 5f;
-    [Range(0, 1f)]
-    public float distanceSmoothing = 0.1f;
+    public float pullAheadSpeed = 10f;
     private float targetDistance;
-
-    private InputDevice device;
-    private float inputX;
 
     //Desired camera position (for lerping)
     private Vector3 targetPosition;
+
+    //Set by player script
+    [HideInInspector]
+    public Vector2 velocity;
 
     void Start()
     {
@@ -49,14 +49,6 @@ public class CameraFollow : MonoBehaviour
             Debug.Log("Camera has no target!");
     }
 
-    void Update()
-    {
-        device = InputManager.ActiveDevice;
-
-        //Get X axis input
-        inputX = Mathf.Clamp(device.DPadX + device.LeftStickX, -1f, 1f);
-    }
-
     void LateUpdate()
     {
         //Make sure there is a target to follow
@@ -69,7 +61,7 @@ public class CameraFollow : MonoBehaviour
             if (followAhead)
             {
                 //Follow ahead of target based on X input
-                targetDistance = Mathf.Lerp(targetDistance, inputX * distanceAhead, distanceSmoothing);
+                targetDistance = Mathf.Lerp(targetDistance, Mathf.Clamp(velocity.x, -1f, 1f) * distanceAhead, pullAheadSpeed * Time.deltaTime);
                 targetPosition.x += targetDistance;
             }
 

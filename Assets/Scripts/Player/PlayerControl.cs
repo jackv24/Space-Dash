@@ -65,10 +65,17 @@ public class PlayerControl : MonoBehaviour
     //Reference to the player's rigidbody
     private Rigidbody2D body;
 
+    private CameraFollow cameraFollow;
+
     void Awake()
     {
         //Get component references
         body = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        cameraFollow = Camera.main.GetComponent<CameraFollow>();
     }
 
     void Update()
@@ -76,11 +83,11 @@ public class PlayerControl : MonoBehaviour
         //Update active device (may have changed)
         device = InputManager.ActiveDevice;
 
+        if (cameraFollow)
+            cameraFollow.velocity = moveVector;
+
         //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
-
-        if (isGrounded)
-            jumpsLeft = jumpAmount;
 
         //Get inputs every frame
         if (device.Action1.WasPressed)
@@ -137,6 +144,10 @@ public class PlayerControl : MonoBehaviour
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
+
+        //If grounded and not moving up, reset jumps
+        if (isGrounded && moveVector.y <= 0)
+            jumpsLeft = jumpAmount;
     }
 
     //Checks if the character is grounded (using raycast)
@@ -176,11 +187,5 @@ public class PlayerControl : MonoBehaviour
 
         //Otherwise, player is not grounded
         return false;
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        //Reset jumps the player lands on ground
-        
     }
 }
