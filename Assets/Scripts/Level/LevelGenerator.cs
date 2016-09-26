@@ -7,10 +7,9 @@ public class LevelGenerator : MonoBehaviour
     [Header("Level Values")]
     [Tooltip("The length (in metres) of each tile.")]
     public float tileLength = 20f;
-    [Tooltip("How many tiles to generate before old tiles start getting deleted.")]
-    public int maxLevelLength = 10;
 
     [Space()]
+    [Tooltip("List of all tiles which can be generated. Will be sorted in order of probability when level is generated.")]
     public List<LevelTile> tiles = new List<LevelTile>();
     public GameObject startTile;
 
@@ -18,6 +17,8 @@ public class LevelGenerator : MonoBehaviour
     public Transform player;
     [Tooltip("How many tiles ahead to generate from the player.")]
     public int lengthAhead = 2;
+    [Tooltip("How many tiles to generate before old tiles start getting deleted.")]
+    public int maxLoadedTiles = 5;
     private float nextGeneratePlayerPos = 0;
 
     private List<GameObject> generatedTiles = new List<GameObject>();
@@ -44,7 +45,7 @@ public class LevelGenerator : MonoBehaviour
             GenerateNextTile();
 
             //Cull old tiles if needed
-            if (generatedTiles.Count > maxLevelLength)
+            if (generatedTiles.Count > maxLoadedTiles)
             {
                 Destroy(generatedTiles[0]);
                 generatedTiles.RemoveAt(0);
@@ -75,6 +76,9 @@ public class LevelGenerator : MonoBehaviour
     public void GeneratePreview(int levelLength)
     {
         Reset();
+
+        //Sort tiles based on probability (ascending) for cumulative probability
+        tiles.Sort((x, y) => x.probability.CompareTo(y.probability));
 
         //Generate specified number of tiles
         for (int i = 0; i < levelLength; i++)
