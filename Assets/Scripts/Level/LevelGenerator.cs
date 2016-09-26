@@ -4,64 +4,102 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [Tooltip("Should the level be regenerated on game start?")]
-    public bool generateOnPlay = false;
-
     [Header("Level Values")]
     [Tooltip("The length (in metres) of each tile.")]
     public float tileLength = 20f;
-    [Tooltip("How many tiles there are in the level.")]
-    public int levelLength = 10;
+    [Tooltip("How many tiles to generate before old tiles start getting deleted.")]
+    public int maxLevelLength = 10;
 
-    [Header("Tiles")]
+    [Space()]
+    public List<LevelTile> tiles = new List<LevelTile>();
     public GameObject startTile;
-    [Space()]
-    public LevelTile[] tiles;
-    [Space()]
-    public GameObject endTile;
 
-    public void Start()
+    [Header("Tracking Player")]
+    public Transform player;
+    [Tooltip("How many tiles ahead to generate from the player.")]
+    public int lengthAhead = 2;
+    private float nextGeneratePlayerPos = 0;
+
+    private List<GameObject> generatedTiles = new List<GameObject>();
+    private int lastTilePos = 0;
+
+    void Start()
     {
-        //Generate the level on start if desired
-        if(generateOnPlay)
-            Generate();
+        //Sort tiles based on probability (ascending) for cumulative probability
+        tiles.Sort((x, y) => x.probability.CompareTo(y.probability));
+
+        //Make sure to delete preview before starting
+        Reset();
     }
 
-    public void Generate()
+    void Update()
     {
-        //Destroy current level objects
-        List<Transform> children = new List<Transform>();
-
-        foreach (Transform child in transform)
-            children.Add(child);
-
-        foreach (Transform child in children)
-            DestroyImmediate(child.gameObject);
-
-        //Generate level
-        for(int i = 0; i < levelLength; i++)
+        //If player has reaches next tile threshold
+        if (player.position.x >= nextGeneratePlayerPos)
         {
-            //Starttile is default
-            GameObject prefab = startTile;
+            //Update threshold
+            nextGeneratePlayerPos += tileLength;
 
-            //Choose random tile
-            if (i > 0)
-                prefab = GetRandomTile();
-            //If end of level, choose endTile
-            if (i == levelLength - 1)
-                prefab = endTile;
+            //Generate the next tile
+            GenerateNextTile();
 
-            //Instantiate tile at correct position
-            GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * i, 0, 0), Quaternion.identity);
-            //Parent to this gameobject
-            tile.transform.SetParent(transform);
+            //Cull old tiles if needed
+            if (generatedTiles.Count > maxLevelLength)
+            {
+                Destroy(generatedTiles[0]);
+                generatedTiles.RemoveAt(0);
+            }
         }
     }
 
-    /// <summary>
-    /// Returns a random tile based on the probability of all tiles.
-    /// </summary>
-    /// <returns></returns>
+    public void Reset()
+    {
+        List<Transform> children = new List<Transform>();
+        //Get all children
+        foreach (Transform child in transform)
+            children.Add(child);
+
+        //Destroy all children
+        foreach (Transform child in children)
+            DestroyImmediate(child.gameObject);
+
+        //Clear generated tiles list
+        generatedTiles.Clear();
+        //reset tile pos
+        lastTilePos = 0;
+
+        //Reset threshold
+        nextGeneratePlayerPos = tileLength * -lengthAhead;
+    }
+
+    public void GeneratePreview(int levelLength)
+    {
+        Reset();
+
+        //Generate specified number of tiles
+        for (int i = 0; i < levelLength; i++)
+            GenerateNextTile();
+    }
+
+    public void GenerateNextTile()
+    {
+        //Starttile is default
+        GameObject prefab = startTile;
+
+        //Choose random tile
+        if (lastTilePos > 0)
+            prefab = GetRandomTile();
+
+        //Instantiate tile at correct position
+        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTilePos, 0, 0), Quaternion.identity);
+        //Parent to this gameobject
+        tile.transform.SetParent(transform);
+
+        generatedTiles.Add(tile);
+        lastTilePos++;
+    }
+
+    // Returns a random tile based on the probability of all tiles.
     GameObject GetRandomTile()
     {
         //Starttile by default (prevents returning null)
@@ -73,11 +111,11 @@ public class LevelGenerator : MonoBehaviour
         float cumulativeProbability = 0;
 
         //Get max probability
-        for (int i = 0; i < tiles.Length; i++)
+        for (int i = 0; i < tiles.Count; i++)
             maxProbability += tiles[i].probability;
 
         //Choose tile
-        for (int i = 0; i < tiles.Length; i++)
+        for (int i = 0; i < tiles.Count; i++)
         {
             //Add to running probability
             cumulativeProbability += tiles[i].probability;

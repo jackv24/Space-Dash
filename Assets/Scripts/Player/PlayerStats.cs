@@ -45,6 +45,11 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        //Reset level if there is a level generator
+        LevelGenerator generator = FindObjectOfType<LevelGenerator>();
+        if (generator)
+            generator.Reset();
+
         //Reset position
         transform.position = initialPosition;
 
