@@ -21,14 +21,13 @@ public class LevelGenerator : MonoBehaviour
     public int maxLoadedTiles = 5;
     private float nextGeneratePlayerPos = 0;
 
+    //List of all generated tiles
     private List<GameObject> generatedTiles = new List<GameObject>();
-    private int lastTilePos = 0;
+    //The index of the last tile generated
+    private int lastTileIndex = 0;
 
     void Start()
     {
-        //Sort tiles based on probability (ascending) for cumulative probability
-        tiles.Sort((x, y) => x.probability.CompareTo(y.probability));
-
         //Make sure to delete preview before starting
         Reset();
     }
@@ -67,7 +66,7 @@ public class LevelGenerator : MonoBehaviour
         //Clear generated tiles list
         generatedTiles.Clear();
         //reset tile pos
-        lastTilePos = 0;
+        lastTileIndex = 0;
 
         //Reset threshold
         nextGeneratePlayerPos = tileLength * -lengthAhead;
@@ -76,9 +75,6 @@ public class LevelGenerator : MonoBehaviour
     public void GeneratePreview(int levelLength)
     {
         Reset();
-
-        //Sort tiles based on probability (ascending) for cumulative probability
-        tiles.Sort((x, y) => x.probability.CompareTo(y.probability));
 
         //Generate specified number of tiles
         for (int i = 0; i < levelLength; i++)
@@ -91,21 +87,32 @@ public class LevelGenerator : MonoBehaviour
         GameObject prefab = startTile;
 
         //Choose random tile
-        if (lastTilePos > 0)
+        if (lastTileIndex > 0)
             prefab = GetRandomTile();
 
         //Instantiate tile at correct position
-        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTilePos, 0, 0), Quaternion.identity);
+        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
         //Parent to this gameobject
         tile.transform.SetParent(transform);
 
         generatedTiles.Add(tile);
-        lastTilePos++;
+        lastTileIndex++;
     }
 
     // Returns a random tile based on the probability of all tiles.
     GameObject GetRandomTile()
     {
+        //List of elegible tiles, and sort based on probability
+        List<LevelTile> possibleTiles = new List<LevelTile>();
+
+        //If tile is within the generation range, add it to the list
+        foreach (LevelTile t in tiles)
+            if (lastTileIndex * tileLength >= t.minDistance)
+                possibleTiles.Add(t);
+
+        //Sort the list by probability (since it is using cumulative probability)
+        possibleTiles.Sort((x, y) => x.probability.CompareTo(y.probability));
+
         //Starttile by default (prevents returning null)
         GameObject tile = startTile;
 
@@ -115,14 +122,14 @@ public class LevelGenerator : MonoBehaviour
         float cumulativeProbability = 0;
 
         //Get max probability
-        for (int i = 0; i < tiles.Count; i++)
-            maxProbability += tiles[i].probability;
+        for (int i = 0; i < possibleTiles.Count; i++)
+            maxProbability += possibleTiles[i].probability;
 
         //Choose tile
-        for (int i = 0; i < tiles.Count; i++)
+        for (int i = 0; i < possibleTiles.Count; i++)
         {
             //Add to running probability
-            cumulativeProbability += tiles[i].probability;
+            cumulativeProbability += possibleTiles[i].probability;
 
             //Generate a random number
             float roll = Random.Range(0, maxProbability);
@@ -131,11 +138,13 @@ public class LevelGenerator : MonoBehaviour
             if (roll < cumulativeProbability)
             {
                 //Set tile as this tile, then break
-                tile = tiles[i].prefab;
+                tile = possibleTiles[i].prefab;
                 break;
             }
+
         }
 
+        //Return the tile that was chosen
         return tile;
     }
 }
@@ -149,4 +158,7 @@ public class LevelTile
     [Range(0f, 1f)]
     [Tooltip("How likely this tile is to be chosen.")]
     public float probability = 1f;
+
+    [Tooltip("How far along the level until this tile starts generating (in metres).")]
+    public float minDistance = 0f;
 }
