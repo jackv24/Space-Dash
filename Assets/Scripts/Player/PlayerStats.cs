@@ -37,6 +37,8 @@ public class PlayerStats : MonoBehaviour
         //Play death transition on main camera
         Camera.main.SendMessage("PlayTransition");
 
+        GameManager.instance.EndRun();
+
         //Start respawn countdown
         StartCoroutine("Respawn", respawnTime);
     }
