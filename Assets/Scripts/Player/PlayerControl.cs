@@ -65,12 +65,16 @@ public class PlayerControl : MonoBehaviour
     //Reference to the player's rigidbody
     private Rigidbody2D body;
 
+    private PlayerStats playerStats;
+
     private CameraFollow cameraFollow;
 
     void Awake()
     {
         //Get component references
         body = GetComponent<Rigidbody2D>();
+
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void Start()
@@ -89,23 +93,29 @@ public class PlayerControl : MonoBehaviour
         //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
 
-        //Get inputs every frame
-        if (device.Action1.WasPressed)
+        //Can only move if player is alive
+        if (playerStats.IsAlive)
         {
-            //Only jump if the player is grounded, or there are jumps left
-            if(jumpsLeft > 0 || isGrounded)
-                //Queue jump button (Inputs are handled every frame, but jump is only applied every physics step)
-                shouldJump = true;
-        }
+            //Get inputs every frame
+            if (device.Action1.WasPressed)
+            {
+                //Only jump if the player is grounded, or there are jumps left
+                if (jumpsLeft > 0 || isGrounded)
+                    //Queue jump button (Inputs are handled every frame, but jump is only applied every physics step)
+                    shouldJump = true;
+            }
 
-        //Autorun simulates axis input
-        if (autoRun == AutoRunDirection.Right)
-            inputX = 1;
-        else if (autoRun == AutoRunDirection.Left)
-            inputX = -1;
-        //Get X movement inputs (clamped)
+            //Autorun simulates axis input
+            if (autoRun == AutoRunDirection.Right)
+                inputX = 1;
+            else if (autoRun == AutoRunDirection.Left)
+                inputX = -1;
+            //Get X movement inputs (clamped)
+            else
+                inputX = Mathf.Clamp(device.DPadX + device.LeftStick.X, -1f, 1f);
+        }
         else
-            inputX = Mathf.Clamp(device.DPadX + device.LeftStick.X, -1f, 1f);
+            inputX = 0;
     }
 
     //Update with the physics engine (since it is using a rigidbody)
