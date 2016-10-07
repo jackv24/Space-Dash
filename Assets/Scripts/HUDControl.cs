@@ -78,11 +78,4 @@ public class HUDControl : MonoBehaviour
         else
             Debug.Log("No player transform assigned to GameManager");
     }
-
-    //Called when the player dies, used for saving HUD data after a run
-    public void SaveData()
-    {
-        //Save data
-        PlayerPrefs.SetFloat("BestDistance", bestDistance);
-    }
 }

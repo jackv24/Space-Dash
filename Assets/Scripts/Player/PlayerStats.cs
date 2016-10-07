@@ -32,6 +32,17 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine("DepleteOxygen");
     }
 
+
+    public void AddHealth(int amount)
+    {
+        //Remove specified amount of health
+        currentHealth += amount;
+
+        //Clamp
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+    }
+
     public void RemoveHealth(int amount)
     {
         //Remove specified amount of health
@@ -45,6 +56,16 @@ public class PlayerStats : MonoBehaviour
 
             Die();
         }
+    }
+
+    public void AddOxygen(int amount)
+    {
+        //Remove specified amount of health
+        currentOxygen += amount;
+
+        //Clamp
+        if (currentOxygen > maxOxygen)
+            currentOxygen = maxOxygen;
     }
 
     public void RemoveOxygen(int amount)
@@ -67,14 +88,14 @@ public class PlayerStats : MonoBehaviour
         //Play death transition on main camera
         Camera.main.SendMessage("PlayTransition");
 
-        //Tell the HUD Controller to save data
-        HUDControl.instance.SaveData();
-
         //Stop depleting oxygen
         StopCoroutine("DepleteOxygen");
 
         //Start respawn countdown
         StartCoroutine("Respawn", respawnTime);
+
+        //Save data
+        PlayerPrefs.SetFloat("BestDistance", transform.position.x);
     }
 
     IEnumerator DepleteOxygen()
