@@ -95,7 +95,10 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine("Respawn", respawnTime);
 
         //Save data
-        PlayerPrefs.SetFloat("BestDistance", transform.position.x);
+        float bestDistance = PlayerPrefs.GetFloat("BestDistance");
+
+        if (transform.position.x > bestDistance)
+            PlayerPrefs.SetFloat("BestDistance", transform.position.x);
     }
 
     IEnumerator DepleteOxygen()

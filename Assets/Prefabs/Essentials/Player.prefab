@@ -153,9 +153,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 1.2}
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 1.25}
+  m_Size: {x: 0.9, y: 1.5}
 --- !u!114 &114000010184399396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
   terminalVelocity: -10
   groundLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   groundedDistance: 0.1
   raysStartX: -0.5
   raysEndX: 0.5
@@ -197,4 +197,4 @@ MonoBehaviour:
   respawnTime: 1
   currentOxygen: 100
   maxOxygen: 100
-  depletionRate: 1
+  depletionRate: 2
