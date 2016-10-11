@@ -172,7 +172,8 @@ MonoBehaviour:
   autoRun: 1
   jumpForce: 10
   jumpAmount: 2
-  terminalVelocity: -10
+  floatingFallSpeed: -1
+  floatingOxygenUsage: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -180,7 +181,6 @@ MonoBehaviour:
   raysStartX: -0.5
   raysEndX: 0.5
   rayAmount: 3
-  platformTag: MovingPlatform
 --- !u!114 &114000013327097606
 MonoBehaviour:
   m_ObjectHideFlags: 1

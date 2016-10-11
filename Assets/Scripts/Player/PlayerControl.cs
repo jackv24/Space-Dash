@@ -3,6 +3,7 @@ using System.Collections;
 using InControl;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerControl : MonoBehaviour
 {
     //Input
@@ -33,12 +34,17 @@ public class PlayerControl : MonoBehaviour
     private int jumpsLeft;
     private bool shouldJump = false;
 
+    [Space()]
+    [Tooltip("The speed at which the player falls when floating.")]
+    public float floatingFallSpeed = -1f;
+    [Tooltip("How much oxygen is used per second when floating.")]
+    public float floatingOxygenUsage = 5f;
+    private bool isFloating = false;
+
     //What velocity of the rigidbody is set to
     private Vector2 moveVector;
 
-    [Space()]
-    [Tooltip("The speed at which the player's fall speed will stop increasing.\nSet to 0 to disable.")]
-    public float terminalVelocity = -10f;
+    private float terminalVelocity = 0;
 
     [Header("Raycasting")]
     [Tooltip("The layer that is raycasted onto when checking if grounded.\nRemember to set the layer on ground objects.")]
@@ -52,15 +58,6 @@ public class PlayerControl : MonoBehaviour
     public float raysStartX = -0.5f;
     public float raysEndX = 0.5f;
     public int rayAmount = 3;
-
-    //Moving platform support
-    [Space()]
-    [Tooltip("The tag that moving platforms use.")]
-    public string platformTag = "MovingPlatform";
-
-    private Transform currentPlatform;
-    private Vector2 lastPlatformPos;
-    private Vector2 platformPosDelta;
 
     //Reference to the player's rigidbody
     private Rigidbody2D body;
@@ -80,6 +77,8 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();
+
+        StartCoroutine("UseOxygen");
     }
 
     void Update()
@@ -113,6 +112,9 @@ public class PlayerControl : MonoBehaviour
             //Get X movement inputs (clamped)
             else
                 inputX = Mathf.Clamp(device.DPadX + device.LeftStick.X, -1f, 1f);
+
+            //Only float if falling while jump button is held
+            isFloating = (body.velocity.y < 0 && device.Action1.IsPressed);
         }
         else
             inputX = 0;
@@ -141,16 +143,8 @@ public class PlayerControl : MonoBehaviour
             moveVector.y = jumpForce;
         }
 
-        //Move with moving platforms
-        if (currentPlatform)
-        {
-            platformPosDelta = (Vector2)currentPlatform.position - lastPlatformPos;
-            lastPlatformPos = currentPlatform.position;
-            //Y movement is handled by physics already
-            platformPosDelta.y = 0;
-
-            body.position += platformPosDelta;
-        }
+        //Set terminal velocity if isFloatig
+        terminalVelocity = isFloating ? floatingFallSpeed : 0;
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
@@ -181,21 +175,29 @@ public class PlayerControl : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * 100, Color.red);
 
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
-            {
-                //Update current platform
-                if (hits[i].transform != currentPlatform && hits[i].collider.tag == platformTag)
-                {
-                    currentPlatform = hits[i].transform;
-                    lastPlatformPos = currentPlatform.position;
-                }
-
                 return true;
-            }
         }
-
-        currentPlatform = null;
 
         //Otherwise, player is not grounded
         return false;
+    }
+
+    IEnumerator UseOxygen()
+    {
+        //this coruotine should always be running
+        while (true)
+        {
+            //If floating then use oxygen
+            if (isFloating)
+            {
+                //For every amount of time per second
+                yield return new WaitForSeconds(1/floatingOxygenUsage);
+                //Remove 1 oxygen
+                playerStats.RemoveOxygen(1);
+            }
+            //If not floating then check again next frame
+            else
+                yield return new WaitForEndOfFrame();
+        }
     }
 }
