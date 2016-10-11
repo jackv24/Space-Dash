@@ -24,11 +24,16 @@ public class ItemSpawn : MonoBehaviour
         //Destroy this spawning object, even if no item was spawned
         Destroy(gameObject);
     }
-
+    
     GameObject ChooseItem()
     {
         //List of items, to be sorted
-        List<LevelItem> possibleItems = new List<LevelItem>(items);
+        List<LevelItem> possibleItems = new List<LevelItem>();
+
+        //If item is within the generation range, add it to the list
+        foreach (LevelItem i in items)
+            if (transform.position.x >= i.minDistance)
+                possibleItems.Add(i);
 
         //Sort the list by probability (since it is using cumulative probability)
         possibleItems.Sort((x, y) => x.probability.CompareTo(y.probability));
@@ -87,4 +92,5 @@ public class LevelItem
     public GameObject prefab;
 
     public float probability = 1f;
+    public float minDistance = 0f;
 }

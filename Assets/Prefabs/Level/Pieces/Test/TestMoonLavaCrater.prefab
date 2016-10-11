@@ -372,10 +372,13 @@ MonoBehaviour:
   items:
   - prefab: {fileID: 0}
     probability: 0.5
+    minDistance: 0
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.3
+    minDistance: 0
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.2
+    minDistance: 0
 --- !u!114 &114000012614874330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,10 +393,13 @@ MonoBehaviour:
   items:
   - prefab: {fileID: 0}
     probability: 0.5
+    minDistance: 0
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.3
+    minDistance: 0
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.2
+    minDistance: 1500
 --- !u!114 &114000013879145538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,5 +428,7 @@ MonoBehaviour:
   items:
   - prefab: {fileID: 0}
     probability: 0.5
+    minDistance: 0
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.5
+    minDistance: 0
