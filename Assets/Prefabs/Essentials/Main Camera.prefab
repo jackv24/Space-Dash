@@ -24,8 +24,8 @@ GameObject:
   - 124: {fileID: 124000014289004512}
   - 81: {fileID: 81000010339252462}
   - 114: {fileID: 114000013055201408}
-  - 114: {fileID: 114000010867034292}
   - 114: {fileID: 114000010004660276}
+  - 114: {fileID: 114000013558996846}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -39,10 +39,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010408502044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 4, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,8 +54,8 @@ Camera:
   m_GameObject: {fileID: 1000010408502044}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -63,9 +63,9 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 8
   m_Depth: -1
   m_CullingMask:
@@ -108,19 +108,7 @@ MonoBehaviour:
   effectMaterial: {fileID: 2100000, guid: 003718ffc9767d2498908c71f2926f4a, type: 2}
   cutoffAmount: 0
   transitionTime: 0.5
-  waitTime: 1
---- !u!114 &114000010867034292
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010408502044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38e272fadcd440488936cc249dfdb0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectMaterial: {fileID: 2100000, guid: 5d58a302e42602440a0f137e4d941dd7, type: 2}
+  waitTime: 0.5
 --- !u!114 &114000013055201408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,12 +121,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 1}
+  offset: {x: 0, y: 5}
   smoothing: 0.1
   followAhead: 1
-  distanceAhead: 5
-  pullAheadSpeed: 10
+  distanceAhead: 8
+  pullAheadSpeed: 2
   velocity: {x: 0, y: 0}
+--- !u!114 &114000013558996846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010408502044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ade48844caf975459b6cfd782d3c444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCurvature: 0.01
+  showInEditor: 0
+  target: {fileID: 0}
 --- !u!124 &124000014289004512
 Behaviour:
   m_ObjectHideFlags: 1

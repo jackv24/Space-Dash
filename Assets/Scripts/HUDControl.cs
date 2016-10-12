@@ -23,6 +23,13 @@ public class HUDControl : MonoBehaviour
     public Text oxygenText;
     private string oxygenTextString;
 
+    [Space()]
+    [Tooltip("The text object to display score.")]
+    public Text scoreText;
+    private string scoreTextString;
+
+    private int bestScore;
+
     void Awake()
     {
         //There should only ever be one HUD controller
@@ -35,15 +42,17 @@ public class HUDControl : MonoBehaviour
         if (!player)
             player = GameObject.FindWithTag("Player").transform;
 
-        //Cache the distanceText string for formatting (if it is assigned)
+        //Cache strings for formatting
         if (distanceText)
             distanceTextString = distanceText.text;
-        //Cache oxygenText string for formatting
         if (oxygenText)
             oxygenTextString = oxygenText.text;
+        if (scoreText)
+            scoreTextString = scoreText.text;
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
 
         //Get PlayerStats from player
         if (player)
@@ -57,6 +66,9 @@ public class HUDControl : MonoBehaviour
         {
             if (player.position.x > bestDistance)
                 bestDistance = player.position.x;
+
+            if (playerStats.Score > bestScore)
+                bestScore = playerStats.Score;
 
             //Check that distancetext is assigned
             if (distanceText)
@@ -74,6 +86,12 @@ public class HUDControl : MonoBehaviour
             if (oxygenText)
                 //Display current and max oxygen in formatted string
                 oxygenText.text = string.Format(oxygenTextString, playerStats.currentOxygen, playerStats.maxOxygen);
+
+            if (scoreText)
+            {
+                //Plug distance into string, using original string's formatting
+                scoreText.text = string.Format(scoreTextString, playerStats.Score, bestScore);
+            }
         }
         else
             Debug.Log("No player transform assigned to GameManager");

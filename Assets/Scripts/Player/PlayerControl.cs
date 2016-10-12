@@ -144,7 +144,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Set terminal velocity if isFloatig
-        terminalVelocity = isFloating ? floatingFallSpeed : 0;
+        terminalVelocity = (isFloating && playerStats.IsAlive) ? floatingFallSpeed : 0;
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;

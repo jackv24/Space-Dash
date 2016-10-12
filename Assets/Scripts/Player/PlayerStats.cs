@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour
 {
+    private int score;
+    public int Score { get { return score + (int)transform.position.x; } }
+
     [Header("Health")]
     public int currentHealth = 100;
     public int maxHealth = 100;
@@ -21,6 +24,7 @@ public class PlayerStats : MonoBehaviour
 
     //Returns true if health and oxygen are above zero, false otherwise
     public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0) ? true : false; } }
+    private bool hasAlreadyDied = false;
 
     private Vector3 initialPosition;
 
@@ -83,27 +87,40 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void AddScore(int amount)
+    {
+        //Remove specified amount of health
+        score += amount;
+    }
+
     public void Die()
     {
-        //Play death transition on main camera
-        Camera.main.SendMessage("PlayTransition");
+        //Ensure the player does not die more than once before respawning
+        if (!hasAlreadyDied)
+        {
+            hasAlreadyDied = true;
 
-        //Stop depleting oxygen
-        StopCoroutine("DepleteOxygen");
+            //Play death transition on main camera
+            Camera.main.SendMessage("PlayTransition");
 
-        //Start respawn countdown
-        StartCoroutine("Respawn", respawnTime);
+            //Start respawn countdown
+            StartCoroutine("Respawn", respawnTime);
 
-        //Save data
-        float bestDistance = PlayerPrefs.GetFloat("BestDistance");
+            //Save data
+            float bestDistance = PlayerPrefs.GetFloat("BestDistance");
 
-        if (transform.position.x > bestDistance)
-            PlayerPrefs.SetFloat("BestDistance", transform.position.x);
+            if (transform.position.x > bestDistance)
+                PlayerPrefs.SetFloat("BestDistance", transform.position.x);
+
+            //Save high score
+            if (Score > PlayerPrefs.GetInt("BestScore"))
+                PlayerPrefs.SetInt("BestScore", Score);
+        }
     }
 
     IEnumerator DepleteOxygen()
     {
-        while (true)
+        while (currentOxygen > 0)
         {
             yield return new WaitForSeconds(1/(float)depletionRate);
 
@@ -127,8 +144,10 @@ public class PlayerStats : MonoBehaviour
         //Reset stats
         currentHealth = maxHealth;
         currentOxygen = maxOxygen;
+        score = 0;
 
         //Start oxygen depletion (should have stopped when the player's oxygen reached 0)
+        StopCoroutine("DepleteOxygen");
         StartCoroutine("DepleteOxygen");
     }
 }

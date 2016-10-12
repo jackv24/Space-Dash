@@ -14,6 +14,9 @@ public class ItemPickup : MonoBehaviour
     [Tooltip("How much of the specified type to gain.")]
     public int value = 0;
 
+    [Tooltip("How many point to add to the score when this item is picked up.")]
+    public int pointsValue = 10;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         PlayerStats stats = col.gameObject.GetComponent<PlayerStats>();
@@ -31,6 +34,8 @@ public class ItemPickup : MonoBehaviour
                     stats.AddOxygen(value);
                     break;
             }
+
+            stats.AddScore(pointsValue);
 
             //Destroy gameobject so it has been "picked up"
             Destroy(gameObject);
