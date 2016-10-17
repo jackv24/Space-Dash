@@ -13,7 +13,7 @@ public class ItemSpawn : MonoBehaviour
         LevelItem levelItem = ChooseItem();
 
         //Only spawn if not null
-        if (levelItem.prefab != null)
+        if (levelItem != null && levelItem.prefab != null)
         {
             int chainSize = Random.Range(1, levelItem.maxChain + 1);
             float distance = 0;

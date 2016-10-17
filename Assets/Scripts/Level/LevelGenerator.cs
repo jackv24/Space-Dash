@@ -11,7 +11,8 @@ public class LevelGenerator : MonoBehaviour
     [Space()]
     [Tooltip("List of all tiles which can be generated. Will be sorted in order of probability when level is generated.")]
     public List<LevelTile> tiles = new List<LevelTile>();
-    public GameObject startTile;
+    public TileGroup startGroup;
+    private TileGroup currentGroup; //If a group is currently being generated
 
     [Header("Tracking Player")]
     public Transform player;
@@ -84,23 +85,45 @@ public class LevelGenerator : MonoBehaviour
     public void GenerateNextTile()
     {
         //Starttile is default
-        GameObject prefab = startTile;
-
+        if (lastTileIndex <= 0)
+            currentGroup = startGroup;
+        else
         //Choose random tile
-        if (lastTileIndex > 0)
-            prefab = GetRandomTile();
+            currentGroup = GetRandomTile();
 
-        //Instantiate tile at correct position
-        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
-        //Parent to this gameobject
-        tile.transform.SetParent(transform);
+        GameObject prefab = null;
 
-        generatedTiles.Add(tile);
-        lastTileIndex++;
+        if (currentGroup.generateInOrder)
+        {
+            for (int i = 0; i < currentGroup.tiles.Count; i++)
+            {
+                prefab = currentGroup.tiles[i].prefab;
+
+                //Instantiate tile at correct position
+                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
+                //Parent to this gameobject
+                tile.transform.SetParent(transform);
+
+                generatedTiles.Add(tile);
+                lastTileIndex++;
+            }
+        }
+        else
+        {
+            prefab = currentGroup.GetRandomTile();
+
+            //Instantiate tile at correct position
+            GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
+            //Parent to this gameobject
+            tile.transform.SetParent(transform);
+
+            generatedTiles.Add(tile);
+            lastTileIndex++;
+        }
     }
 
     // Returns a random tile based on the probability of all tiles.
-    GameObject GetRandomTile()
+    TileGroup GetRandomTile()
     {
         //List of elegible tiles, and sort based on probability
         List<LevelTile> possibleTiles = new List<LevelTile>();
@@ -114,7 +137,7 @@ public class LevelGenerator : MonoBehaviour
         possibleTiles.Sort((x, y) => x.probability.CompareTo(y.probability));
 
         //Starttile by default (prevents returning null)
-        GameObject tile = startTile;
+        TileGroup tile = startGroup;
 
         //The probability of all tiles added together
         float maxProbability = 0;
@@ -137,8 +160,14 @@ public class LevelGenerator : MonoBehaviour
             //If number is within range
             if (roll < cumulativeProbability)
             {
-                //Set tile as this tile, then break
-                tile = possibleTiles[i].prefab;
+                if (possibleTiles[i].group)
+                    tile = possibleTiles[i].group;
+                else
+                {
+                    //If it is a single tile, create a group with only that tile
+                    tile = (TileGroup)ScriptableObject.CreateInstance(typeof(TileGroup));
+                    tile.tiles.Add(new Tile(possibleTiles[i].prefab));
+                }
                 break;
             }
 
@@ -152,9 +181,12 @@ public class LevelGenerator : MonoBehaviour
 [System.Serializable]
 public class LevelTile
 {
+    [Tooltip("Can be assigned if a group of tiles is to be generated. If this is assigned, all options below mean nothing.")]
+    public TileGroup group;
     [Tooltip("The prefab to instantiate for this tile.")]
     public GameObject prefab;
 
+    [Space()]
     [Range(0f, 1f)]
     [Tooltip("How likely this tile is to be chosen.")]
     public float probability = 1f;
