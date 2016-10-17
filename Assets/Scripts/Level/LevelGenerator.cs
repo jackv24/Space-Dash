@@ -100,7 +100,7 @@ public class LevelGenerator : MonoBehaviour
                 prefab = currentGroup.tiles[i].prefab;
 
                 //Instantiate tile at correct position
-                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
+                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
                 //Parent to this gameobject
                 tile.transform.SetParent(transform);
 
@@ -120,7 +120,7 @@ public class LevelGenerator : MonoBehaviour
                     prefab = currentGroup.GetRandomTile();
 
                 //Instantiate tile at correct position
-                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
+                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
                 //Parent to this gameobject
                 tile.transform.SetParent(transform);
 
