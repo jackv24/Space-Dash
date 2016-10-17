@@ -138,7 +138,7 @@ public class LevelGenerator : MonoBehaviour
 
         //If tile is within the generation range, add it to the list
         foreach (LevelTile t in tiles)
-            if (lastTileIndex * tileLength >= t.minDistance)
+            if ((lastTileIndex * tileLength >= t.minDistance) && (lastTileIndex * tileLength <= t.maxDistance || t.maxDistance == 0))
                 possibleTiles.Add(t);
 
         //Sort the list by probability (since it is using cumulative probability)
@@ -201,4 +201,6 @@ public class LevelTile
 
     [Tooltip("How far along the level until this tile starts generating (in metres).")]
     public float minDistance = 0f;
+    [Tooltip("When to stop generating tiles (leave at 0 if they should never stop).")]
+    public float maxDistance = 0f;
 }
