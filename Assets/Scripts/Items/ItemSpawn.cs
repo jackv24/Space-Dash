@@ -10,22 +10,48 @@ public class ItemSpawn : MonoBehaviour
     void Start()
     {
         //get item to spawn
-        GameObject itemPrefab = ChooseItem();
+        LevelItem levelItem = ChooseItem();
 
         //Only spawn if not null
-        if (itemPrefab != null)
+        if (levelItem.prefab != null)
         {
-            GameObject item = (GameObject)Instantiate(itemPrefab, transform.position, Quaternion.identity);
-            item.name = itemPrefab.name;
-            //Item replaces this gameobject in heirarchy, so they should have the same parent
-            item.transform.SetParent(transform.parent);
+            int chainSize = Random.Range(1, levelItem.maxChain + 1);
+            float distance = 0;
+
+            for (int i = 0; i < chainSize; i++)
+            {
+                Vector3 offset = Vector3.zero;
+
+                switch (levelItem.chainDirection)
+                {
+                    case LevelItem.Direction.Up:
+                        offset = new Vector3(0, distance, 0);
+                        break;
+                    case LevelItem.Direction.Down:
+                        offset = new Vector3(0, -distance, 0);
+                        break;
+                    case LevelItem.Direction.Left:
+                        offset = new Vector3(-distance, 0, 0);
+                        break;
+                    case LevelItem.Direction.Right:
+                        offset = new Vector3(distance, 0, 0);
+                        break;
+                }
+
+                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, Quaternion.identity);
+                item.name = levelItem.prefab.name;
+                //Item replaces this gameobject in heirarchy, so they should have the same parent
+                item.transform.SetParent(transform.parent);
+
+                distance += levelItem.chainSpacing;
+            }
         }
 
         //Destroy this spawning object, even if no item was spawned
         Destroy(gameObject);
     }
     
-    GameObject ChooseItem()
+    LevelItem ChooseItem()
     {
         //List of items, to be sorted
         List<LevelItem> possibleItems = new List<LevelItem>();
@@ -39,7 +65,7 @@ public class ItemSpawn : MonoBehaviour
         possibleItems.Sort((x, y) => x.probability.CompareTo(y.probability));
 
         //Item is null by default
-        GameObject item = null;
+        LevelItem item = null;
 
         //The probability of all items added together
         float maxProbability = 0;
@@ -63,7 +89,7 @@ public class ItemSpawn : MonoBehaviour
             if (roll < cumulativeProbability)
             {
                 //Set item as this item, then break
-                item = possibleItems[i].prefab;
+                item = possibleItems[i];
                 break;
             }
 
@@ -89,8 +115,22 @@ public class ItemSpawn : MonoBehaviour
 [System.Serializable]
 public class LevelItem
 {
+    [Tooltip("The game object that will be instantiated.")]
     public GameObject prefab;
 
+    [Tooltip("How likely it is that this item will be generated (try and make all items probability add up to 1, otherwise it is hard to visualise).")]
     public float probability = 1f;
+    [Tooltip("This item will not start generating until this distance has been reached.")]
     public float minDistance = 0f;
+
+    [Space()]
+    [Tooltip("The maxiumum amount of this item that will be generated in a chain.")]
+    public int maxChain = 1;
+
+    public enum Direction { Left, Right, Up, Down }
+    [Tooltip("The direction that the chain will be generated in (will have no effect if the chain length is one, of course).")]
+    public Direction chainDirection = Direction.Right;
+
+    [Tooltip("How much space between items in the chain.")]
+    public float chainSpacing = 2f;
 }

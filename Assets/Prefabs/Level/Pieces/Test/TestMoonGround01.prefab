@@ -222,12 +222,21 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     probability: 0.5
     minDistance: 0
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.3
     minDistance: 0
+    maxChain: 2
+    chainDirection: 3
+    chainSpacing: 2
   - prefab: {fileID: 1000010040672262, guid: 7f3d06df9938fe8498071d72b52ff24a, type: 2}
     probability: 0.2
     minDistance: 0
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
 --- !u!114 &114000012306374696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,15 +252,27 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     probability: 0.5
     minDistance: 0
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.3
     minDistance: 0
+    maxChain: 3
+    chainDirection: 0
+    chainSpacing: 2
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.15
     minDistance: 0
+    maxChain: 2
+    chainDirection: 1
+    chainSpacing: 2
   - prefab: {fileID: 1000010040672262, guid: 7f3d06df9938fe8498071d72b52ff24a, type: 2}
     probability: 0.05
     minDistance: 2000
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
 --- !u!114 &114000012315017374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,12 +288,24 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     probability: 0.5
     minDistance: 0
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.3
     minDistance: 0
+    maxChain: 3
+    chainDirection: 1
+    chainSpacing: 2
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.15
     minDistance: 200
+    maxChain: 2
+    chainDirection: 0
+    chainSpacing: 2
   - prefab: {fileID: 1000010040672262, guid: 7f3d06df9938fe8498071d72b52ff24a, type: 2}
     probability: 0.05
     minDistance: 500
+    maxChain: 1
+    chainDirection: 1
+    chainSpacing: 2
