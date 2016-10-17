@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using InControl;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerControl : MonoBehaviour
 {
     //Input
-    private InputDevice device;
     private float inputX;
 
     [Header("Movement")]
@@ -83,9 +81,6 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        //Update active device (may have changed)
-        device = InputManager.ActiveDevice;
-
         if (cameraFollow)
             cameraFollow.velocity = moveVector;
 
@@ -96,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         if (playerStats.IsAlive)
         {
             //Get inputs every frame
-            if (device.Action1.WasPressed)
+            if (Input.GetButtonDown("Jump"))
             {
                 //Only jump if the player is grounded, or there are jumps left
                 if (jumpsLeft > 0 || isGrounded)
@@ -111,10 +106,10 @@ public class PlayerControl : MonoBehaviour
                 inputX = -1;
             //Get X movement inputs (clamped)
             else
-                inputX = Mathf.Clamp(device.DPadX + device.LeftStick.X, -1f, 1f);
+                inputX = Input.GetAxisRaw("Horizontal");
 
             //Only float if falling while jump button is held
-            isFloating = (body.velocity.y < 0 && device.Action1.IsPressed);
+            isFloating = (body.velocity.y < 0 && Input.GetButton("Jump"));
         }
         else
             inputX = 0;
