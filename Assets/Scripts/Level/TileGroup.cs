@@ -5,16 +5,22 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "TileGroup", menuName = "Tile Group")]
 public class TileGroup : ScriptableObject
 {
+    public GameObject startTile = null;
+
     [Tooltip("The tiles to generate in this group.")]
     public List<Tile> tiles = new List<Tile>();
+
+    public GameObject endTile = null;
 
     [Space()]
     [Tooltip("Should these tiles be generated in order? If not, tiles are generated based on probability.")]
     public bool generateInOrder = true;
 
+    [Tooltip("How many tiles to generate, if not in order.")]
+    public int length = 5;
+
     public GameObject GetRandomTile()
-    {
-        //Copy tile list into new list for sorting
+    {        //Copy tile list into new list for sorting
         List<Tile> possibleTiles = new List<Tile>(tiles);
 
         possibleTiles.Sort((x, y) => x.probability.CompareTo(y.probability));
@@ -56,6 +62,6 @@ public class Tile
     [Tooltip("The prfab to instantiate for the tile.")]
     public GameObject prefab;
 
-    [Tooltip("How likely this tile is to be chosen (if Generate in Order is set to true, otherwise it is ignored).")]
+    [Tooltip("How likely this tile is to be chosen (if Generate in Order is set to false, otherwise it is ignored).")]
     public float probability = 1f;
 }

@@ -110,15 +110,23 @@ public class LevelGenerator : MonoBehaviour
         }
         else
         {
-            prefab = currentGroup.GetRandomTile();
+            for (int i = 0; i < currentGroup.length; i++)
+            {
+                if (i == 0 && currentGroup.startTile)
+                    prefab = currentGroup.startTile;
+                else if (i >= currentGroup.length - 1 && currentGroup.endTile)
+                    prefab = currentGroup.endTile;
+                else
+                    prefab = currentGroup.GetRandomTile();
 
-            //Instantiate tile at correct position
-            GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
-            //Parent to this gameobject
-            tile.transform.SetParent(transform);
+                //Instantiate tile at correct position
+                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, 0, 0), Quaternion.identity);
+                //Parent to this gameobject
+                tile.transform.SetParent(transform);
 
-            generatedTiles.Add(tile);
-            lastTileIndex++;
+                generatedTiles.Add(tile);
+                lastTileIndex++;
+            }
         }
     }
 
