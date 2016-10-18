@@ -12,6 +12,7 @@ Shader "Custom/Curved World"
 
 		_EmissionMap("Emission", 2D) = "white" {}
 		_EmissionColor("Emission Color", Color) = (0,0,0)
+		_EmissionMultiplier("Emission Multiplier", Float) = 1
 	}
 
 	SubShader
@@ -29,6 +30,7 @@ Shader "Custom/Curved World"
 
 		sampler2D _EmissionMap;
 		float4 _EmissionColor;
+		float _EmissionMultiplier;
 
 		float _Curvature;
 		float3 _TargetPos;
@@ -67,7 +69,8 @@ Shader "Custom/Curved World"
 			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 
 			o.Emission = tex2D(_EmissionMap, IN.uv_EmissionMap);
-			o.Emission *= _EmissionColor.rgb;
+			o.Emission *= _EmissionColor.rgb * _EmissionMultiplier;
+			
 		}
 
 		ENDCG

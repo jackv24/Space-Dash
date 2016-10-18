@@ -20,6 +20,13 @@ public class HUDControl : MonoBehaviour
     [Space()]
     [Tooltip("The slider to display oxygen level.")]
     public Slider oxygenSlider;
+    [Tooltip("The fill image for the slider, of which to change the colour.")]
+    public Image barImage;
+    [Tooltip("The gradient from which to colour the bar.")]
+    public Gradient barColour;
+
+    [Space()]
+    [Tooltip("The text to be used to display oxygen level.")]
     public Text oxygenText;
     private string oxygenTextString;
 
@@ -78,9 +85,14 @@ public class HUDControl : MonoBehaviour
             }
 
             //If there is an oxygen slider
-            if(oxygenSlider)
+            if (oxygenSlider)
+            {
                 //Display ratio between current and max oxygen (cast to float so that result is a float)
                 oxygenSlider.value = (float)playerStats.currentOxygen / playerStats.maxOxygen;
+
+                if (barImage)
+                    barImage.color = barColour.Evaluate(oxygenSlider.value);
+            }
 
             //If there is an oxygen text component assigned
             if (oxygenText)
