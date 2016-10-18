@@ -12,10 +12,6 @@ public class TileGroup : ScriptableObject
 
     public GameObject endTile = null;
 
-    [Space()]
-    [Tooltip("Should these tiles be generated in order? If not, tiles are generated based on probability.")]
-    public bool generateInOrder = true;
-
     [Tooltip("How many tiles to generate, if not in order.")]
     public int length = 5;
 
@@ -30,17 +26,23 @@ public class TileGroup : ScriptableObject
         float maxProbability = 0;
         float cumulativeProbability = 0;
 
+        //Get max probability
         for (int i = 0; i < possibleTiles.Count; i++)
             maxProbability += possibleTiles[i].probability;
 
+        //Choose from available tiles
         for (int i = 0; i < possibleTiles.Count; i++)
         {
+            //Add cumulative probability
             cumulativeProbability += possibleTiles[i].probability;
 
+            //Get random number in range
             float roll = Random.Range(0, maxProbability);
 
+            //If this number is within the cumulative probability
             if (roll < cumulativeProbability)
             {
+                //Choose this tile
                 tile = possibleTiles[i];
                 break;
             }

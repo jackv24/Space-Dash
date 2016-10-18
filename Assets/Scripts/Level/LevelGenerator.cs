@@ -12,7 +12,10 @@ public class LevelGenerator : MonoBehaviour
     [Tooltip("List of all tiles which can be generated. Will be sorted in order of probability when level is generated.")]
     public List<LevelTile> tiles = new List<LevelTile>();
     public TileGroup startGroup;
-    private TileGroup currentGroup; //If a group is currently being generated
+    //The group that is currently being generated
+    private TileGroup currentGroup;
+    //The index in the current group
+    private int currentGroupIndex = 0;
 
     [Header("Tracking Player")]
     public Transform player;
@@ -68,6 +71,7 @@ public class LevelGenerator : MonoBehaviour
         generatedTiles.Clear();
         //reset tile pos
         lastTileIndex = 0;
+        currentGroupIndex = 0;
 
         //Reset threshold
         nextGeneratePlayerPos = tileLength * -lengthAhead;
@@ -87,47 +91,31 @@ public class LevelGenerator : MonoBehaviour
         //Starttile is default
         if (lastTileIndex <= 0)
             currentGroup = startGroup;
-        else
-        //Choose random tile
+        else if (currentGroupIndex >= currentGroup.length)
+        {
+            //Choose random tile
             currentGroup = GetRandomTile();
+            currentGroupIndex = 0;
+        }
 
         GameObject prefab = null;
 
-        if (currentGroup.generateInOrder)
-        {
-            for (int i = 0; i < currentGroup.tiles.Count; i++)
-            {
-                prefab = currentGroup.tiles[i].prefab;
-
-                //Instantiate tile at correct position
-                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
-                //Parent to this gameobject
-                tile.transform.SetParent(transform);
-
-                generatedTiles.Add(tile);
-                lastTileIndex++;
-            }
-        }
+        //Choose start, end, or random tile
+        if (currentGroupIndex == 0 && currentGroup.startTile)
+            prefab = currentGroup.startTile;
+        else if (currentGroupIndex >= currentGroup.length - 1 && currentGroup.endTile)
+            prefab = currentGroup.endTile;
         else
-        {
-            for (int i = 0; i < currentGroup.length; i++)
-            {
-                if (i == 0 && currentGroup.startTile)
-                    prefab = currentGroup.startTile;
-                else if (i >= currentGroup.length - 1 && currentGroup.endTile)
-                    prefab = currentGroup.endTile;
-                else
-                    prefab = currentGroup.GetRandomTile();
+            prefab = currentGroup.GetRandomTile();
 
-                //Instantiate tile at correct position
-                GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
-                //Parent to this gameobject
-                tile.transform.SetParent(transform);
+        //Instantiate tile at correct position
+        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
+        //Parent to this gameobject
+        tile.transform.SetParent(transform);
 
-                generatedTiles.Add(tile);
-                lastTileIndex++;
-            }
-        }
+        generatedTiles.Add(tile);
+        lastTileIndex++;
+        currentGroupIndex++;
     }
 
     // Returns a random tile based on the probability of all tiles.
@@ -175,6 +163,7 @@ public class LevelGenerator : MonoBehaviour
                     //If it is a single tile, create a group with only that tile
                     tile = (TileGroup)ScriptableObject.CreateInstance(typeof(TileGroup));
                     tile.tiles.Add(new Tile(possibleTiles[i].prefab));
+                    tile.length = 1;
                 }
                 break;
             }

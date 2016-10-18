@@ -57,15 +57,18 @@ MonoBehaviour:
     prefab: {fileID: 1000014153067448, guid: 03d374c6c88b1cf4794eac04c4b7c18f, type: 2}
     probability: 0.5
     minDistance: 0
+    maxDistance: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000010771897722, guid: ca3d7c31b41de2c47b0e26e7280469e2, type: 2}
     probability: 0.25
     minDistance: 0
+    maxDistance: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000014183258998, guid: 694d9017bd582744aa4aa63ad00ec553, type: 2}
     probability: 0.25
     minDistance: 500
+    maxDistance: 0
   startGroup: {fileID: 11400000, guid: 901cee536c8c3c840b8dd0a83dad1651, type: 2}
   player: {fileID: 0}
   lengthAhead: 2
-  maxLoadedTiles: 10
+  maxLoadedTiles: 5

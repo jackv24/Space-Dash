@@ -196,12 +196,12 @@ Prefab:
     - target: {fileID: 224000010806795672, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000010806795672, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
@@ -227,11 +227,6 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
@@ -452,11 +447,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1194285606}
-    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[0].maxDistance
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_IsPrefabParent: 0
@@ -507,25 +497,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2091822283 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012255913020, guid: a372273bfd7002445a118044f0c99a84,
-    type: 2}
-  m_PrefabInternal: {fileID: 2495663}
---- !u!95 &2091822287
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091822283}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4e95d908fe0b12c4184a9d1b789cc3ca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
