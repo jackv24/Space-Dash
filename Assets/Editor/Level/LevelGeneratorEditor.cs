@@ -16,6 +16,8 @@ public class LevelGeneratorEditor : Editor
 
         previewLength = EditorGUILayout.IntField("Preview Length", previewLength);
 
+        EditorGUILayout.BeginHorizontal();
+
         if (GUILayout.Button("Generate Preview"))
         {
             ((LevelGenerator)target).GeneratePreview(previewLength);
@@ -24,5 +26,7 @@ public class LevelGeneratorEditor : Editor
         {
             ((LevelGenerator)target).Reset();
         }
+
+        EditorGUILayout.EndHorizontal();
     }
 }

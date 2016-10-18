@@ -9,6 +9,7 @@ public class HUDControl : MonoBehaviour
     [Tooltip("The transform of the player. The x coordinate of this transform is the \"distance travelled\".")]
     public Transform player;
     private PlayerStats playerStats;
+    private PlayerControl playerControl;
 
     [Header("HUD Elements")]
     [Tooltip("The text object to display distance.")]
@@ -35,6 +36,10 @@ public class HUDControl : MonoBehaviour
     public Text scoreText;
     private string scoreTextString;
 
+    [Space()]
+    public Text jumpText;
+    private string jumpTextString;
+
     private int bestScore;
 
     void Awake()
@@ -56,6 +61,8 @@ public class HUDControl : MonoBehaviour
             oxygenTextString = oxygenText.text;
         if (scoreText)
             scoreTextString = scoreText.text;
+        if (jumpText)
+            jumpTextString = jumpText.text;
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
@@ -63,7 +70,10 @@ public class HUDControl : MonoBehaviour
 
         //Get PlayerStats from player
         if (player)
+        {
             playerStats = player.GetComponent<PlayerStats>();
+            playerControl = player.GetComponent<PlayerControl>();
+        }
     }
 
     void Update()
@@ -104,6 +114,9 @@ public class HUDControl : MonoBehaviour
                 //Plug distance into string, using original string's formatting
                 scoreText.text = string.Format(scoreTextString, playerStats.Score, bestScore);
             }
+
+            if (jumpText)
+                jumpText.text = string.Format(jumpTextString, (playerControl.isFloating) ? "Floating!" : playerControl.jumpsLeft.ToString());
         }
         else
             Debug.Log("No player transform assigned to GameManager");
