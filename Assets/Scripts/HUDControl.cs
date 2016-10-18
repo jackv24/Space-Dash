@@ -116,7 +116,12 @@ public class HUDControl : MonoBehaviour
             }
 
             if (jumpText)
-                jumpText.text = string.Format(jumpTextString, (playerControl.isFloating) ? "Floating!" : playerControl.jumpsLeft.ToString());
+            {
+                jumpText.text = string.Format(jumpTextString, playerControl.jumpsLeft);
+
+                if (playerControl.isFloating)
+                    jumpText.text += "\nFloating!";
+            }
         }
         else
             Debug.Log("No player transform assigned to GameManager");
