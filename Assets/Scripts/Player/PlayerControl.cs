@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     public float jumpForce = 5f;
     [Tooltip("How many times the player can jump without touching the ground.")]
     public int jumpAmount = 2;
-    private int jumpsLeft;
+    public int jumpsLeft;
     private bool shouldJump = false;
 
     [Space()]
@@ -37,7 +37,10 @@ public class PlayerControl : MonoBehaviour
     public float floatingFallSpeed = -1f;
     [Tooltip("How much oxygen is used per second when floating.")]
     public float floatingOxygenUsage = 5f;
-    private bool isFloating = false;
+    public bool isFloating = false;
+
+    [Space()]
+    public ParticleSystem floatingParticles;
 
     //What velocity of the rigidbody is set to
     private Vector2 moveVector;
@@ -113,6 +116,18 @@ public class PlayerControl : MonoBehaviour
         }
         else
             inputX = 0;
+
+        //Starts and stop particle system at the start and end of floating
+        if (isFloating && floatingParticles.isStopped)
+            floatingParticles.Play();
+        else if(!isFloating && !floatingParticles.isStopped)
+            floatingParticles.Stop();
+
+        //Debugging
+        if (Input.GetKeyDown(KeyCode.F) && Application.isEditor)
+            Time.timeScale = 5f;
+        else if (Input.GetKeyUp(KeyCode.F))
+            Time.timeScale = 1f;
     }
 
     //Update with the physics engine (since it is using a rigidbody)
