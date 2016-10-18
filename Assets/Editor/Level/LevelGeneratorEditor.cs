@@ -20,5 +20,9 @@ public class LevelGeneratorEditor : Editor
         {
             ((LevelGenerator)target).GeneratePreview(previewLength);
         }
+        if (GUILayout.Button("Clear Preview"))
+        {
+            ((LevelGenerator)target).Reset();
+        }
     }
 }
