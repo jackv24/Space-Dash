@@ -149,5 +149,7 @@ public class PlayerStats : MonoBehaviour
         //Start oxygen depletion (should have stopped when the player's oxygen reached 0)
         StopCoroutine("DepleteOxygen");
         StartCoroutine("DepleteOxygen");
+
+        hasAlreadyDied = false;
     }
 }
