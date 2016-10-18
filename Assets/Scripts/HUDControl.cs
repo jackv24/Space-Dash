@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class HUDControl : MonoBehaviour
@@ -37,8 +38,8 @@ public class HUDControl : MonoBehaviour
     private string scoreTextString;
 
     [Space()]
-    public Text jumpText;
-    private string jumpTextString;
+    public GameObject jumpsPanel;
+    private List<Image> jumpsIcons = new List<Image>();
 
     private int bestScore;
 
@@ -61,8 +62,6 @@ public class HUDControl : MonoBehaviour
             oxygenTextString = oxygenText.text;
         if (scoreText)
             scoreTextString = scoreText.text;
-        if (jumpText)
-            jumpTextString = jumpText.text;
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
@@ -73,6 +72,18 @@ public class HUDControl : MonoBehaviour
         {
             playerStats = player.GetComponent<PlayerStats>();
             playerControl = player.GetComponent<PlayerControl>();
+        }
+
+        if (jumpsPanel)
+        {
+            GameObject icon = jumpsPanel.transform.GetChild(0).gameObject;
+            jumpsIcons.Add(icon.GetComponent<Image>());
+
+            for (int i = 1; i < playerControl.jumpAmount; i++)
+            {
+                GameObject n = (GameObject)Instantiate(icon, jumpsPanel.transform);
+                jumpsIcons.Add(n.GetComponent<Image>());
+            }
         }
     }
 
@@ -115,12 +126,17 @@ public class HUDControl : MonoBehaviour
                 scoreText.text = string.Format(scoreTextString, playerStats.Score, bestScore);
             }
 
-            if (jumpText)
+            if (jumpsPanel)
             {
-                jumpText.text = string.Format(jumpTextString, playerControl.jumpsLeft);
-
-                if (playerControl.isFloating)
-                    jumpText.text += "\nFloating!";
+                //Loop through all jump icons
+                for(int i = 0; i < jumpsIcons.Count; i++)
+                {
+                    //Set animation based on if that jump is available or not
+                    if (playerControl.jumpsLeft > i)
+                        jumpsIcons[i].GetComponent<Animator>().SetBool("isFull", true);
+                    else
+                        jumpsIcons[i].GetComponent<Animator>().SetBool("isFull", false);
+                }
             }
         }
         else
