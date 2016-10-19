@@ -43,6 +43,7 @@ GameObject:
   - 95: {fileID: 95000013644368824}
   - 114: {fileID: 114000010794342146}
   - 60: {fileID: 60000011112649022}
+  - 114: {fileID: 114000011466301914}
   m_Layer: 8
   m_Name: lavaCube4
   m_TagString: Untagged
@@ -245,3 +246,95 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000011466301914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013159948764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d61d0530c42d141bd2cf53acb002fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocksMovementX:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0.018459808
+      outSlope: 0.018459808
+      tangentMode: 0
+    - time: 0.2125
+      value: 0.74219185
+      inSlope: 0.040833667
+      outSlope: 0.040833667
+      tangentMode: 0
+    - time: 0.49508172
+      value: 0.0044645667
+      inSlope: 0.0010658815
+      outSlope: 0.0010658815
+      tangentMode: 0
+    - time: 0.78380376
+      value: 0.76362884
+      inSlope: -0.005379156
+      outSlope: -0.005379156
+      tangentMode: 0
+    - time: 0.9916667
+      value: 0.0046918676
+      inSlope: 0.022520967
+      outSlope: 0.022520967
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  rocksMovementZ:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  rocksSpeed: 0.01
+  lavaMovementX:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  lavaMovementZ:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  lavaSpeed: 0.05

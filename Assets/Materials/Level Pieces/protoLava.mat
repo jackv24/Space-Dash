@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: protoLava
-  m_Shader: {fileID: 4800000, guid: 8e7bd2a91a2d07847a81152c74ad3f68, type: 3}
+  m_Shader: {fileID: 4800000, guid: dd5ac58dad616e445961e8bbc0b7918f, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 236c7cea590a9ce4b8392a2953a904b4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4fa2ddafa887b3640aff3d5b915f8add, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -67,6 +67,12 @@ Material:
         name: _ParallaxMap
       second:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _TopTex
+      second:
+        m_Texture: {fileID: 2800000, guid: b1fb4081dbee1de4697b744705f4f005, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

@@ -396,7 +396,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013825917802, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -13.47
       objectReference: {fileID: 0}
     - target: {fileID: 4000013825917802, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -435,6 +435,11 @@ Prefab:
         type: 2}
       propertyPath: showInEditor
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010141781452, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: bloomIntensity
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
@@ -487,6 +492,10 @@ Prefab:
         type: 2}
       propertyPath: currentOxygen
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013375508610, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
