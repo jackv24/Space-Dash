@@ -203,31 +203,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 32
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
   m_IsPrefabParent: 0
@@ -4424,7 +4399,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.75
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -5370,11 +5345,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1194285606}
-    - target: {fileID: 114000010141781452, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
-        type: 2}
-      propertyPath: bloomIntensity
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
   m_IsPrefabParent: 0

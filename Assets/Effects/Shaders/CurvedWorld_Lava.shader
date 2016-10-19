@@ -56,19 +56,24 @@ Shader "Custom/Curved World (Lava)"
 		//Draw surface shader
 		void surf(Input IN, inout SurfaceOutputStandard o)
 		{
+			//Get textures
 			fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);
 			fixed4 topTex = tex2D(_TopTex, IN.uv_TopTex);
 
+			//blend textures
 			fixed4 mainOutput = mainTex.rgba * (1.0 - topTex.a);
 			fixed4 blendOutput = topTex.rgba * topTex.a;
 
+			//Set albedo
 			o.Albedo = mainOutput.rgb + blendOutput.rgb;
 			o.Alpha = mainOutput.a + blendOutput.a;
 			o.Albedo *= _Color.rgb;
 
+			//Subtract rocks from emission
 			float4 emission = tex2D(_MainTex, IN.uv_MainTex);
 			emission.rgb *= 1 - blendOutput.a;
 
+			//Set emission
 			o.Emission = emission.rgba;
 			o.Emission *= _EmissionColor.rgb * _EmissionMultiplier;
 		}
