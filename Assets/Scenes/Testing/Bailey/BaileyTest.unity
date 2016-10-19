@@ -203,6 +203,31 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014259921912, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
   m_IsPrefabParent: 0
@@ -272,10 +297,15 @@ MonoBehaviour:
     probability: 1
     minDistance: 375
     maxDistance: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011734368086, guid: af7faa250ba29bc4db4d4b5bc283178a, type: 2}
+    probability: 1
+    minDistance: 375
+    maxDistance: 0
   startGroup: {fileID: 11400000, guid: 862b318c9f8f3634d89548f59c8b291c, type: 2}
   player: {fileID: 1194285606}
   lengthAhead: 2
-  maxLoadedTiles: 10
+  maxLoadedTiles: 5
 --- !u!4 &113093878
 Transform:
   m_ObjectHideFlags: 0
