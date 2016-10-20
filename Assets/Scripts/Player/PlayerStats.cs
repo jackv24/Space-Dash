@@ -151,5 +151,9 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine("DepleteOxygen");
 
         hasAlreadyDied = false;
+
+        //Randomise background on death
+        if(BackgroundManager.instance)
+            BackgroundManager.instance.Randomise();
     }
 }
