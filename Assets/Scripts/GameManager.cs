@@ -17,6 +17,19 @@ public class GameManager : MonoBehaviour
             instance = this;
     }
 
+    void Start()
+    {
+        TransitionImageEffect effect = Camera.main.GetComponent<TransitionImageEffect>();
+
+        effect.playStart = false;
+        effect.playEnd = true;
+        effect.cutoffAmount = 1f;
+
+        effect.PlayTransition();
+
+        effect.playStart = true;
+    }
+
     //Ensures that all inputs before game starts aren't carried into game start
     void LateUpdate()
     {

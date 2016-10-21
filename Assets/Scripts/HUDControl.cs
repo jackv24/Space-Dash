@@ -82,9 +82,11 @@ public class HUDControl : MonoBehaviour
 
         if (jumpsPanel)
         {
+            //Get the existing jump icon to copy
             GameObject icon = jumpsPanel.transform.GetChild(0).gameObject;
             jumpsIcons.Add(icon.GetComponent<Image>());
 
+            //Create any copies needed
             for (int i = 1; i < playerControl.jumpAmount; i++)
             {
                 GameObject n = (GameObject)Instantiate(icon, jumpsPanel.transform);

@@ -13,7 +13,11 @@ public class TransitionImageEffect : MonoBehaviour
     public float transitionTime = 0.5f;
 
     [Space()]
-    public float waitTime = 2f;
+    public float waitTime = 0f;
+
+    [Space()]
+    public bool playStart = true;
+    public bool playEnd = true;
 
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
@@ -34,25 +38,31 @@ public class TransitionImageEffect : MonoBehaviour
     IEnumerator Transition()
     {
         //Play transition forward
-        while (cutoffAmount < 0.98f)
+        if (playStart)
         {
-            cutoffAmount = Mathf.Lerp(cutoffAmount, 1, (1 / transitionTime) * Time.deltaTime);
+            while (cutoffAmount < 0.98f)
+            {
+                cutoffAmount = Mathf.Lerp(cutoffAmount, 1, (1 / transitionTime) * Time.deltaTime);
 
-            yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+            }
+
+            //Wait for a bit
+            yield return new WaitForSeconds(waitTime);
         }
 
-        //Wait for a bit
-        yield return new WaitForSeconds(waitTime);
-
-        //Play transition backward
-        while (cutoffAmount > 0.02f)
+        if (playEnd)
         {
-            cutoffAmount = Mathf.Lerp(cutoffAmount, 0, (1 / transitionTime) * Time.deltaTime);
+            //Play transition backward
+            while (cutoffAmount > 0.02f)
+            {
+                cutoffAmount = Mathf.Lerp(cutoffAmount, 0, (1 / transitionTime) * Time.deltaTime);
 
-            yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+            }
+
+            //Make sure cutoff is at zero to avoid small artifacts
+            cutoffAmount = 0;
         }
-
-        //Make sure cutoff is at zero to avoid small artifacts
-        cutoffAmount = 0;
     }
 }

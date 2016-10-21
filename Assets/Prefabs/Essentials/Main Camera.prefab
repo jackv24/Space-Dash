@@ -20,12 +20,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013825917802}
   - 20: {fileID: 20000012405058434}
-  - 92: {fileID: 92000013493735828}
   - 124: {fileID: 124000014289004512}
   - 81: {fileID: 81000010339252462}
   - 114: {fileID: 114000013055201408}
-  - 114: {fileID: 114000010004660276}
   - 114: {fileID: 114000013558996846}
+  - 114: {fileID: 114000010423534286}
   - 114: {fileID: 114000012410792184}
   - 114: {fileID: 114000010141781452}
   - 114: {fileID: 114000012883859410}
@@ -251,28 +250,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010408502044}
   m_Enabled: 1
---- !u!92 &92000013493735828
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010408502044}
-  m_Enabled: 1
---- !u!114 &114000010004660276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010408502044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e88fb7042b4a748bc10e9678617fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectMaterial: {fileID: 2100000, guid: 003718ffc9767d2498908c71f2926f4a, type: 2}
-  cutoffAmount: 0
-  transitionTime: 0.5
-  waitTime: 0.5
 --- !u!114 &114000010141781452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,6 +288,23 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &114000010423534286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010408502044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e88fb7042b4a748bc10e9678617fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 003718ffc9767d2498908c71f2926f4a, type: 2}
+  cutoffAmount: 0
+  transitionTime: 0.5
+  waitTime: 0.5
+  playStart: 1
+  playEnd: 1
 --- !u!114 &114000011700119368
 MonoBehaviour:
   m_ObjectHideFlags: 1

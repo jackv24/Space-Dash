@@ -66,11 +66,11 @@ public class BackgroundManager : MonoBehaviour
     {
         //Set maintex on material as background
         if (backgroundRenderer)
-            backgroundRenderer.sharedMaterial.SetTexture("_MainTex", bg.background);
+            backgroundRenderer.material.SetTexture("_MainTex", bg.background);
 
         //Set maintex on material as stars
         if (starsRenderer)
-            starsRenderer.sharedMaterial.SetTexture("_MainTex", bg.stars);
+            starsRenderer.material.SetTexture("_MainTex", bg.stars);
     }
 }
 
