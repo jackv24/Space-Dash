@@ -120,7 +120,7 @@ public class PlayerControl : MonoBehaviour
         //Starts and stop particle system at the start and end of floating
         if (isFloating && floatingParticles.isStopped)
             floatingParticles.Play();
-        else if(!isFloating && !floatingParticles.isStopped)
+        else if (!isFloating && !floatingParticles.isStopped)
             floatingParticles.Stop();
 
         //Debugging

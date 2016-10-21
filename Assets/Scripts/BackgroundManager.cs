@@ -44,7 +44,7 @@ public class BackgroundManager : MonoBehaviour
             backgroundOffsetX += backgroundMoveX * Time.deltaTime;
 
             //Set material property
-            backgroundRenderer.sharedMaterial.SetTextureOffset("_MainTex", new Vector2(backgroundOffsetX, 0));
+            backgroundRenderer.material.SetTextureOffset("_MainTex", new Vector2(backgroundOffsetX, 0));
         }
 
         //Same as backgroundRenderer
@@ -52,7 +52,7 @@ public class BackgroundManager : MonoBehaviour
         {
             starsOffsetX += starsMoveX * Time.deltaTime;
 
-            starsRenderer.sharedMaterial.SetTextureOffset("_MainTex", new Vector2(starsOffsetX, 0));
+            starsRenderer.material.SetTextureOffset("_MainTex", new Vector2(starsOffsetX, 0));
         }
     }
 
