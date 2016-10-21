@@ -91,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         isGrounded = CheckGrounded();
 
         //Can only move if player is alive
-        if (playerStats.IsAlive)
+        if (playerStats.IsAlive && GameManager.instance.IsGamePlaying)
         {
             //Get inputs every frame
             if (Input.GetButtonDown("Jump"))
@@ -115,7 +115,13 @@ public class PlayerControl : MonoBehaviour
             isFloating = (body.velocity.y < 0 && Input.GetButton("Jump"));
         }
         else
+        {
+            //Dont move
             inputX = 0;
+
+            //Stop floating particles if player can not move (prevents them getting stuck on if boosting before death)
+            floatingParticles.Stop();
+        }
 
         //Starts and stop particle system at the start and end of floating
         if (isFloating && floatingParticles.isStopped)

@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 383d6ce19f715f9439ae41170878aabd, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca795665e46180b42bb62b661858b717, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -83,6 +83,9 @@ Material:
         name: _DstBlend
       second: 0
     - first:
+        name: _EmissionMultiplier
+      second: 1
+    - first:
         name: _GlossMapScale
       second: 1
     - first:
@@ -97,6 +100,12 @@ Material:
     - first:
         name: _Mode
       second: 0
+    - first:
+        name: _MultipyX
+      second: 1
+    - first:
+        name: _MultipyZ
+      second: 1
     - first:
         name: _OcclusionStrength
       second: 1
@@ -114,6 +123,9 @@ Material:
       second: 1
     - first:
         name: _UVSec
+      second: 0
+    - first:
+        name: _UsesZ
       second: 0
     - first:
         name: _ZWrite

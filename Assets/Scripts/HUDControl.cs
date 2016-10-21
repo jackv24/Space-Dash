@@ -43,10 +43,16 @@ public class HUDControl : MonoBehaviour
 
     private int bestScore;
 
+    [Header("Game Flow")]
+    public Text startText;
+    public float fadeDuration = 0.25f;
+
     void Awake()
     {
-        //There should only ever be one HUD controller
-        instance = this;
+        if (instance)
+            Debug.LogWarning("More than one HUDControl in scene. There should only ever be one HUDControl present!");
+        else
+            instance = this;
     }
 
     void Start()
@@ -138,8 +144,14 @@ public class HUDControl : MonoBehaviour
                         jumpsIcons[i].GetComponent<Animator>().SetBool("isFull", false);
                 }
             }
+
+            //Hide and show start game text
+            if (GameManager.instance.IsGamePlaying)
+                startText.CrossFadeAlpha(0f, fadeDuration, false);
+            else
+                startText.CrossFadeAlpha(1f, fadeDuration, false);
         }
         else
-            Debug.Log("No player transform assigned to GameManager");
+            Debug.Log("No player transform assigned to HUDControl");
     }
 }

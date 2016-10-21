@@ -12,10 +12,10 @@ public class BackgroundManager : MonoBehaviour
     public MeshRenderer starsRenderer;
 
     [Header("Backgrounds")]
-    public float backgroundMoveX = 0.1f;
+    public float backgroundSpeedX = -0.025f;
     private float backgroundOffsetX = 0;
 
-    public float starsMoveX = 0.25f;
+    public float starsSpeedX = -0.05f;
     private float starsOffsetX = 0;
 
     [Space()]
@@ -24,7 +24,7 @@ public class BackgroundManager : MonoBehaviour
     void Awake()
     {
         if (instance)
-            Debug.LogWarning("A Background Manager already exists!");
+            Debug.LogWarning("More than one GameManager in scene. There should only ever be one GameManager present!");
         else
             instance = this;
     }
@@ -41,7 +41,7 @@ public class BackgroundManager : MonoBehaviour
         if (backgroundRenderer)
         {
             //Move offset over time
-            backgroundOffsetX += backgroundMoveX * Time.deltaTime;
+            backgroundOffsetX += backgroundSpeedX * Time.deltaTime;
 
             //Set material property
             backgroundRenderer.material.SetTextureOffset("_MainTex", new Vector2(backgroundOffsetX, 0));
@@ -50,7 +50,7 @@ public class BackgroundManager : MonoBehaviour
         //Same as backgroundRenderer
         if (starsRenderer)
         {
-            starsOffsetX += starsMoveX * Time.deltaTime;
+            starsOffsetX += starsSpeedX * Time.deltaTime;
 
             starsRenderer.material.SetTextureOffset("_MainTex", new Vector2(starsOffsetX, 0));
         }

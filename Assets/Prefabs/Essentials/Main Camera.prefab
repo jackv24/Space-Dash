@@ -81,7 +81,7 @@ Transform:
   m_GameObject: {fileID: 1000014076526908}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 5, z: 100}
-  m_LocalScale: {x: 22, y: 1, z: 11}
+  m_LocalScale: {x: 30, y: 1, z: 15}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013825917802}
@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1000013444561224}
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 4.7, z: 99}
-  m_LocalScale: {x: 22, y: 1.0000008, z: 11.0000105}
+  m_LocalScale: {x: 30, y: 1, z: 15}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013825917802}
@@ -324,6 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundRenderer: {fileID: 23000014231781874}
   starsRenderer: {fileID: 23000011970823118}
+  backgroundSpeedX: 0.025
+  starsSpeedX: 0.05
   backgrounds:
   - background: {fileID: 2800000, guid: d7d7252f3f50fe24db2667fbddda185b, type: 3}
     stars: {fileID: 2800000, guid: 82c4b187851448b4d964c3c9d8387a50, type: 3}
@@ -335,8 +337,6 @@ MonoBehaviour:
     stars: {fileID: 2800000, guid: be8339300a66e5046a9f0064f639e141, type: 3}
   - background: {fileID: 2800000, guid: 383d6ce19f715f9439ae41170878aabd, type: 3}
     stars: {fileID: 2800000, guid: 5f49e9eccd8a14947a82a872c21d2f75, type: 3}
-  backgroundMoveX: -0.025
-  starsMoveX: -0.05
 --- !u!114 &114000012410792184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 0.15
+  intensity: 0.25
   chromaticAberration: 0.2
   axialAberration: 2.47
   blur: 0.1

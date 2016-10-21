@@ -124,7 +124,9 @@ public class PlayerStats : MonoBehaviour
         {
             yield return new WaitForSeconds(1/(float)depletionRate);
 
-            RemoveOxygen(1);
+            //Only deplete oxygen if game is running
+            if(GameManager.instance.IsGamePlaying)
+                RemoveOxygen(1);
         }
     }
 
@@ -155,5 +157,8 @@ public class PlayerStats : MonoBehaviour
         //Randomise background on death
         if(BackgroundManager.instance)
             BackgroundManager.instance.Randomise();
+
+        //Stop game on respawn
+        GameManager.instance.StopGame();
     }
 }
