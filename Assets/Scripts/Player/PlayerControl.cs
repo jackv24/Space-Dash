@@ -119,6 +119,8 @@ public class PlayerControl : MonoBehaviour
             //Dont move
             inputX = 0;
 
+            isFloating = false;
+
             //Stop floating particles if player can not move (prevents them getting stuck on if boosting before death)
             floatingParticles.Stop();
         }
