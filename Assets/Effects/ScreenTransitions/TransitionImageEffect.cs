@@ -40,7 +40,7 @@ public class TransitionImageEffect : MonoBehaviour
         //Play transition forward
         if (playStart)
         {
-            while (cutoffAmount < 0.98f)
+            while (cutoffAmount < 0.99f)
             {
                 cutoffAmount = Mathf.Lerp(cutoffAmount, 1, (1 / transitionTime) * Time.deltaTime);
 
@@ -54,7 +54,7 @@ public class TransitionImageEffect : MonoBehaviour
         if (playEnd)
         {
             //Play transition backward
-            while (cutoffAmount > 0.02f)
+            while (cutoffAmount > 0.001f)
             {
                 cutoffAmount = Mathf.Lerp(cutoffAmount, 0, (1 / transitionTime) * Time.deltaTime);
 

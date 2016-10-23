@@ -187,8 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundRenderer: {fileID: 826294053}
   starsRenderer: {fileID: 250955815}
-  backgroundSpeedX: 0.025
-  starsSpeedX: 0.05
+  backgroundSpeedX: -0.025
+  starsSpeedX: -0.05
   backgrounds:
   - background: {fileID: 2800000, guid: d7d7252f3f50fe24db2667fbddda185b, type: 3}
     stars: {fileID: 2800000, guid: 82c4b187851448b4d964c3c9d8387a50, type: 3}
@@ -642,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 8300000, guid: 5660ceb695cd7014bbcabd51244160ca, type: 3}
+  musicVolume: 1
 --- !u!4 &403312688
 Transform:
   m_ObjectHideFlags: 0
@@ -1219,4 +1220,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6dc223903b0084eb03c61ab3380d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoadDelay: 0.75
+  sceneLoadDelay: 1
