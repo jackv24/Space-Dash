@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class BackgroundSpawn : MonoBehaviour
 {
-    public float minOffset = 5f;
+    public float minOffset = -20f;
     public float maxOffset = 20f;
     private float nextPosX;
 
@@ -21,7 +21,7 @@ public class BackgroundSpawn : MonoBehaviour
         //Only spawn if not null
         if (levelObject != null && levelObject.prefab != null)
         {
-            GameObject item = (GameObject)Instantiate(levelObject.prefab, new Vector3(nextPosX, tile.position.y, levelObject.prefab.transform.position.z), Quaternion.identity);
+            GameObject item = (GameObject)Instantiate(levelObject.prefab, new Vector3(nextPosX, levelObject.prefab.transform.position.y + tile.position.y, levelObject.prefab.transform.position.z), Quaternion.identity);
             item.name = levelObject.prefab.name;
 
             item.transform.SetParent(tile);
