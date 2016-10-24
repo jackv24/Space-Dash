@@ -89,9 +89,9 @@ public class LevelGenerator : MonoBehaviour
     public void GenerateNextTile()
     {
         //Starttile is default
-        if (lastTileIndex <= 0)
+        if (lastTileIndex <= 0 && startGroup)
             currentGroup = startGroup;
-        else if (currentGroupIndex >= currentGroup.length)
+        else if (!startGroup || currentGroupIndex >= currentGroup.length)
         {
             //Choose random tile
             currentGroup = GetRandomTile();
@@ -109,7 +109,7 @@ public class LevelGenerator : MonoBehaviour
             prefab = currentGroup.GetRandomTile();
 
         //Instantiate tile at correct position
-        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y, 0), Quaternion.identity);
+        GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y + transform.position.y, 0), Quaternion.identity);
         //Parent to this gameobject
         tile.transform.SetParent(transform);
 
