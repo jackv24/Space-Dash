@@ -22,6 +22,8 @@ GameObject:
   - 33: {fileID: 33000010083871372}
   - 23: {fileID: 23000012984147804}
   - 95: {fileID: 95000011684878506}
+  - 114: {fileID: 114000010489229704}
+  - 114: {fileID: 114000012759860160}
   m_Layer: 8
   m_Name: floatingRock1
   m_TagString: Untagged
@@ -95,3 +97,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010489229704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011598891506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3ac85a00a44b741beeb3bb7f330cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeedMin: 10
+  rotateSpeedMax: 20
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 1
+--- !u!114 &114000012759860160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011598891506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc67b1fabe0f1e49851dc97ef2e413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: -0.5, z: 0}
