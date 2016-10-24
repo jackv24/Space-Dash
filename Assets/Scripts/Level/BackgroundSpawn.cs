@@ -4,44 +4,44 @@ using System.Collections.Generic;
 
 public class BackgroundSpawn : MonoBehaviour
 {
+    public float minOffset = 5f;
+    public float maxOffset = 20f;
+    private float nextPosX;
+
     //List of possilbe items to spawn
     public List<BackgroundPiece> objects = new List<BackgroundPiece>();
 
-    void Start()
+    public void GenerateBackground(Transform tile)
     {
+        nextPosX = tile.position.x + Random.Range(minOffset, maxOffset);
+
         //get item to spawn
         BackgroundPiece levelObject = ChooseObject();
 
         //Only spawn if not null
         if (levelObject != null && levelObject.prefab != null)
         {
-            GameObject item = (GameObject)Instantiate(levelObject.prefab, transform.position, Quaternion.identity);
+            GameObject item = (GameObject)Instantiate(levelObject.prefab, new Vector3(nextPosX, tile.position.y, levelObject.prefab.transform.position.z), Quaternion.identity);
             item.name = levelObject.prefab.name;
-            //Item replaces this gameobject in heirarchy, so they should have the same parent
-            item.transform.SetParent(transform.parent);
-        }
 
-        //Destroy this spawning object, even if no item was spawned
-        Destroy(gameObject);
+            item.transform.SetParent(tile);
+        }
     }
 
     BackgroundPiece ChooseObject()
     {
-        //List of prefabs, to be sorted
+        //List of elegible tiles, and sort based on probability
         List<BackgroundPiece> possibleObjects = new List<BackgroundPiece>();
 
-        //If item is within the generation range, add it to the list
-        foreach (BackgroundPiece i in objects)
-            if (transform.position.x >= i.minDistance)
-                possibleObjects.Add(i);
+        //If tile is within the generation range, add it to the list
+        foreach (BackgroundPiece o in objects)
+            if ((transform.position.x >= o.minDistance) && (transform.position.x <= o.maxDistance || o.maxDistance == 0))
+                possibleObjects.Add(o);
 
         //Sort the list by probability (since it is using cumulative probability)
         possibleObjects.Sort((x, y) => x.probability.CompareTo(y.probability));
 
-        //prefab is null by default
-        BackgroundPiece prefab = null;
-
-        //The probability of all prefabs added together
+        //The probability of all tiles added together
         float maxProbability = 0;
         //Running cumulative rpobability
         float cumulativeProbability = 0;
@@ -50,7 +50,7 @@ public class BackgroundSpawn : MonoBehaviour
         for (int i = 0; i < possibleObjects.Count; i++)
             maxProbability += possibleObjects[i].probability;
 
-        //Choose prefab
+        //Choose tile
         for (int i = 0; i < possibleObjects.Count; i++)
         {
             //Add to running probability
@@ -62,27 +62,12 @@ public class BackgroundSpawn : MonoBehaviour
             //If number is within range
             if (roll < cumulativeProbability)
             {
-                //Set prefab as this prefab, then break
-                prefab = possibleObjects[i];
-                break;
+                return possibleObjects[i];
             }
 
         }
 
-        //Return the prefab that was chosen
-        return prefab;
-    }
-
-    void OnDrawGizmos()
-    {
-        Vector3 pos = transform.position;
-        Vector3 size = new Vector3(2, 2, 1);
-
-        Gizmos.color = new Color(0, 1, 0, 0.5f);
-        Gizmos.DrawCube(pos, size);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(pos, size);
+        return null;
     }
 }
 
@@ -93,4 +78,5 @@ public class BackgroundPiece
 
     public float probability = 1f;
     public float minDistance = 0f;
+    public float maxDistance = 0f;
 }
