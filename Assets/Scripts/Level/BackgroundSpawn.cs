@@ -21,7 +21,11 @@ public class BackgroundSpawn : MonoBehaviour
         //Only spawn if not null
         if (levelObject != null && levelObject.prefab != null)
         {
-            GameObject item = (GameObject)Instantiate(levelObject.prefab, new Vector3(nextPosX, levelObject.prefab.transform.position.y + tile.position.y, levelObject.prefab.transform.position.z), Quaternion.identity);
+            GameObject item = (GameObject)Instantiate(
+                levelObject.prefab,
+                new Vector3(nextPosX, levelObject.prefab.transform.position.y + tile.position.y, levelObject.prefab.transform.position.z),
+                Quaternion.Euler(0, Random.Range(0, levelObject.maxRotation), 0));
+
             item.name = levelObject.prefab.name;
 
             item.transform.SetParent(tile);
@@ -76,7 +80,12 @@ public class BackgroundPiece
 {
     public GameObject prefab;
 
+    [Space()]
     public float probability = 1f;
     public float minDistance = 0f;
     public float maxDistance = 0f;
+
+    [Space()]
+    [Range(0, 360f)]
+    public float maxRotation = 0f;
 }
