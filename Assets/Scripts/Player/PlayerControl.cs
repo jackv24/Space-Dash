@@ -34,7 +34,8 @@ public class PlayerControl : MonoBehaviour
 
     [Space()]
     [Tooltip("The speed at which the player falls when floating.")]
-    public float floatingFallSpeed = -1f;
+    public float floatingGravity = 0f;
+    private float normalGravity = 1f;
     [Tooltip("How much oxygen is used per second when floating.")]
     public float floatingOxygenUsage = 5f;
     public bool isFloating = false;
@@ -78,6 +79,8 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();
+
+        normalGravity = body.gravityScale;
 
         StartCoroutine("UseOxygen");
     }
@@ -161,8 +164,7 @@ public class PlayerControl : MonoBehaviour
             moveVector.y = jumpForce;
         }
 
-        //Set terminal velocity if isFloatig
-        terminalVelocity = (isFloating && playerStats.IsAlive) ? floatingFallSpeed : 0;
+        body.gravityScale = isFloating ? floatingGravity : normalGravity;
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
