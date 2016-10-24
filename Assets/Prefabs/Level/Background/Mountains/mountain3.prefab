@@ -9,46 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000014020363198}
+  m_RootGameObject: {fileID: 1000011120287846}
   m_IsPrefabParent: 1
---- !u!1 &1000014020363198
+--- !u!1 &1000011120287846
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011547690300}
-  - 33: {fileID: 33000013147075424}
-  - 23: {fileID: 23000010263961476}
-  - 95: {fileID: 95000013626225804}
-  - 60: {fileID: 60000012174170968}
+  - 4: {fileID: 4000012164950072}
+  - 33: {fileID: 33000011439757306}
+  - 23: {fileID: 23000012782901728}
+  - 95: {fileID: 95000013229497918}
   m_Layer: 8
-  m_Name: tileableEasy3
+  m_Name: mountain3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011547690300
+--- !u!4 &4000012164950072
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014020363198}
+  m_GameObject: {fileID: 1000011120287846}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.1, y: -2.6, z: 15.61}
+  m_LocalScale: {x: 0.6393551, y: 0.6393551, z: 0.6393551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000010263961476
+--- !u!23 &23000012782901728
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014020363198}
+  m_GameObject: {fileID: 1000011120287846}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a0781bd41349e954a96660ab5f729f78, type: 2}
+  - {fileID: 2100000, guid: 9306a1d70d958d74899cc01801cbaf05, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -72,53 +71,22 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000013147075424
+--- !u!33 &33000011439757306
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014020363198}
-  m_Mesh: {fileID: 4300000, guid: b8f31871ac25fec46b2f77c34555ce5f, type: 3}
---- !u!60 &60000012174170968
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014020363198}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -25, y: 1}
-      - {x: -15.874969, y: 1}
-      - {x: -12.377847, y: 2.1294346}
-      - {x: -8.001057, y: 4.00671}
-      - {x: -7.303571, y: 3.847337}
-      - {x: -4.2347164, y: 2.117352}
-      - {x: 0.67296124, y: 1}
-      - {x: 3.1849787, y: 1.7296047}
-      - {x: 9.697524, y: 5.6550174}
-      - {x: 10.426109, y: 5.734963}
-      - {x: 14.052922, y: 5.747237}
-      - {x: 16.497744, y: 4.5604696}
-      - {x: 20.757998, y: 1.8192134}
-      - {x: 22.904217, y: 1}
-      - {x: 25, y: 1}
-      - {x: 25, y: 0}
-      - {x: -25, y: 0}
---- !u!95 &95000013626225804
+  m_GameObject: {fileID: 1000011120287846}
+  m_Mesh: {fileID: 4300000, guid: f54fdfa2ea868934ea4f015b0df5bd4b, type: 3}
+--- !u!95 &95000013229497918
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014020363198}
+  m_GameObject: {fileID: 1000011120287846}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b8f31871ac25fec46b2f77c34555ce5f, type: 3}
+  m_Avatar: {fileID: 9000000, guid: f54fdfa2ea868934ea4f015b0df5bd4b, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0

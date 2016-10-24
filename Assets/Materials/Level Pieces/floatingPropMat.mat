@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: groundMat
+  m_Name: floatingPropMat
   m_Shader: {fileID: 4800000, guid: 8e7bd2a91a2d07847a81152c74ad3f68, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -42,13 +42,13 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2038605c5d7961f428569445458a3801, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 643675ac0b0ae384e98e59020d258505, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f08311a57e769f46b6f5abbf2eaf4ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -84,13 +84,13 @@ Material:
       second: 0
     - first:
         name: _EmissionMultiplier
-      second: 1
+      second: 1.8
     - first:
         name: _GlossMapScale
       second: 1
     - first:
         name: _Glossiness
-      second: 0.522
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -127,4 +127,4 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
