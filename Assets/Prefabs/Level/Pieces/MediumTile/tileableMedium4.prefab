@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000014145994946}
   m_IsPrefabParent: 1
+--- !u!1 &1000010929899882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010629069746}
+  - 114: {fileID: 114000013366625252}
+  m_Layer: 0
+  m_Name: ItemSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013637510288
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,8 +79,22 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012886109870}
+  - {fileID: 4000010629069746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &4000010629069746
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010929899882}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.55, y: 7.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010560256674}
+  m_RootOrder: 1
 --- !u!4 &4000012886109870
 Transform:
   m_ObjectHideFlags: 1
@@ -166,13 +196,16 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -25, y: 1}
       - {x: -15.207589, y: 1}
+      - {x: -14.2529, y: -0.16197234}
       - {x: -10.2233515, y: -2.908095}
-      - {x: -3.2375543, y: 0.6793585}
-      - {x: -1.8286896, y: 1.0758314}
-      - {x: 0.81653804, y: 0.98779225}
-      - {x: 2.307521, y: 0.4013945}
+      - {x: -4.941101, y: -1.449789}
+      - {x: -4.096487, y: 0.7264929}
+      - {x: 2.2915077, y: 0.73513633}
+      - {x: 4.4124956, y: -1.0042531}
+      - {x: 6.393616, y: -2.4294267}
       - {x: 9.091169, y: -2.8325565}
-      - {x: 16.510891, y: 0.9881891}
+      - {x: 16.235092, y: -1.7364194}
+      - {x: 16.36589, y: 0.89560795}
       - {x: 25, y: 1}
       - {x: 25, y: 0}
       - {x: 17.64307, y: -0.056638718}
@@ -334,3 +367,21 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   lavaSpeed: 0.05
+--- !u!114 &114000013366625252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010929899882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c417f53bc9484743bea3fa4583f1758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - prefab: {fileID: 0}
+    probability: 0.9
+    minDistance: 0
+    maxChain: 4
+    chainDirection: 1
+    chainSpacing: 3
