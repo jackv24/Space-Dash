@@ -34,11 +34,11 @@ public class PlayerControl : MonoBehaviour
 
     [Space()]
     [Tooltip("The speed at which the player falls when floating.")]
-    public float floatingGravity = 0f;
-    private float normalGravity = 1f;
+    public float floatingFallSpeed = 0f;
     [Tooltip("How much oxygen is used per second when floating.")]
     public float floatingOxygenUsage = 5f;
     public bool isFloating = false;
+    private bool canFloat = false;
 
     [Space()]
     public ParticleSystem floatingParticles;
@@ -80,8 +80,6 @@ public class PlayerControl : MonoBehaviour
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();
 
-        normalGravity = body.gravityScale;
-
         StartCoroutine("UseOxygen");
     }
 
@@ -115,7 +113,12 @@ public class PlayerControl : MonoBehaviour
                 inputX = Input.GetAxisRaw("Horizontal");
 
             //Only float if falling while jump button is held
-            isFloating = (body.velocity.y < 0 && Input.GetButton("Jump"));
+            isFloating = (canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
+
+            if (Input.GetButtonDown("Jump"))
+                canFloat = true;
+            if (Input.GetButtonUp("Jump"))
+                canFloat = false;
         }
         else
         {
@@ -164,7 +167,7 @@ public class PlayerControl : MonoBehaviour
             moveVector.y = jumpForce;
         }
 
-        body.gravityScale = isFloating ? floatingGravity : normalGravity;
+        moveVector.y = isFloating ? floatingFallSpeed : moveVector.y;
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
