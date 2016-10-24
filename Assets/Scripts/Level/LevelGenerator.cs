@@ -30,6 +30,13 @@ public class LevelGenerator : MonoBehaviour
     //The index of the last tile generated
     private int lastTileIndex = 0;
 
+    private BackgroundSpawn backgroundSpawn;
+
+    void Awake()
+    {
+        backgroundSpawn = GetComponent<BackgroundSpawn>();
+    }
+
     void Start()
     {
         //Make sure to delete preview before starting
@@ -116,6 +123,12 @@ public class LevelGenerator : MonoBehaviour
         generatedTiles.Add(tile);
         lastTileIndex++;
         currentGroupIndex++;
+
+        if (!backgroundSpawn)
+            backgroundSpawn = GetComponent<BackgroundSpawn>();
+        if(backgroundSpawn)
+            backgroundSpawn.GenerateBackground(tile.transform);
+        
     }
 
     // Returns a random tile based on the probability of all tiles.
