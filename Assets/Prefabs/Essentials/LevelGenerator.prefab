@@ -52,25 +52,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350db155b70d7fa49a28116e2c59b375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOffset: -20
-  maxOffset: 20
   objects:
-  - prefab: {fileID: 1000013531125634, guid: a8020a18b2987174286cca2ec450d608, type: 2}
+  - prefab: {fileID: 1000012380216436, guid: c794efd0a58c8aa4eb4d595ae800760b, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-  - prefab: {fileID: 1000013978741892, guid: b0d9cb40e6adf7c40b3064e506dd7ad4, type: 2}
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 0, z: 5}
+  - prefab: {fileID: 1000012572104324, guid: 614faf2518246c14ca0f315a08c52119, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-  - prefab: {fileID: 1000011823097350, guid: daa7cefc9ced639428e044e775938f81, type: 2}
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 0, z: 5}
+  - prefab: {fileID: 1000011120287846, guid: 6f7c1422d3d90d44db31e2f2badea1d0, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 0, z: 5}
+  - prefab: {fileID: 1000012882047274, guid: e9169a360cb287240b1fe5bc4c484fa1, type: 2}
+    probability: 1
+    minDistance: 0
+    maxDistance: 0
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 10, z: 40}
+  - prefab: {fileID: 1000011598891506, guid: 9e17ca77eab2ec549b8c18ee9eeb45ee, type: 2}
+    probability: 1
+    minDistance: 0
+    maxDistance: 0
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: -5}
+    maxOffset: {x: 20, y: 5, z: 20}
   - prefab: {fileID: 0}
     probability: 1
     minDistance: 0
     maxDistance: 0
+    maxRotation: 0
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 0, z: 10}
 --- !u!114 &114000013132301178
 MonoBehaviour:
   m_ObjectHideFlags: 1

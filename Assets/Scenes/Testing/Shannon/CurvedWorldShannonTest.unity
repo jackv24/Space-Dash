@@ -236,7 +236,7 @@ Prefab:
     - target: {fileID: 224000013701149768, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -890.5
+      value: -930.88
       objectReference: {fileID: 0}
     - target: {fileID: 114000013875135338, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
@@ -387,7 +387,7 @@ Prefab:
     - target: {fileID: 224000013701149768, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -27.58
+      value: -27.580078
       objectReference: {fileID: 0}
     - target: {fileID: 114000011250013312, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
@@ -480,7 +480,7 @@ Prefab:
     - target: {fileID: 224000011813582644, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -20.4
+      value: -20.399902
       objectReference: {fileID: 0}
     - target: {fileID: 224000011813582644, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
@@ -491,6 +491,36 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011009373316, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011009373316, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011009373316, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011009373316, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013337101128, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013337101128, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
@@ -590,6 +620,16 @@ Prefab:
         type: 2}
       propertyPath: showInEditor
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011700119368, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: starsSpeedX
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011700119368, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: backgroundSpeedX
+      value: -0.004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}
@@ -1029,6 +1069,36 @@ Prefab:
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: acceleration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013383368960, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: jumpForce
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: floatingFallSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
+        type: 2}
+      propertyPath: isFloating
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}

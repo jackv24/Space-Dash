@@ -7,7 +7,6 @@ Shader "Custom/Curved World (Transparent)"
 	{
 		_MainTex("Base (RGB) Alpha (A)", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
-		_Cutoff("Alpha Cutoff", Float) = 0.5
 
 		_BumpMap("Normal Map", 2D) = "bump" {}
 
@@ -18,11 +17,11 @@ Shader "Custom/Curved World (Transparent)"
 
 	SubShader
 	{
-		Tags{ "Queue" = "Transparent" "RenderType" = "TransparentCutout" }
+		Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
 
 		CGPROGRAM
 
-		#pragma surface surf Standard alpha vertex:vert addshadow alphatest:_Cutoff
+		#pragma surface surf Standard alpha vertex:vert addshadow
 
 		sampler2D _MainTex;
 		float4 _Color;
@@ -65,10 +64,10 @@ Shader "Custom/Curved World (Transparent)"
 		void surf(Input IN, inout SurfaceOutputStandard o)
 		{
 			fixed4 diffuse = tex2D(_MainTex, IN.uv_MainTex).rgba;
-			diffuse *= _Color.rgba;
+			diffuse *= _Color.rgba * IN.color;
 
 			o.Albedo = diffuse.rgb;
-			o.Alpha = diffuse.a;
+			o.Alpha = diffuse.a * IN.color.a;
 
 			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 

@@ -38,6 +38,7 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("How much oxygen is used per second when floating.")]
     public float floatingOxygenUsage = 5f;
     public bool isFloating = false;
+    private bool canFloat = false;
 
     [Space()]
     public ParticleSystem floatingParticles;
@@ -112,7 +113,12 @@ public class PlayerControl : MonoBehaviour
                 inputX = Input.GetAxisRaw("Horizontal");
 
             //Only float if falling while jump button is held
-            isFloating = (body.velocity.y < 0 && Input.GetButton("Jump"));
+            isFloating = (canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
+
+            if (Input.GetButtonDown("Jump"))
+                canFloat = true;
+            if (Input.GetButtonUp("Jump"))
+                canFloat = false;
         }
         else
         {

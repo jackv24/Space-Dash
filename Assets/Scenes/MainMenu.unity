@@ -2513,8 +2513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc67b1fabe0f1e49851dc97ef2e413a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 1, y: 0, z: 0}
-  speed: 5
+  direction: {x: 5, y: 0, z: 0}
+  speed: 1
 --- !u!1001 &1481604939
 Prefab:
   m_ObjectHideFlags: 0
@@ -2567,12 +2567,37 @@ Prefab:
     - target: {fileID: 114000013558996846, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
         type: 2}
       propertyPath: worldCurvature
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 114000013055201408, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
         type: 2}
       propertyPath: offset.y
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011700119368, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: backgroundSpeedX
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011700119368, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: starsSpeedX
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012883859410, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: blur
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012883859410, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: blurSpread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012883859410, guid: fa09a1b724d4fc64eac10615fe5bb2f7,
+        type: 2}
+      propertyPath: intensity
+      value: 0.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa09a1b724d4fc64eac10615fe5bb2f7, type: 2}

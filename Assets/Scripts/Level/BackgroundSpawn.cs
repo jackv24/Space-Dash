@@ -4,17 +4,11 @@ using System.Collections.Generic;
 
 public class BackgroundSpawn : MonoBehaviour
 {
-    public float minOffset = -20f;
-    public float maxOffset = 20f;
-    private float nextPosX;
-
-    //List of possilbe items to spawn
+    [Tooltip("A list of all possible objects to spawn.")]
     public List<BackgroundPiece> objects = new List<BackgroundPiece>();
 
     public void GenerateBackground(Transform tile)
     {
-        nextPosX = tile.position.x + Random.Range(minOffset, maxOffset);
-
         //get item to spawn
         BackgroundPiece levelObject = ChooseObject();
 
@@ -23,10 +17,17 @@ public class BackgroundSpawn : MonoBehaviour
         {
             GameObject item = (GameObject)Instantiate(
                 levelObject.prefab,
-                new Vector3(nextPosX, levelObject.prefab.transform.position.y + tile.position.y, levelObject.prefab.transform.position.z),
+                new Vector3(tile.position.x, levelObject.prefab.transform.position.y + tile.position.y, levelObject.prefab.transform.position.z),
                 Quaternion.Euler(0, Random.Range(0, levelObject.maxRotation), 0));
 
             item.name = levelObject.prefab.name;
+
+            Vector3 offset = new Vector3(
+                Random.Range(levelObject.minOffset.x, levelObject.maxOffset.x),
+                Random.Range(levelObject.minOffset.y, levelObject.maxOffset.y),
+                Random.Range(levelObject.minOffset.z, levelObject.maxOffset.z));
+
+            item.transform.position += offset;
 
             item.transform.SetParent(tile);
         }
@@ -88,4 +89,8 @@ public class BackgroundPiece
     [Space()]
     [Range(0, 360f)]
     public float maxRotation = 0f;
+
+    [Space()]
+    public Vector3 minOffset = new Vector3(-20, -5, 0);
+    public Vector3 maxOffset = new Vector3(20, 0, 10);
 }
