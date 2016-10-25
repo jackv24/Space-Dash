@@ -197,7 +197,6 @@ public class LevelTile
     public GameObject prefab;
 
     [Space()]
-    [Range(0f, 1f)]
     [Tooltip("How likely this tile is to be chosen.")]
     public float probability = 1f;
 
