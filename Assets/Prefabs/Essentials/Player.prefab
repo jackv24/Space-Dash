@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -198,13 +198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aeffddd237de5428a06ec3453c5a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 14
   acceleration: 0.75
   autoRun: 1
-  jumpForce: 10
+  jumpForce: 14
   jumpAmount: 2
   jumpsLeft: 0
-  floatingFallSpeed: -1
+  floatingFallSpeed: 0
   floatingOxygenUsage: 10
   isFloating: 0
   floatingParticles: {fileID: 198000011651391536}
