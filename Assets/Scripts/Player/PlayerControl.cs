@@ -113,7 +113,7 @@ public class PlayerControl : MonoBehaviour
                 inputX = Input.GetAxisRaw("Horizontal");
 
             //Only float if falling while jump button is held
-            isFloating = (canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
+            isFloating = (!shouldJump && canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
 
             if (Input.GetButtonDown("Jump"))
                 canFloat = true;
