@@ -730,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 8300000, guid: 5660ceb695cd7014bbcabd51244160ca, type: 3}
   musicVolume: 1
+  gameVolume: 1
 --- !u!4 &403312688
 Transform:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481576472}
   m_Mesh: {fileID: 4300000, guid: 7597f71afed244b4bb3faf63e641f7da, type: 3}
+--- !u!114 &579119468 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011351399066, guid: 30a3fbd734b17af49ae91787fd8b9992,
+    type: 2}
+  m_PrefabInternal: {fileID: 616766706}
+  m_Script: {fileID: 11500000, guid: 2f84b760dec6ee94aa3b48fe13bd4076, type: 3}
+--- !u!1001 &616766706
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014063529556, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 30a3fbd734b17af49ae91787fd8b9992, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &635634515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1768,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 773525616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579119468}
+        m_MethodName: ShowOrHide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!95 &773525620
@@ -2514,7 +2574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 5, y: 0, z: 0}
-  speed: 1
 --- !u!1001 &1481604939
 Prefab:
   m_ObjectHideFlags: 0
