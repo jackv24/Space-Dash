@@ -27,14 +27,8 @@ public class OptionsManager : MonoBehaviour
             //Persist between scenes
             DontDestroyOnLoad(gameObject);
 
-            //Datapath is asset path in editor, but persistent path everywhere else (fixes permissions issue)
-            if (Application.isEditor)
-                dataPath = Application.dataPath;
-            else
-                dataPath = Application.persistentDataPath;
-
             //Add filename onto datapath
-            dataPath += "/" + fileName + ".xml";
+            dataPath = Application.persistentDataPath + "/" + fileName + ".xml";
 
             LoadOptions();
         }
@@ -62,12 +56,16 @@ public class OptionsManager : MonoBehaviour
 
     public void SaveOptions()
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(Options));
-
-        //Save options to xml file
-        using (FileStream stream = new FileStream(dataPath, FileMode.Create))
+        //Dont save in editor
+        if (!Application.isEditor)
         {
-            serializer.Serialize(stream, currentOptions);
+            XmlSerializer serializer = new XmlSerializer(typeof(Options));
+
+            //Save options to xml file
+            using (FileStream stream = new FileStream(dataPath, FileMode.Create))
+            {
+                serializer.Serialize(stream, currentOptions);
+            }
         }
     }
 
@@ -76,7 +74,7 @@ public class OptionsManager : MonoBehaviour
         XmlSerializer serializer = new XmlSerializer(typeof(Options));
 
         //Check if file exists
-        if (File.Exists(dataPath))
+        if (!Application.isEditor && File.Exists(dataPath))
         {
             //Load options from xml
             using (FileStream stream = new FileStream(dataPath, FileMode.Open))

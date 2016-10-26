@@ -30,6 +30,7 @@ public class OptionsUI : MonoBehaviour
     [Header("Finish Buttons")]
     public Button applyButton;
     public Button okayButton;
+    public Button cancelButton;
 
     private bool isVisible = false;
 
@@ -44,6 +45,9 @@ public class OptionsUI : MonoBehaviour
         applyButton.onClick.AddListener(delegate { ApplyChanges(); });
         okayButton.onClick.AddListener(delegate { ApplyChanges(); });
         okayButton.onClick.AddListener(delegate { ShowOrHide(); });
+
+        //Cancel button should hide the UI, reset options, and reset options in UI
+        cancelButton.onClick.AddListener(delegate { ShowOrHide(); OptionsManager.instance.ApplyOptions(); LoadOptions(); });
 
         //Load resolutions
         resolutions = Screen.resolutions;
@@ -93,10 +97,14 @@ public class OptionsUI : MonoBehaviour
         options.ApplyOptions();
     }
 
-    public void UpdateSliders()
+    void UpdateSliders()
     {
         musicText.text = string.Format(musicTextString, (musicSlider.value * 100));
         soundText.text = string.Format(soundTextString, (soundSlider.value * 100));
+
+        //Preview sound level before saving
+        SoundManager.instance.SetMusicVolume(musicSlider.value);
+        SoundManager.instance.SetGameVolume(soundSlider.value);
     }
 
     public void ShowOrHide()
