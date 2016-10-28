@@ -72,7 +72,7 @@ public class HUDControl : MonoBehaviour
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
-        bestScore = 100;//PlayerPrefs.GetInt("BestScore", 0);
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
 
         //Get PlayerStats from player
         if (player)
