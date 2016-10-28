@@ -398,6 +398,16 @@ MonoBehaviour:
   distanceAhead: 8
   pullAheadSpeed: 2
   velocity: {x: 0, y: 0}
+  zoomOut: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  padding:
+    left: 0
+    right: 0
+    up: 0
+    down: 0
+  outStep: 0.1
 --- !u!114 &114000013558996846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldCurvature: 0.005
-  showInEditor: 1
+  showInEditor: 0
   target: {fileID: 0}
 --- !u!124 &124000014289004512
 Behaviour:

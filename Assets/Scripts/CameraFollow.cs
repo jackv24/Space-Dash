@@ -32,6 +32,15 @@ public class CameraFollow : MonoBehaviour
     [HideInInspector]
     public Vector2 velocity;
 
+    [Header("Zoom Out")]
+    public bool zoomOut = false;
+    public LayerMask groundLayer;
+    [Tooltip("How much padding there should be for detecting if ground is visible.")]
+    [Range(0, 1f)]
+    public float padding;
+    public float outStep = 0.1f;
+    private float initialDistance;
+
     void Start()
     {
         //If there is no target, attempt to find a player's transform
@@ -46,6 +55,8 @@ public class CameraFollow : MonoBehaviour
         }
         else
             Debug.Log("Camera has no target!");
+
+        initialDistance = transform.position.z;
     }
 
     void LateUpdate()
@@ -64,8 +75,32 @@ public class CameraFollow : MonoBehaviour
                 targetPosition.x += targetDistance;
             }
 
+            if (zoomOut)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(target.position, Vector2.down, 1000f, groundLayer);
+
+                if (!IsVisible(hit.point))
+                {
+                    targetPosition.z -= outStep;
+                }
+                else if (velocity.y < 0 || ((Vector2)target.position - hit.point).magnitude < 0.01f)
+                    targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothing);
+            }
+
             //Lerp camera position
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
         }
+    }
+
+    bool IsVisible(Vector3 point)
+    {
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(point);
+
+        if (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > padding && screenPoint.y < 1)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
