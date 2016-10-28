@@ -100,6 +100,10 @@ public class PlayerStats : MonoBehaviour
         {
             hasAlreadyDied = true;
 
+            //Play random death sound on death
+            if (SoundManager.instance)
+                SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomDeath);
+
             //Play death transition on main camera
             Camera.main.SendMessage("PlayTransition");
 

@@ -55,6 +55,7 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("The distance from the ground at which the player is counted as 'grounded'.")]
     public float groundedDistance = 0.01f;
     private bool isGrounded = false;
+    private bool becameGrounded = false;
 
     [Space()]
     public float raysStartX = -0.5f;
@@ -133,9 +134,19 @@ public class PlayerControl : MonoBehaviour
 
         //Starts and stop particle system at the start and end of floating
         if (isFloating && floatingParticles.isStopped)
+        {
             floatingParticles.Play();
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.boosting);
+        }
         else if (!isFloating && !floatingParticles.isStopped)
+        {
             floatingParticles.Stop();
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(null);
+        }
 
         //Debugging
         if (Input.GetKeyDown(KeyCode.F) && Application.isEditor)
@@ -162,6 +173,10 @@ public class PlayerControl : MonoBehaviour
             shouldJump = false;
             //Decrement jumps left
             jumpsLeft--;
+
+            //Play jumping sound if jumping from ground, and air jumping sound if jumping from air
+            if(SoundManager.instance)
+                SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomJump);
 
             //Set jump force (dont add, to prevent double jumps launching player)
             moveVector.y = jumpForce;
@@ -198,7 +213,29 @@ public class PlayerControl : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * 100, Color.red);
 
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
+            {
+                if(!becameGrounded && playerStats.IsAlive && moveVector.x > 0 && GameManager.instance.IsGamePlaying)
+                {
+                    becameGrounded = true;
+
+                    //Start footstep sound if just became grounded
+                    if (SoundManager.instance)
+                    {
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.landing);
+                        SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.running);
+                    }
+                }
+
                 return true;
+            }
+        }
+
+        if (becameGrounded)
+        {
+            becameGrounded = false;
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(null);
         }
 
         //Otherwise, player is not grounded

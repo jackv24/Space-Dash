@@ -32,6 +32,8 @@ public class ItemPickup : MonoBehaviour
                     break;
                 case Type.Oxygen:
                     stats.AddOxygen(value);
+                    if (SoundManager.instance)
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.pickupOxygen);
                     break;
             }
 
