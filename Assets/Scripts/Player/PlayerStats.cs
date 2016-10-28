@@ -135,11 +135,6 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        //Reset level if there is a level generator
-        LevelGenerator generator = FindObjectOfType<LevelGenerator>();
-        if (generator)
-            generator.Reset();
-
         //Reset position
         transform.position = initialPosition;
 
@@ -154,11 +149,8 @@ public class PlayerStats : MonoBehaviour
 
         hasAlreadyDied = false;
 
-        //Randomise background on death
-        if(BackgroundManager.instance)
-            BackgroundManager.instance.Randomise();
-
         //Stop game on respawn
         GameManager.instance.StopGame();
+        GameManager.instance.ResetGame();
     }
 }

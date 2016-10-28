@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public static LevelGenerator instance;
+
     [Header("Level Values")]
     [Tooltip("The length (in metres) of each tile.")]
     public float tileLength = 20f;
@@ -34,6 +36,8 @@ public class LevelGenerator : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
+
         backgroundSpawn = GetComponent<BackgroundSpawn>();
     }
 
