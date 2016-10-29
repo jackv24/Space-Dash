@@ -62,9 +62,11 @@ public class PlayerControl : MonoBehaviour
     public float raysEndX = 0.5f;
     public int rayAmount = 3;
 
+    [Space()]
+    public Animator anim;
+
     //Reference to the player's rigidbody
     private Rigidbody2D body;
-
     private PlayerStats playerStats;
 
     private CameraFollow cameraFollow;
@@ -180,9 +182,15 @@ public class PlayerControl : MonoBehaviour
 
             //Set jump force (dont add, to prevent double jumps launching player)
             moveVector.y = jumpForce;
+
+            if (anim)
+                anim.SetTrigger("jump");
         }
 
         moveVector.y = isFloating ? floatingFallSpeed : moveVector.y;
+
+        if (anim)
+            anim.SetBool("boosting", isFloating);
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
@@ -190,6 +198,9 @@ public class PlayerControl : MonoBehaviour
         //If grounded and not moving up, reset jumps
         if (isGrounded && moveVector.y <= 0)
             jumpsLeft = jumpAmount;
+
+        if (anim)
+            anim.SetFloat("speed", moveVector.x);
     }
 
     //Checks if the character is grounded (using raycast)

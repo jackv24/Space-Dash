@@ -26,6 +26,9 @@ public class PlayerStats : MonoBehaviour
     public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0) ? true : false; } }
     private bool hasAlreadyDied = false;
 
+    [Space()]
+    public Animator anim;
+
     private Vector3 initialPosition;
 
     void Start()
@@ -70,6 +73,9 @@ public class PlayerStats : MonoBehaviour
         //Clamp
         if (currentOxygen > maxOxygen)
             currentOxygen = maxOxygen;
+
+        if (anim)
+            anim.SetFloat("oxygen", (float)currentOxygen / maxOxygen);
     }
 
     public void RemoveOxygen(int amount)
@@ -85,6 +91,9 @@ public class PlayerStats : MonoBehaviour
 
             Die();
         }
+
+        if (anim)
+            anim.SetFloat("oxygen", (float)currentOxygen / maxOxygen);
     }
 
     public void AddScore(int amount)
@@ -103,9 +112,6 @@ public class PlayerStats : MonoBehaviour
             //Play random death sound on death
             if (SoundManager.instance)
                 SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomDeath);
-
-            //Play death transition on main camera
-            Camera.main.SendMessage("PlayTransition");
 
             //Start respawn countdown
             StartCoroutine("Respawn", respawnTime);
@@ -138,6 +144,15 @@ public class PlayerStats : MonoBehaviour
     IEnumerator Respawn(float time)
     {
         yield return new WaitForSeconds(time);
+
+        //Play death transition on main camera
+        TransitionImageEffect effect = Camera.main.GetComponent<TransitionImageEffect>();
+        if (effect)
+        {
+            effect.PlayTransition();
+
+            yield return new WaitForSeconds(effect.transitionTime);
+        }
 
         //Reset position
         transform.position = initialPosition;
