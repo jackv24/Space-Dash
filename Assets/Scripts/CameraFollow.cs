@@ -62,7 +62,7 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         //Make sure there is a target to follow
-        if (target)
+        if (target && Time.timeScale > 0)
         {
             //Set position with offset
             targetPosition.x = target.position.x + offset.x;

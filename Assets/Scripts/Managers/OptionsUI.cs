@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class OptionsUI : MonoBehaviour
 {
+    public GameObject backgroundPanel;
+    public GameObject optionsPanel;
+    public GameObject pauseMenu;
+
     [Header("Resolution")]
     public Dropdown resolutionDropdown;
     private bool hasResolutionChanged = false;
@@ -32,8 +36,6 @@ public class OptionsUI : MonoBehaviour
     public Button okayButton;
     public Button cancelButton;
 
-    private bool isVisible = false;
-
     void Start()
     {
         //Add listeners to events
@@ -44,10 +46,10 @@ public class OptionsUI : MonoBehaviour
 
         applyButton.onClick.AddListener(delegate { ApplyChanges(); });
         okayButton.onClick.AddListener(delegate { ApplyChanges(); });
-        okayButton.onClick.AddListener(delegate { ShowOrHide(); });
+        okayButton.onClick.AddListener(delegate { ToggleOptions(); });
 
         //Cancel button should hide the UI, reset options, and reset options in UI
-        cancelButton.onClick.AddListener(delegate { ShowOrHide(); OptionsManager.instance.ApplyOptions(); LoadOptions(); });
+        cancelButton.onClick.AddListener(delegate { ToggleOptions(); OptionsManager.instance.ApplyOptions(); LoadOptions(); });
 
         //Load resolutions
         resolutions = Screen.resolutions;
@@ -69,8 +71,17 @@ public class OptionsUI : MonoBehaviour
         UpdateSliders();
 
         //Hide options menu to start with
-        isVisible = true;
-        ShowOrHide();
+        //Disable all children (hides UI)
+        for (int i = 0; i < transform.childCount; i++)
+            transform.GetChild(i).gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel") && pauseMenu)
+        {
+            TogglePauseMenu();
+        }
     }
 
     public void ApplyChanges()
@@ -107,13 +118,28 @@ public class OptionsUI : MonoBehaviour
         SoundManager.instance.SetGameVolume(soundSlider.value);
     }
 
-    public void ShowOrHide()
+    public void ToggleOptions()
     {
-        isVisible = !isVisible;
+        bool isVisible = !optionsPanel.activeSelf;
 
-        //Disbale all children (hides UI)
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).gameObject.SetActive(isVisible);
+        optionsPanel.SetActive(isVisible);
+
+        if (GameObject.FindWithTag("Player") == null)
+            backgroundPanel.SetActive(isVisible);
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (pauseMenu)
+        {
+            bool isVisible = !pauseMenu.activeSelf;
+
+            pauseMenu.SetActive(isVisible);
+
+            Time.timeScale = isVisible ? 0 : 1f;
+
+            backgroundPanel.SetActive(isVisible);
+        }
     }
 
     public void LoadOptions()

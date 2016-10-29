@@ -22,4 +22,9 @@ public class UIFunctions : MonoBehaviour
 
         SceneManager.LoadScene(index);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
