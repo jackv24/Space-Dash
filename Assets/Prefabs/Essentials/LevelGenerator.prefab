@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013882139736}
   - 114: {fileID: 114000013132301178}
-  - 114: {fileID: 114000012407338374}
+  - 114: {fileID: 114000012848317090}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012407338374
+--- !u!114 &114000012848317090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,42 +57,35 @@ MonoBehaviour:
     probability: 1
     minDistance: 0
     maxDistance: 0
-    maxRotation: 0
+    maxRotation: 360
     minOffset: {x: -20, y: -5, z: 0}
-    maxOffset: {x: 20, y: 0, z: 5}
+    maxOffset: {x: 20, y: 0, z: 10}
   - prefab: {fileID: 1000012572104324, guid: 614faf2518246c14ca0f315a08c52119, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-    maxRotation: 0
+    maxRotation: 360
     minOffset: {x: -20, y: -5, z: 0}
-    maxOffset: {x: 20, y: 0, z: 5}
+    maxOffset: {x: 20, y: 0, z: 10}
   - prefab: {fileID: 1000011120287846, guid: 6f7c1422d3d90d44db31e2f2badea1d0, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-    maxRotation: 0
+    maxRotation: 360
     minOffset: {x: -20, y: -5, z: 0}
-    maxOffset: {x: 20, y: 0, z: 5}
-  - prefab: {fileID: 1000012882047274, guid: e9169a360cb287240b1fe5bc4c484fa1, type: 2}
-    probability: 1
-    minDistance: 0
-    maxDistance: 0
-    maxRotation: 0
-    minOffset: {x: -20, y: -5, z: 0}
-    maxOffset: {x: 20, y: 10, z: 40}
+    maxOffset: {x: 20, y: 0, z: 10}
   - prefab: {fileID: 1000011598891506, guid: 9e17ca77eab2ec549b8c18ee9eeb45ee, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-    maxRotation: 0
-    minOffset: {x: -20, y: -5, z: -5}
-    maxOffset: {x: 20, y: 5, z: 20}
-  - prefab: {fileID: 0}
+    maxRotation: 360
+    minOffset: {x: -20, y: -5, z: 0}
+    maxOffset: {x: 20, y: 0, z: 10}
+  - prefab: {fileID: 1000012882047274, guid: e9169a360cb287240b1fe5bc4c484fa1, type: 2}
     probability: 1
     minDistance: 0
     maxDistance: 0
-    maxRotation: 0
+    maxRotation: 360
     minOffset: {x: -20, y: -5, z: 0}
     maxOffset: {x: 20, y: 0, z: 10}
 --- !u!114 &114000013132301178
@@ -145,6 +138,21 @@ MonoBehaviour:
     maxDistance: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000011734368086, guid: af7faa250ba29bc4db4d4b5bc283178a, type: 2}
+    probability: 1
+    minDistance: 375
+    maxDistance: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010892443116, guid: 5984588c0f53fb5418a44daca5501095, type: 2}
+    probability: 1
+    minDistance: 375
+    maxDistance: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010389231282, guid: 936d11ed836ef60499872ce39fe8f374, type: 2}
+    probability: 1
+    minDistance: 375
+    maxDistance: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: ba15d85d5cab717419f17f1a682ad21e, type: 2}
     probability: 1
     minDistance: 375
     maxDistance: 0
