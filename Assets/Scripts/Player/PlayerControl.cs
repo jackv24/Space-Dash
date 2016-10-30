@@ -94,6 +94,9 @@ public class PlayerControl : MonoBehaviour
         //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
 
+        if (anim)
+            anim.SetBool("grounded", isGrounded);
+
         //Can only move if player is alive
         if (playerStats.IsAlive && GameManager.instance.IsGamePlaying)
         {
