@@ -132,6 +132,7 @@ ModelImporter:
     100248: wrist_L_JNT
     100250: wrist_R_END
     100252: wrist_R_JNT
+    100254: left
     400000: ankle_L_JNT
     400002: ankle_R_JNT
     400004: arm_L_CTRL
@@ -259,8 +260,9 @@ ModelImporter:
     400248: wrist_L_JNT
     400250: wrist_R_END
     400252: wrist_R_JNT
+    400254: left
     4300000: spaceman_MESH
-    7400000: Take 001
+    7400000: Fall
     7400002: NormalRun
     7400004: RunLowAir
     7400006: Jump
@@ -1138,7 +1140,7 @@ ModelImporter:
     - serializedVersion: 16
       name: JetBoost
       takeName: Take 001
-      firstFrame: 88
+      firstFrame: 75
       lastFrame: 122
       wrapMode: 0
       orientationOffsetY: 0
@@ -1449,6 +1451,290 @@ ModelImporter:
       - path: imagePlane2
         weight: 1
       - path: imagePlane3
+        weight: 1
+      - path: spaceman_MESH
+        weight: 1
+      - path: spacemanRig_All_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/index1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/index1_L_JNT/index2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/index1_L_JNT/index2_L_JNT/index3_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/index1_L_JNT/index2_L_JNT/index3_L_JNT/index4_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/middle1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/middle1_L_JNT/middle2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/middle1_L_JNT/middle2_L_JNT/middle3_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/middle1_L_JNT/middle2_L_JNT/middle3_L_JNT/middle4_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/pinky1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/pinky1_L_JNT/pinky2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/pinky1_L_JNT/pinky2_L_JNT/pinky3_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/pinky1_L_JNT/pinky2_L_JNT/pinky3_L_JNT/pinky4_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/ring1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/ring1_L_JNT/ring2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/ring1_L_JNT/ring2_L_JNT/ring3_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/ring1_L_JNT/ring2_L_JNT/ring3_L_JNT/ring4_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/thumb1_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/thumb1_L_JNT/thumb2_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_L_JNT/clav2_L_JNT/clav3_L_END/upperArm_L_JNT/elbow_L_JNT/wrist_L_JNT/wrist_L_END/hand_L_JNT/thumb1_L_JNT/thumb2_L_JNT/thumb3_L_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/index1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/index1_R_JNT/index2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/index1_R_JNT/index2_R_JNT/index3_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/index1_R_JNT/index2_R_JNT/index3_R_JNT/index4_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/middle1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/middle1_R_JNT/middle2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/middle1_R_JNT/middle2_R_JNT/middle3_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/middle1_R_JNT/middle2_R_JNT/middle3_R_JNT/middle4_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/pinky1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/pinky1_R_JNT/pinky2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/pinky1_R_JNT/pinky2_R_JNT/pinky3_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/pinky1_R_JNT/pinky2_R_JNT/pinky3_R_JNT/pinky4_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/ring1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/ring1_R_JNT/ring2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/ring1_R_JNT/ring2_R_JNT/ring3_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/ring1_R_JNT/ring2_R_JNT/ring3_R_JNT/ring4_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/thumb1_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/thumb1_R_JNT/thumb2_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/clav1_R_JNT/clav2_R_JNT/clav3_R_END/upperArm_R_JNT/elbow_R_JNT/wrist_R_JNT/wrist_R_END/hand_R_JNT/thumb1_R_JNT/thumb2_R_JNT/thumb3_R_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/head_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/chest_JNT/head_JNT/head_END
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_L_JNT/knee_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_L_JNT/knee_L_JNT/ankle_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_L_JNT/knee_L_JNT/ankle_L_JNT/ball_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_L_JNT/knee_L_JNT/ankle_L_JNT/ball_L_JNT/toe_L_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_R_JNT/knee_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_R_JNT/knee_R_JNT/ankle_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_R_JNT/knee_R_JNT/ankle_R_JNT/ball_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/root_JNT/hip_JNT/thigh_R_JNT/knee_R_JNT/ankle_R_JNT/ball_R_JNT/toe_R_JNT
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_L_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_L_CTRL_GRP/arm_L_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_L_CTRL_GRP/arm_L_CTRL/arm_L_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_R_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_R_CTRL_GRP/arm_R_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/arm_R_CTRL_GRP/arm_R_CTRL/arm_R_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_L_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_L_CTRL_GRP/elbow_L_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_L_CTRL_GRP/elbow_L_CTRL/elbow_L_LOC_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_L_CTRL_GRP/elbow_L_CTRL/elbow_L_LOC_GRP/elbow_L_LOC
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_R_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_R_CTRL_GRP/elbow_R_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_R_CTRL_GRP/elbow_R_CTRL/elbow_R_LOC_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/elbow_R_CTRL_GRP/elbow_R_CTRL/elbow_R_LOC_GRP/elbow_R_LOC
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/peelHeelFix_L_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/peelHeelFix_L_GRP/peelHeel_L_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/peelHeelFix_L_GRP/peelHeel_L_GRP/leg_L_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/toeTapFix_L_GRP1
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/toeTapFix_L_GRP1/toeTap_L_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/toeTapFix_L_GRP1/toeTap_L_GRP/ball_L_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_L_CTRL_GRP/foot_L_CTRL/foot_L_GRP/toeTapFix_L_GRP1/toeTap_L_GRP/toe_L_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/peelHeelFix_R_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/peelHeelFix_R_GRP/peelHeel_R_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/peelHeelFix_R_GRP/peelHeel_R_GRP/leg_R_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/toeTapFix_R_GRP1
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/toeTapFix_R_GRP1/toeTap_R_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/toeTapFix_R_GRP1/toeTap_R_GRP/ball_R_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/foot_R_CTRL_GRP/foot_R_CTRL/foot_R_GRP/toeTapFix_R_GRP1/toeTap_R_GRP/toe_R_IKH
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_L_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_L_CTRL_GRP/knee_L_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_L_CTRL_GRP/knee_L_CTRL/knee_L_LOC_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_L_CTRL_GRP/knee_L_CTRL/knee_L_LOC_GRP/knee_L_LOC
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_R_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_R_CTRL_GRP/knee_R_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_R_CTRL_GRP/knee_R_CTRL/knee_R_LOC_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/knee_R_CTRL_GRP/knee_R_CTRL/knee_R_LOC_GRP/knee_R_LOC
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/chest_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/chest_CTRL_GRP/chest_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/chest_CTRL_GRP/chest_CTRL/head_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/chest_CTRL_GRP/chest_CTRL/head_CTRL_GRP/head_CTRL
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/hip_CTRL_GRP
+        weight: 1
+      - path: spacemanRig_All_GRP/spacemanRig_Global_CTRL/ctrl_GRP/root_CTRL_GRP/root_CTRL/hip_CTRL_GRP/hip_CTRL
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Fall
+      takeName: Take 001
+      firstFrame: 63
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: imagePlane1
+        weight: 1
+      - path: imagePlane2
+        weight: 1
+      - path: imagePlane3
+        weight: 1
+      - path: left
         weight: 1
       - path: spaceman_MESH
         weight: 1
