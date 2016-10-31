@@ -43,6 +43,9 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
+        if (!player)
+            player = GameObject.FindWithTag("Player").transform;
+
         //Make sure to delete preview before starting
         Reset();
     }
@@ -80,6 +83,10 @@ public class LevelGenerator : MonoBehaviour
 
         //Clear generated tiles list
         generatedTiles.Clear();
+
+        foreach (LevelTile t in tiles)
+            t.nextSpawnPos = 0;
+
         //reset tile pos
         lastTileIndex = 0;
         currentGroupIndex = 0;
@@ -143,7 +150,7 @@ public class LevelGenerator : MonoBehaviour
 
         //If tile is within the generation range, add it to the list
         foreach (LevelTile t in tiles)
-            if ((lastTileIndex * tileLength >= t.minDistance) && (lastTileIndex * tileLength <= t.maxDistance || t.maxDistance == 0))
+            if ((lastTileIndex * tileLength >= t.minDistance) && (lastTileIndex * tileLength <= t.maxDistance || t.maxDistance == 0) && lastTileIndex >= t.nextSpawnPos)
                 possibleTiles.Add(t);
 
         //Sort the list by probability (since it is using cumulative probability)
@@ -182,6 +189,9 @@ public class LevelGenerator : MonoBehaviour
                     tile.tiles.Add(new Tile(possibleTiles[i].prefab));
                     tile.length = 1;
                 }
+
+                possibleTiles[i].nextSpawnPos = lastTileIndex + possibleTiles[i].spacing + 1;
+
                 break;
             }
 
@@ -208,4 +218,11 @@ public class LevelTile
     public float minDistance = 0f;
     [Tooltip("When to stop generating tiles (leave at 0 if they should never stop).")]
     public float maxDistance = 0f;
+
+    [Space()]
+    [Tooltip("How far after spawning this tile until another can be spawned (in number of tiles).")]
+    public int spacing = 0;
+    //The next index position at which this tile can spawn
+    [HideInInspector]
+    public int nextSpawnPos = 0;
 }
