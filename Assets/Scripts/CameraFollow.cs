@@ -38,7 +38,10 @@ public class CameraFollow : MonoBehaviour
     [Tooltip("How much padding there should be for detecting if ground is visible.")]
     [Range(0, 1f)]
     public float padding;
+    [Tooltip("How much the camera should step out each frame.")]
     public float outStep = 0.1f;
+    [Tooltip("How smoothly the camera should return to it's normal distance.")]
+    public float smoothIn = 0.1f;
     private float initialDistance;
 
     void Start()
@@ -84,7 +87,7 @@ public class CameraFollow : MonoBehaviour
                     targetPosition.z -= outStep;
                 }
                 else if (velocity.y < 0 || ((Vector2)target.position - hit.point).magnitude < 0.01f)
-                    targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothing);
+                    targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothIn);
             }
 
             //Lerp camera position
