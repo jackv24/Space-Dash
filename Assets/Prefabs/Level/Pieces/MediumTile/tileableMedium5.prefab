@@ -42,8 +42,8 @@ GameObject:
   - 23: {fileID: 23000013715778362}
   - 95: {fileID: 95000013644368824}
   - 114: {fileID: 114000010794342146}
-  - 60: {fileID: 60000011112649022}
   - 114: {fileID: 114000011466301914}
+  - 61: {fileID: 61000011293833862}
   m_Layer: 8
   m_Name: lavaCube4
   m_TagString: Untagged
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011734368086}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -5.684342e-16, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 1000013159948764}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.43, y: -3.33, z: 0}
-  m_LocalScale: {x: 1.2124996, y: 1.8359337, z: 1}
+  m_LocalScale: {x: 1.2124996, y: 1.8359337, z: 1.001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010946999514}
@@ -211,8 +211,8 @@ PolygonCollider2D:
       - {x: -14.222553, y: -6.7942796}
       - {x: -22.863785, y: -0.22137368}
       - {x: -25, y: 0}
---- !u!60 &60000011112649022
-PolygonCollider2D:
+--- !u!61 &61000011293833862
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -223,12 +223,8 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 17.52, y: 1.8}
-      - {x: 17.5, y: -1.77}
-      - {x: -17.5, y: -1.8}
-      - {x: -17.46, y: 1.8}
+  serializedVersion: 2
+  m_Size: {x: 34.978, y: 3.4999998}
 --- !u!95 &95000011225382490
 Animator:
   serializedVersion: 3

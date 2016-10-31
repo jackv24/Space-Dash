@@ -55,15 +55,18 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("The distance from the ground at which the player is counted as 'grounded'.")]
     public float groundedDistance = 0.01f;
     private bool isGrounded = false;
+    private bool becameGrounded = false;
 
     [Space()]
     public float raysStartX = -0.5f;
     public float raysEndX = 0.5f;
     public int rayAmount = 3;
 
+    [Space()]
+    public Animator anim;
+
     //Reference to the player's rigidbody
     private Rigidbody2D body;
-
     private PlayerStats playerStats;
 
     private CameraFollow cameraFollow;
@@ -90,6 +93,9 @@ public class PlayerControl : MonoBehaviour
 
         //Check if the player is grounded every frame
         isGrounded = CheckGrounded();
+
+        if (anim)
+            anim.SetBool("grounded", isGrounded);
 
         //Can only move if player is alive
         if (playerStats.IsAlive && GameManager.instance.IsGamePlaying)
@@ -133,9 +139,19 @@ public class PlayerControl : MonoBehaviour
 
         //Starts and stop particle system at the start and end of floating
         if (isFloating && floatingParticles.isStopped)
+        {
             floatingParticles.Play();
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.boosting);
+        }
         else if (!isFloating && !floatingParticles.isStopped)
+        {
             floatingParticles.Stop();
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(null);
+        }
 
         //Debugging
         if (Input.GetKeyDown(KeyCode.F) && Application.isEditor)
@@ -163,11 +179,21 @@ public class PlayerControl : MonoBehaviour
             //Decrement jumps left
             jumpsLeft--;
 
+            //Play jumping sound if jumping from ground, and air jumping sound if jumping from air
+            if(SoundManager.instance)
+                SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomJump);
+
             //Set jump force (dont add, to prevent double jumps launching player)
             moveVector.y = jumpForce;
+
+            if (anim)
+                anim.SetTrigger("jump");
         }
 
         moveVector.y = isFloating ? floatingFallSpeed : moveVector.y;
+
+        if (anim)
+            anim.SetBool("boosting", isFloating);
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
@@ -175,6 +201,9 @@ public class PlayerControl : MonoBehaviour
         //If grounded and not moving up, reset jumps
         if (isGrounded && moveVector.y <= 0)
             jumpsLeft = jumpAmount;
+
+        if (anim)
+            anim.SetFloat("speed", moveVector.x);
     }
 
     //Checks if the character is grounded (using raycast)
@@ -198,7 +227,29 @@ public class PlayerControl : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * 100, Color.red);
 
             if (hits[i].distance <= groundedDistance && hits[i].collider != null)
+            {
+                if(!becameGrounded && playerStats.IsAlive && moveVector.x > 0 && GameManager.instance.IsGamePlaying)
+                {
+                    becameGrounded = true;
+
+                    //Start footstep sound if just became grounded
+                    if (SoundManager.instance)
+                    {
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.landing);
+                        SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.running);
+                    }
+                }
+
                 return true;
+            }
+        }
+
+        if (becameGrounded)
+        {
+            becameGrounded = false;
+
+            if (SoundManager.instance)
+                SoundManager.instance.SetPlayerLoop(null);
         }
 
         //Otherwise, player is not grounded

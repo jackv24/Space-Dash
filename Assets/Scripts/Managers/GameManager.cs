@@ -49,4 +49,17 @@ public class GameManager : MonoBehaviour
     {
         isGamePlaying = false;
     }
+
+    public void ResetGame()
+    {
+        if (LevelGenerator.instance)
+            LevelGenerator.instance.Reset();
+
+        //Randomise background on death
+        if (BackgroundManager.instance)
+            BackgroundManager.instance.Randomise();
+
+        if (SoundManager.instance)
+            SoundManager.instance.StartBackgroundMusic();
+    }
 }

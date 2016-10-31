@@ -26,6 +26,9 @@ public class PlayerStats : MonoBehaviour
     public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0) ? true : false; } }
     private bool hasAlreadyDied = false;
 
+    [Space()]
+    public Animator anim;
+
     private Vector3 initialPosition;
 
     void Start()
@@ -70,6 +73,9 @@ public class PlayerStats : MonoBehaviour
         //Clamp
         if (currentOxygen > maxOxygen)
             currentOxygen = maxOxygen;
+
+        if (anim)
+            anim.SetFloat("oxygen", (float)currentOxygen / maxOxygen);
     }
 
     public void RemoveOxygen(int amount)
@@ -85,6 +91,9 @@ public class PlayerStats : MonoBehaviour
 
             Die();
         }
+
+        if (anim)
+            anim.SetFloat("oxygen", (float)currentOxygen / maxOxygen);
     }
 
     public void AddScore(int amount)
@@ -100,8 +109,9 @@ public class PlayerStats : MonoBehaviour
         {
             hasAlreadyDied = true;
 
-            //Play death transition on main camera
-            Camera.main.SendMessage("PlayTransition");
+            //Play random death sound on death
+            if (SoundManager.instance)
+                SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomDeath);
 
             //Start respawn countdown
             StartCoroutine("Respawn", respawnTime);
@@ -135,10 +145,14 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        //Reset level if there is a level generator
-        LevelGenerator generator = FindObjectOfType<LevelGenerator>();
-        if (generator)
-            generator.Reset();
+        //Play death transition on main camera
+        TransitionImageEffect effect = Camera.main.GetComponent<TransitionImageEffect>();
+        if (effect)
+        {
+            effect.PlayTransition();
+
+            yield return new WaitForSeconds(effect.transitionTime);
+        }
 
         //Reset position
         transform.position = initialPosition;
@@ -154,11 +168,8 @@ public class PlayerStats : MonoBehaviour
 
         hasAlreadyDied = false;
 
-        //Randomise background on death
-        if(BackgroundManager.instance)
-            BackgroundManager.instance.Randomise();
-
         //Stop game on respawn
         GameManager.instance.StopGame();
+        GameManager.instance.ResetGame();
     }
 }

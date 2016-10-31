@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[ExecuteInEditMode]
 public class TransitionImageEffect : MonoBehaviour
 {
     public Material effectMaterial;
@@ -28,7 +27,6 @@ public class TransitionImageEffect : MonoBehaviour
         Graphics.Blit(src, dst, effectMaterial);
     }
 
-    //Usually Called via sendmessage on the main camera
     public void PlayTransition()
     {
         StartCoroutine("Transition");

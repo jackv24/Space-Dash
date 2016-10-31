@@ -36,6 +36,7 @@ public class HUDControl : MonoBehaviour
     [Tooltip("The text object to display score.")]
     public Text scoreText;
     private string scoreTextString;
+    public Text highScoreText;
 
     [Space()]
     public GameObject jumpsPanel;
@@ -103,8 +104,14 @@ public class HUDControl : MonoBehaviour
             if (player.position.x > bestDistance)
                 bestDistance = player.position.x;
 
-            if (playerStats.Score > bestScore)
-                bestScore = playerStats.Score;
+            if (highScoreText)
+            {
+                //Show high score text if high score has been passed
+                if (playerStats.Score >= bestScore)
+                    highScoreText.gameObject.SetActive(true);
+                else if (highScoreText)
+                    highScoreText.gameObject.SetActive(false);
+            }
 
             //Check that distancetext is assigned
             if (distanceText)
