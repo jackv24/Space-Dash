@@ -96,6 +96,16 @@ public class PlayerStats : MonoBehaviour
             anim.SetFloat("oxygen", (float)currentOxygen / maxOxygen);
     }
 
+    public void IncreaseOxygen(int amount, bool fillOxygen)
+    {
+        maxOxygen += amount;
+
+        if (fillOxygen)
+            AddOxygen(maxOxygen);
+        else
+            AddOxygen(amount);
+    }
+
     public void AddScore(int amount)
     {
         //Remove specified amount of health

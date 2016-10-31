@@ -6,23 +6,25 @@ public class ItemPickup : MonoBehaviour
     public enum Type
     {
         Health,
-        Oxygen
+        Oxygen,
+        ExtraJump
     }
     [Tooltip("The type of value to affect.")]
     public Type type;
 
-    [Tooltip("How much of the specified type to gain.")]
     public int value = 0;
 
-    [Tooltip("How many point to add to the score when this item is picked up.")]
+    public bool reset = false;
+
     public int pointsValue = 10;
 
     void OnTriggerEnter2D(Collider2D col)
     {
         PlayerStats stats = col.gameObject.GetComponent<PlayerStats>();
+        PlayerControl control = col.gameObject.GetComponent<PlayerControl>();
 
         //If stats was gotten
-        if (stats)
+        if (stats && control)
         {
             //Add stat based on type
             switch (type)
@@ -34,6 +36,9 @@ public class ItemPickup : MonoBehaviour
                     stats.AddOxygen(value);
                     if (SoundManager.instance)
                         SoundManager.instance.PlaySound(SoundManager.instance.sounds.pickupOxygen);
+                    break;
+                case Type.ExtraJump:
+                    control.AddJump(reset);
                     break;
             }
 

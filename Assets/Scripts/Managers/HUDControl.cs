@@ -41,6 +41,7 @@ public class HUDControl : MonoBehaviour
     [Space()]
     public GameObject jumpsPanel;
     private List<Image> jumpsIcons = new List<Image>();
+    private int jumpAmount = 0;
 
     private int bestScore;
 
@@ -82,18 +83,7 @@ public class HUDControl : MonoBehaviour
         }
 
         if (jumpsPanel)
-        {
-            //Get the existing jump icon to copy
-            GameObject icon = jumpsPanel.transform.GetChild(0).gameObject;
-            jumpsIcons.Add(icon.GetComponent<Image>());
-
-            //Create any copies needed
-            for (int i = 1; i < playerControl.jumpAmount; i++)
-            {
-                GameObject n = (GameObject)Instantiate(icon, jumpsPanel.transform);
-                jumpsIcons.Add(n.GetComponent<Image>());
-            }
-        }
+            UpdateJumpAmount();
     }
 
     void Update()
@@ -152,6 +142,9 @@ public class HUDControl : MonoBehaviour
                     else
                         jumpsIcons[i].GetComponent<Animator>().SetBool("isFull", false);
                 }
+
+                if(jumpAmount != playerControl.jumpAmount)
+                    UpdateJumpAmount();
             }
 
             //Hide and show start game text
@@ -162,5 +155,22 @@ public class HUDControl : MonoBehaviour
         }
         else
             Debug.Log("No player transform assigned to HUDControl");
+    }
+
+    void UpdateJumpAmount()
+    {
+        //Get the existing jump icon to copy
+        GameObject icon = jumpsPanel.transform.GetChild(0).gameObject;
+        icon.SetActive(false);
+
+        //Create any copies needed
+        for (int i = jumpsIcons.Count; i < playerControl.jumpAmount; i++)
+        {
+            GameObject n = (GameObject)Instantiate(icon, jumpsPanel.transform);
+            jumpsIcons.Add(n.GetComponent<Image>());
+            n.SetActive(true);
+        }
+
+        jumpAmount = jumpsIcons.Count;
     }
 }

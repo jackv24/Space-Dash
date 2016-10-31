@@ -18,6 +18,11 @@ public class TransitionImageEffect : MonoBehaviour
     public bool playStart = true;
     public bool playEnd = true;
 
+    void OnDisable()
+    {
+        effectMaterial.SetFloat("_Cutoff", 0);
+    }
+
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
         //Update material cutoff amount to match script

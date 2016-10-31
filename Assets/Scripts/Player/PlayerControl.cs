@@ -274,4 +274,14 @@ public class PlayerControl : MonoBehaviour
                 yield return new WaitForEndOfFrame();
         }
     }
+
+    public void AddJump(bool resetJumps)
+    {
+        jumpAmount++;
+
+        if (resetJumps)
+            jumpsLeft = jumpAmount;
+        else
+            jumpsLeft++;
+    }
 }
