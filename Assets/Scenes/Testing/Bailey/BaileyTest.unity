@@ -394,6 +394,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.size
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013882139736, guid: d696361f2d618db4398a5835d7105c58, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -431,6 +436,33 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1194285606}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[11].prefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[11].probability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[11].minDistance
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[11].group
+      value: 
+      objectReference: {fileID: 11400000, guid: b74892ab4fb14534fa0d8ece0e52f778,
+        type: 2}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: startGroup
+      value: 
+      objectReference: {fileID: 11400000, guid: 862b318c9f8f3634d89548f59c8b291c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_IsPrefabParent: 0
@@ -552,7 +584,7 @@ Light:
     m_CustomResolution: -1
     m_Strength: 0.5
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
