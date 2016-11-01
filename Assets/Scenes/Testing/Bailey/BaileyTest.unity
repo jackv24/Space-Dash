@@ -397,7 +397,7 @@ Prefab:
     - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
       propertyPath: tiles.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4000013882139736, guid: d696361f2d618db4398a5835d7105c58, type: 2}
       propertyPath: m_LocalPosition.x
@@ -463,6 +463,22 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 862b318c9f8f3634d89548f59c8b291c,
         type: 2}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[12].group
+      value: 
+      objectReference: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c,
+        type: 2}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[12].probability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[12].minDistance
+      value: 375
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_IsPrefabParent: 0
