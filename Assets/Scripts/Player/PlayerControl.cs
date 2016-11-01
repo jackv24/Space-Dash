@@ -31,6 +31,9 @@ public class PlayerControl : MonoBehaviour
     public int jumpAmount = 2;
     public int jumpsLeft;
     private bool shouldJump = false;
+    [Tooltip("The time after jumping before it can reset jumps - fixes jumping bug.")]
+    public float jumpResetDelay = 0.5f;
+    private float jumpResetTime = 0;
 
     [Space()]
     [Tooltip("The speed at which the player falls when floating.")]
@@ -163,6 +166,13 @@ public class PlayerControl : MonoBehaviour
     //Update with the physics engine (since it is using a rigidbody)
     void FixedUpdate()
     {
+        //If grounded and not moving up, reset jumps
+        if (isGrounded && Time.time > jumpResetTime)
+        {
+            jumpsLeft = jumpAmount;
+            jumpResetTime = Time.time + jumpResetDelay;
+        }
+
         //Set horizontal movement of the vector
         moveVector.x = Mathf.Lerp(moveVector.x, inputX * moveSpeed, acceleration);
 
@@ -197,10 +207,6 @@ public class PlayerControl : MonoBehaviour
 
         //Set velocity after moveVector is set
         body.velocity = moveVector;
-
-        //If grounded and not moving up, reset jumps
-        if (isGrounded && moveVector.y <= 0)
-            jumpsLeft = jumpAmount;
 
         if (anim)
             anim.SetFloat("speed", moveVector.x);
