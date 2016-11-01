@@ -287,34 +287,22 @@ MonoBehaviour:
   playerLoopSource: {fileID: 82000012250461378}
   sounds:
     running:
-      clip: {fileID: 8300000, guid: 8a9e6f18cef1b564baca93ab2f7a0e5c, type: 3}
-      volume: 1
-    jumps:
-    - clip: {fileID: 8300000, guid: 658ed5f31cf24f94cb6d37a4dba1dc65, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: 76741f5776ba4f94dafb404fa86d4b20, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: ae058c291fd10114ab7c1ebc64a529da, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: b8c37a51fbdfca648b3a9eb2d2933f98, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: 709f64a6ac0e5bb43af85440ec4d9d65, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: efaecd0280d386a4ebba8bbb3ac5af54, type: 3}
-      volume: 1
-    landing:
       clip: {fileID: 0}
       volume: 1
+    jumps:
+    - clip: {fileID: 8300000, guid: b321fd315e0de644eb9cad41be6d5f84, type: 3}
+      volume: 1.01
+    - clip: {fileID: 8300000, guid: 4da9255817c826b4a9d91d1f2fa45b3d, type: 3}
+      volume: 1.05
+    landing:
+      clip: {fileID: 8300000, guid: 3f4cb3a3c14aed640bcef6136a51246f, type: 3}
+      volume: 1
     boosting:
-      clip: {fileID: 8300000, guid: bf04bc5953f7df746ae96e5d93200b4e, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 010bcddcd5d14aa4a97e3f3e0cb5a5df, type: 3}
+      volume: 0.42
     pickupOxygen:
-      clip: {fileID: 8300000, guid: f85fdbe069100124e814c4e02e9d6952, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 1412f25c736f8854cb90113d4777b9c5, type: 3}
+      volume: 0.36
     deaths:
-    - clip: {fileID: 8300000, guid: ab8525f596a0e3c41a4eeb21d95f6be8, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: a51c652d119626a4d97d494a6be00b0d, type: 3}
-      volume: 1
-    - clip: {fileID: 8300000, guid: 411f1a0c78b42c840b40a1939b754c9d, type: 3}
-      volume: 1
+    - clip: {fileID: 8300000, guid: 35d2dfe5b97590f49b2fc3764b9ff0b5, type: 3}
+      volume: 0.4

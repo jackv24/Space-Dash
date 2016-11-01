@@ -41,7 +41,7 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        if (Application.isEditor)
+        if (DebugInfo.displayDebugInfo)
         {
             DebugInfo.currentOxygen = currentOxygen;
             DebugInfo.maxOxygen = maxOxygen;

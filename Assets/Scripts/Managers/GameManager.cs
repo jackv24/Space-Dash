@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("More than one GameManager in scene. There should only ever be one GameManager present!");
         else
             instance = this;
+
+        DebugInfo.displayDebugInfo = Debug.isDebugBuild;
     }
 
     void Start()
@@ -31,6 +33,15 @@ public class GameManager : MonoBehaviour
 
         //Reset value for later death transitions
         effect.playStart = true;
+    }
+
+    void Update()
+    {
+        if (DebugInfo.displayDebugInfo)
+            DebugInfo.framesPerSecond = 1 / Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D))
+            DebugInfo.displayDebugInfo = !DebugInfo.displayDebugInfo;
     }
 
     //Ensures that all inputs before game starts aren't carried into game start

@@ -27,8 +27,6 @@ public class LevelGenerator : MonoBehaviour
     public int maxLoadedTiles = 5;
     private float nextGeneratePlayerPos = 0;
 
-    public LayerMask tileLayer;
-
     //List of all generated tiles
     private List<GameObject> generatedTiles = new List<GameObject>();
     //The index of the last tile generated
@@ -71,11 +69,29 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (Application.isEditor)
+        //Calculate what tile the player is on, if in editor
+        if (DebugInfo.displayDebugInfo)
         {
-            RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.down, 1000f, tileLayer);
+            //Get playr pos and add half a tile length (otherwise it would only go to next tile in the middle of it)
+            float playerPos = player.position.x + (tileLength / 2);
 
-            DebugInfo.currentTile = hit.collider.name;
+            //Get closest index to this tile, in number of tiles
+            int index = (int)Mathf.Floor(playerPos/ tileLength);
+            //Convert from number of tiles to index of currently loaded tile
+            int offset = lastTileIndex - maxLoadedTiles;
+
+            //Dont offset of not needed (max loaded tiles is not yet reached)
+            if (offset < 0)
+                offset = 0;
+
+            //Adjust index for this offset
+            index -= offset;
+
+            //If there is a tile in this index, set name in DebugInfo
+            if (generatedTiles[index])
+                DebugInfo.currentTile = generatedTiles[index].name;
+            else
+                DebugInfo.currentTile = "Invalid";
         }
     }
 

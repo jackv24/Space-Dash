@@ -159,9 +159,12 @@ public class HUDControl : MonoBehaviour
         else
             Debug.Log("No player transform assigned to HUDControl");
 
-        if (debugText && Application.isEditor)
+        if (debugText)
         {
-            debugText.text = DebugInfo.GetString();
+            if (DebugInfo.displayDebugInfo)
+                debugText.text = DebugInfo.GetString();
+            else
+                debugText.text = "";
         }
     }
 
