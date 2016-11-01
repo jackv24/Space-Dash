@@ -541,6 +541,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &25872849
 Animator:
   serializedVersion: 3
@@ -1970,25 +1971,15 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 32
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013926570940, guid: a372273bfd7002445a118044f0c99a84,
+    - target: {fileID: 224000013139649168, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
-      propertyPath: m_StartCorner
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: -200
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013886711670, guid: a372273bfd7002445a118044f0c99a84,
+    - target: {fileID: 114000012126233270, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013886711670, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013886711670, guid: a372273bfd7002445a118044f0c99a84,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
@@ -2048,6 +2039,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &57189316
 Animator:
   serializedVersion: 3
@@ -5982,6 +5974,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &254962763
 Animator:
   serializedVersion: 3
@@ -6832,6 +6825,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &285489929
 Animator:
   serializedVersion: 3
@@ -6948,6 +6942,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &306802943
 Animator:
   serializedVersion: 3
@@ -7098,6 +7093,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &309684402
 Animator:
   serializedVersion: 3
@@ -8205,6 +8201,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &402374872
 Animator:
   serializedVersion: 3
@@ -8563,6 +8560,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &407725087
 Animator:
   serializedVersion: 3
@@ -9215,6 +9213,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1194285606}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tileLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_IsPrefabParent: 0
@@ -9631,6 +9634,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &469639087
 Animator:
   serializedVersion: 3
@@ -11619,6 +11623,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &558874442
 Animator:
   serializedVersion: 3
@@ -12538,6 +12543,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &595903780
 Animator:
   serializedVersion: 3
@@ -13453,6 +13459,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &631980585
 Animator:
   serializedVersion: 3
@@ -14227,6 +14234,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &703533095
 Animator:
   serializedVersion: 3
@@ -14784,6 +14792,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &714900758
 Animator:
   serializedVersion: 3
@@ -15643,6 +15652,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &775377107
 Animator:
   serializedVersion: 3
@@ -16851,6 +16861,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &809823990
 Animator:
   serializedVersion: 3
@@ -19291,6 +19302,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &925628298
 Animator:
   serializedVersion: 3
@@ -21394,6 +21406,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1029809321
 Animator:
   serializedVersion: 3
@@ -24058,6 +24071,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1149029680
 Animator:
   serializedVersion: 3
@@ -24209,6 +24223,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1156794318
 Animator:
   serializedVersion: 3
@@ -26018,6 +26033,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1265842955
 Animator:
   serializedVersion: 3
@@ -27762,6 +27778,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1302554104
 Animator:
   serializedVersion: 3
@@ -29303,6 +29320,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1344276202
 Animator:
   serializedVersion: 3
@@ -30415,6 +30433,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1373663156
 Animator:
   serializedVersion: 3
@@ -30662,6 +30681,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1403182302
 Animator:
   serializedVersion: 3
@@ -30776,6 +30796,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1404083600
 Animator:
   serializedVersion: 3
@@ -30892,6 +30913,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1419797695
 Animator:
   serializedVersion: 3
@@ -32285,6 +32307,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1492491676
 Animator:
   serializedVersion: 3
@@ -33446,6 +33469,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1531220172
 Animator:
   serializedVersion: 3
@@ -34153,6 +34177,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1580449913
 Animator:
   serializedVersion: 3
@@ -37153,6 +37178,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1733841655
 Animator:
   serializedVersion: 3
@@ -37283,6 +37309,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1738334980
 Animator:
   serializedVersion: 3
@@ -37876,6 +37903,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1767400730
 Animator:
   serializedVersion: 3
@@ -38651,6 +38679,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1798416352
 Animator:
   serializedVersion: 3
@@ -39119,6 +39148,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1810067711
 Animator:
   serializedVersion: 3
@@ -40882,6 +40912,7 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 1
   rotateZ: 0
+  randomStartRotation: 0
 --- !u!95 &1864202303
 Animator:
   serializedVersion: 3
@@ -42227,6 +42258,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &1922867588
 Animator:
   serializedVersion: 3
@@ -45576,6 +45608,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 1
+  randomStartRotation: 0
 --- !u!95 &2071063417
 Animator:
   serializedVersion: 3

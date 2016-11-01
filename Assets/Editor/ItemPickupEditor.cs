@@ -21,6 +21,10 @@ public class ItemPickupEditor : Editor
             case ItemPickup.Type.ExtraJump:
                 t.reset = EditorGUILayout.Toggle("Reset Jumps", t.reset);
                 break;
+            case ItemPickup.Type.ExtraOxygen:
+                t.value = EditorGUILayout.IntField("Value", t.value);
+                t.reset = EditorGUILayout.Toggle("Reset Oxygen", t.reset);
+                break;
         }
 
         EditorGUILayout.Space();

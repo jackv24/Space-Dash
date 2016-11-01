@@ -7,7 +7,8 @@ public class ItemPickup : MonoBehaviour
     {
         Health,
         Oxygen,
-        ExtraJump
+        ExtraJump,
+        ExtraOxygen
     }
     [Tooltip("The type of value to affect.")]
     public Type type;
@@ -39,6 +40,9 @@ public class ItemPickup : MonoBehaviour
                     break;
                 case Type.ExtraJump:
                     control.AddJump(reset);
+                    break;
+                case Type.ExtraOxygen:
+                    stats.IncreaseOxygen(value, reset);
                     break;
             }
 

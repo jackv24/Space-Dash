@@ -8,6 +8,8 @@ public class RandomRotate : MonoBehaviour
 
     public bool rotateX, rotateY, rotateZ;
 
+    public bool randomStartRotation = false;
+
     private Vector3 rotationDelta;
 
     void Start()
@@ -19,6 +21,9 @@ public class RandomRotate : MonoBehaviour
             rotationDelta.y = Random.Range(rotateSpeedMin, rotateSpeedMax);
         if (rotateZ)
             rotationDelta.z = Random.Range(rotateSpeedMin, rotateSpeedMax);
+
+        if (randomStartRotation)
+            transform.eulerAngles = new Vector3(rotateX ? Random.Range(0, 360) : 0, rotateY ? Random.Range(0, 360) : 0, rotateZ ? Random.Range(0, 360) : 0);
     }
 
     void Update()

@@ -39,6 +39,14 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine("DepleteOxygen");
     }
 
+    void Update()
+    {
+        if (Application.isEditor)
+        {
+            DebugInfo.currentOxygen = currentOxygen;
+            DebugInfo.maxOxygen = maxOxygen;
+        }
+    }
 
     public void AddHealth(int amount)
     {
