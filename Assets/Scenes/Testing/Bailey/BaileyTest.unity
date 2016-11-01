@@ -477,7 +477,12 @@ Prefab:
     - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
       propertyPath: tiles.Array.data[12].minDistance
-      value: 375
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tileLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
