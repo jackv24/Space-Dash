@@ -7,6 +7,8 @@ public class ItemSpawn : MonoBehaviour
     //List of possilbe items to spawn
     public List<LevelItem> items = new List<LevelItem>();
 
+    private static List<LevelItem> cantSpawnItems = new List<LevelItem>();
+
     void Start()
     {
         //get item to spawn
@@ -45,6 +47,12 @@ public class ItemSpawn : MonoBehaviour
 
                 distance += levelItem.chainSpacing;
             }
+
+            if(levelItem.spacing > 0)
+            {
+                levelItem.nextSpawnPos = transform.position.x + levelItem.spacing;
+                cantSpawnItems.Add(levelItem);
+            }
         }
 
         //Destroy this spawning object, even if no item was spawned
@@ -59,7 +67,28 @@ public class ItemSpawn : MonoBehaviour
         //If item is within the generation range, add it to the list
         foreach (LevelItem i in items)
             if (transform.position.x >= i.minDistance)
-                possibleItems.Add(i);
+            {
+                bool canAdd = true;
+
+                //Loop through items that cant be spawned
+                foreach (LevelItem j in cantSpawnItems)
+                {
+                    //If this item is in the list, and past the distance it can be spawned
+                    if (j.prefab == i.prefab)
+                    {
+                        if (transform.position.x > j.nextSpawnPos)
+                        {
+                            possibleItems.Add(i);
+                            cantSpawnItems.Remove(j);
+                        }
+
+                        canAdd = false;
+                    }
+                }
+
+                if (canAdd)
+                    possibleItems.Add(i);
+            }
 
         //Sort the list by probability (since it is using cumulative probability)
         possibleItems.Sort((x, y) => x.probability.CompareTo(y.probability));
@@ -122,6 +151,13 @@ public class LevelItem
     public float probability = 1f;
     [Tooltip("This item will not start generating until this distance has been reached.")]
     public float minDistance = 0f;
+
+    [Space()]
+    [Tooltip("How many metres until this item can be spawned again after spawning.")]
+    public float spacing = 0f;
+    //When this can next be spawned
+    [HideInInspector]
+    public float nextSpawnPos = 0f;
 
     [Space()]
     [Tooltip("The maxiumum amount of this item that will be generated in a chain.")]
