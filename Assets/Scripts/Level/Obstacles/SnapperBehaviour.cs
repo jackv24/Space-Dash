@@ -36,12 +36,17 @@ public class SnapperBehaviour : MonoBehaviour
                 anim.SetBool("isOpen", true);
                 hasOpened = true;
             }
+
+            if(player.position.x > transform.position.x)
+            {
+                anim.SetBool("isOpen", false);
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == player.tag && anim)
+        if (other.transform == player && anim)
         {
             anim.SetBool("isOpen", false);
         }
