@@ -27,6 +27,8 @@ public class LevelGenerator : MonoBehaviour
     public int maxLoadedTiles = 5;
     private float nextGeneratePlayerPos = 0;
 
+    public LayerMask tileLayer;
+
     //List of all generated tiles
     private List<GameObject> generatedTiles = new List<GameObject>();
     //The index of the last tile generated
@@ -67,6 +69,13 @@ public class LevelGenerator : MonoBehaviour
                 Destroy(generatedTiles[0]);
                 generatedTiles.RemoveAt(0);
             }
+        }
+
+        if (Application.isEditor)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.down, 1000f, tileLayer);
+
+            DebugInfo.currentTile = hit.collider.name;
         }
     }
 
@@ -130,6 +139,7 @@ public class LevelGenerator : MonoBehaviour
         GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y + transform.position.y, 0), Quaternion.identity);
         //Parent to this gameobject
         tile.transform.SetParent(transform);
+        tile.name = prefab.name;
 
         generatedTiles.Add(tile);
         lastTileIndex++;

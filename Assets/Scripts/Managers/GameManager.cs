@@ -63,3 +63,13 @@ public class GameManager : MonoBehaviour
             SoundManager.instance.StartBackgroundMusic();
     }
 }
+
+public static class DebugInfo
+{
+    public static string currentTile;
+
+    public static string GetString()
+    {
+        return string.Format("Debug Info:\n\tCurrent Tile: {0}", currentTile);
+    }
+}

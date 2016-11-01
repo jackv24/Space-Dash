@@ -45,6 +45,9 @@ public class HUDControl : MonoBehaviour
 
     private int bestScore;
 
+    [Space()]
+    public Text debugText;
+
     [Header("Game Flow")]
     public Text startText;
     public float fadeDuration = 0.25f;
@@ -155,6 +158,11 @@ public class HUDControl : MonoBehaviour
         }
         else
             Debug.Log("No player transform assigned to HUDControl");
+
+        if (debugText && Application.isEditor)
+        {
+            debugText.text = DebugInfo.GetString();
+        }
     }
 
     void UpdateJumpAmount()
