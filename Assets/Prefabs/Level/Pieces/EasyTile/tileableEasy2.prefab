@@ -201,14 +201,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
-    probability: 0.5
+    probability: 0.1
     minDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
     maxChain: 1
     chainDirection: 1
     chainSpacing: 2
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
     maxChain: 1
     chainDirection: 1
     chainSpacing: 2
@@ -225,8 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
-    probability: 0.1
+    probability: 0.3
     minDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
     maxChain: 4
     chainDirection: 1
     chainSpacing: 2
