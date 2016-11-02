@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ItemSpawn : MonoBehaviour
 {
-    //List of possilbe items to spawn
+    //List of possible items to spawn
     public List<LevelItem> items = new List<LevelItem>();
 
     private static List<LevelItem> cantSpawnItems = new List<LevelItem>();
@@ -89,7 +89,7 @@ public class ItemSpawn : MonoBehaviour
     public void Spawn(bool parent)
     {
         //Delete preview preview object
-        if (transform.childCount > 0)
+        while(transform.childCount > 0)
             DestroyImmediate(transform.GetChild(0).gameObject);
 
         //get item to spawn
@@ -98,26 +98,26 @@ public class ItemSpawn : MonoBehaviour
         //Only spawn if not null
         if (levelItem != null && levelItem.prefab != null)
         {
-            int chainSize = Random.Range(1, levelItem.maxChain + 1);
             float distance = 0;
 
-            for (int i = 0; i < chainSize; i++)
+            for (int i = 0; i < levelItem.chainLength; i++)
             {
                 Vector3 offset = Vector3.zero;
+                float curvePos = (levelItem.chainLength > 1) ? levelItem.chainCurve.Evaluate(i / (float)(levelItem.chainLength - 1)) : 0;
 
                 switch (levelItem.chainDirection)
                 {
                     case LevelItem.Direction.Up:
-                        offset = new Vector3(0, distance, 0);
+                        offset = new Vector3(curvePos, distance, 0);
                         break;
                     case LevelItem.Direction.Down:
-                        offset = new Vector3(0, -distance, 0);
+                        offset = new Vector3(curvePos, -distance, 0);
                         break;
                     case LevelItem.Direction.Left:
-                        offset = new Vector3(-distance, 0, 0);
+                        offset = new Vector3(-distance, curvePos, 0);
                         break;
                     case LevelItem.Direction.Right:
-                        offset = new Vector3(distance, 0, 0);
+                        offset = new Vector3(distance, curvePos, 0);
                         break;
                 }
 
@@ -129,6 +129,7 @@ public class ItemSpawn : MonoBehaviour
                 distance += levelItem.chainSpacing;
             }
 
+            //Prevent items from spawnng for some time, if needed
             if (levelItem.spacing > 0)
             {
                 levelItem.nextSpawnPos = transform.position.x + levelItem.spacing;
@@ -169,13 +170,16 @@ public class LevelItem
     public float nextSpawnPos = 0f;
 
     [Space()]
-    [Tooltip("The maxiumum amount of this item that will be generated in a chain.")]
-    public int maxChain = 1;
-
-    public enum Direction { Left, Right, Up, Down }
-    [Tooltip("The direction that the chain will be generated in (will have no effect if the chain length is one, of course).")]
-    public Direction chainDirection = Direction.Right;
+    [Tooltip("The minimum amount of this item that will be generated in a chain.")]
+    public int chainLength = 1;
 
     [Tooltip("How much space between items in the chain.")]
     public float chainSpacing = 2f;
+
+    public enum Direction { Left, Right, Up, Down }
+    [Space()]
+    [Tooltip("The direction that the chain will be generated in (will have no effect if the chain length is one, of course).")]
+    public Direction chainDirection = Direction.Right;
+    [Tooltip("How the spawned items will be offset along their length.")]
+    public AnimationCurve chainCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 0));
 }
