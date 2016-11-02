@@ -11,49 +11,7 @@ public class ItemSpawn : MonoBehaviour
 
     void Start()
     {
-        //get item to spawn
-        LevelItem levelItem = ChooseItem();
-
-        //Only spawn if not null
-        if (levelItem != null && levelItem.prefab != null)
-        {
-            int chainSize = Random.Range(1, levelItem.maxChain + 1);
-            float distance = 0;
-
-            for (int i = 0; i < chainSize; i++)
-            {
-                Vector3 offset = Vector3.zero;
-
-                switch (levelItem.chainDirection)
-                {
-                    case LevelItem.Direction.Up:
-                        offset = new Vector3(0, distance, 0);
-                        break;
-                    case LevelItem.Direction.Down:
-                        offset = new Vector3(0, -distance, 0);
-                        break;
-                    case LevelItem.Direction.Left:
-                        offset = new Vector3(-distance, 0, 0);
-                        break;
-                    case LevelItem.Direction.Right:
-                        offset = new Vector3(distance, 0, 0);
-                        break;
-                }
-
-                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, Quaternion.identity);
-                item.name = levelItem.prefab.name;
-                //Item replaces this gameobject in heirarchy, so they should have the same parent
-                item.transform.SetParent(transform.parent);
-
-                distance += levelItem.chainSpacing;
-            }
-
-            if(levelItem.spacing > 0)
-            {
-                levelItem.nextSpawnPos = transform.position.x + levelItem.spacing;
-                cantSpawnItems.Add(levelItem);
-            }
-        }
+        Spawn(false);
 
         //Destroy this spawning object, even if no item was spawned
         Destroy(gameObject);
@@ -126,6 +84,57 @@ public class ItemSpawn : MonoBehaviour
 
         //Return the item that was chosen
         return item;
+    }
+
+    public void Spawn(bool parent)
+    {
+        //Delete preview preview object
+        if (transform.childCount > 0)
+            DestroyImmediate(transform.GetChild(0).gameObject);
+
+        //get item to spawn
+        LevelItem levelItem = ChooseItem();
+
+        //Only spawn if not null
+        if (levelItem != null && levelItem.prefab != null)
+        {
+            int chainSize = Random.Range(1, levelItem.maxChain + 1);
+            float distance = 0;
+
+            for (int i = 0; i < chainSize; i++)
+            {
+                Vector3 offset = Vector3.zero;
+
+                switch (levelItem.chainDirection)
+                {
+                    case LevelItem.Direction.Up:
+                        offset = new Vector3(0, distance, 0);
+                        break;
+                    case LevelItem.Direction.Down:
+                        offset = new Vector3(0, -distance, 0);
+                        break;
+                    case LevelItem.Direction.Left:
+                        offset = new Vector3(-distance, 0, 0);
+                        break;
+                    case LevelItem.Direction.Right:
+                        offset = new Vector3(distance, 0, 0);
+                        break;
+                }
+
+                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, Quaternion.identity);
+                item.name = levelItem.prefab.name;
+                //Item replaces this gameobject in heirarchy, so they should have the same parent
+                item.transform.SetParent(parent ? transform : transform.parent);
+
+                distance += levelItem.chainSpacing;
+            }
+
+            if (levelItem.spacing > 0)
+            {
+                levelItem.nextSpawnPos = transform.position.x + levelItem.spacing;
+                cantSpawnItems.Add(levelItem);
+            }
+        }
     }
 
     void OnDrawGizmos()
