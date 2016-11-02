@@ -562,9 +562,25 @@ MonoBehaviour:
     minDistance: 0
     spacing: 0
     nextSpawnPos: 0
-    maxChain: 1
-    chainDirection: 1
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &114000012864531530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1210,7 +1226,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: 1
+    radius: 1.9361382
     angle: 13.04
     length: 5
     boxX: 3.9
@@ -2963,7 +2979,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: 1
+    radius: 2.2484639
     angle: 13.04
     length: 5
     boxX: 3.9

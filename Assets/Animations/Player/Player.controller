@@ -232,7 +232,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.019038714
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -273,7 +273,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: oxygen
-    m_EventTreshold: 0.25
+    m_EventTreshold: 0.45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012432614570}
   m_Solo: 0
@@ -297,16 +297,16 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: oxygen
-    m_EventTreshold: 0.25
+    m_EventTreshold: 0.45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000011840021150}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.73913044
+  m_TransitionDuration: 0.1455183
+  m_TransitionOffset: 0.013893557
+  m_ExitTime: 0.762689
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -343,7 +343,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: RunLowAir
-  m_Speed: 1
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101000013568297596}
@@ -392,7 +392,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: NormalRun
-  m_Speed: 1
+  m_Speed: 1.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101000014038728614}
@@ -478,10 +478,10 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: -72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000014007066756}
-    m_Position: {x: 180, y: 120, z: 0}
+    m_Position: {x: 216, y: 132, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012326834972}
-    m_Position: {x: 456, y: 120, z: 0}
+    m_Position: {x: 480, y: 132, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012930055980}
     m_Position: {x: 300, y: 48, z: 0}

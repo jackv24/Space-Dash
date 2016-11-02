@@ -62,22 +62,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000012218408408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000012130433272}
-  - 114: {fileID: 114000012986956900}
-  m_Layer: 0
-  m_Name: ItemSpawn (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4000010174124848
 Transform:
   m_ObjectHideFlags: 1
@@ -91,19 +75,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013124526720}
   m_RootOrder: 0
---- !u!4 &4000012130433272
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012218408408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.15, y: 2.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000013124526720}
-  m_RootOrder: 2
 --- !u!4 &4000012803210380
 Transform:
   m_ObjectHideFlags: 1
@@ -130,7 +101,6 @@ Transform:
   m_Children:
   - {fileID: 4000010174124848}
   - {fileID: 4000012803210380}
-  - {fileID: 4000012130433272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &23000010629251010
@@ -221,29 +191,25 @@ MonoBehaviour:
     minDistance: 0
     spacing: 0
     nextSpawnPos: 0
-    maxChain: 1
-    chainDirection: 1
+    chainLength: 1
     chainSpacing: 2
---- !u!114 &114000012986956900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012218408408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c417f53bc9484743bea3fa4583f1758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - prefab: {fileID: 100000, guid: 36ac64fceac542a4ebec3c72270519c8, type: 3}
-    probability: 0.5
-    minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
-    maxChain: 1
     chainDirection: 1
-    chainSpacing: 2
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &114000013466942922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +227,22 @@ MonoBehaviour:
     minDistance: 0
     spacing: 0
     nextSpawnPos: 0
-    maxChain: 1
-    chainDirection: 1
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
