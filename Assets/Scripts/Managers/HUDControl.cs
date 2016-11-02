@@ -182,6 +182,13 @@ public class HUDControl : MonoBehaviour
             n.SetActive(true);
         }
 
+        //Remove unneeded copies
+        for (int i = jumpsIcons.Count - 1; i >= playerControl.jumpAmount; i--)
+        {
+            Destroy(jumpsIcons[i]);
+            jumpsIcons.RemoveAt(i);
+        }
+
         jumpAmount = jumpsIcons.Count;
     }
 }

@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Oxygen")]
     public int currentOxygen = 100;
     public int maxOxygen = 100;
+    private int startOxygen;
 
     [Space()]
     [Tooltip("How much oxygen should be depleted per second.")]
@@ -35,6 +36,8 @@ public class PlayerStats : MonoBehaviour
     {
         //Cache initial position
         initialPosition = transform.position;
+
+        startOxygen = maxOxygen;
 
         StartCoroutine("DepleteOxygen");
     }
@@ -177,6 +180,7 @@ public class PlayerStats : MonoBehaviour
 
         //Reset stats
         currentHealth = maxHealth;
+        maxOxygen = startOxygen;
         currentOxygen = maxOxygen;
         score = 0;
 
@@ -185,6 +189,9 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine("DepleteOxygen");
 
         hasAlreadyDied = false;
+
+        //Reset on all player monobehaviours
+        SendMessage("Reset");
 
         //Stop game on respawn
         GameManager.instance.StopGame();

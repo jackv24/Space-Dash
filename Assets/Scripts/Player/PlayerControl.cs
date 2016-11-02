@@ -9,13 +9,14 @@ public class PlayerControl : MonoBehaviour
     private float inputX;
 
     [Header("Movement")]
-    //How fast the player can move horizontally
+    [Tooltip("How fast the player can move horizontally.")]
     public float moveSpeed = 10f;
+    private float currentMoveSpeed;
+    [Tooltip("How far until the player stops accelerating (in metres).")]
+    public int maxAccelerationDistance = 2000;
+    [Tooltip("How much speed the player gains until the max distance.")]
+    public AnimationCurve acceleration;
 
-    //How fast the player reaches it's move speed
-    [Range(0f, 1f)]
-    [Tooltip("How quickly the player reaches it's move speed. Set to 1 for instantly.")]
-    public float acceleration = 0.75f;
     public enum AutoRunDirection
     {
         Left, Right, None
@@ -29,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     public float jumpForce = 5f;
     [Tooltip("How many times the player can jump without touching the ground.")]
     public int jumpAmount = 2;
+    private int startJumps;
     public int jumpsLeft;
     private bool shouldJump = false;
     [Tooltip("The time after jumping before it can reset jumps - fixes jumping bug.")]
@@ -86,6 +88,9 @@ public class PlayerControl : MonoBehaviour
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();
 
+        startJumps = jumpAmount;
+        currentMoveSpeed = moveSpeed;
+
         StartCoroutine("UseOxygen");
     }
 
@@ -120,6 +125,9 @@ public class PlayerControl : MonoBehaviour
             //Get X movement inputs (clamped)
             else
                 inputX = Input.GetAxisRaw("Horizontal");
+
+            //Adjust move speed according to acceleration curve
+            currentMoveSpeed = moveSpeed + acceleration.Evaluate((transform.position.x < maxAccelerationDistance) ? transform.position.x / maxAccelerationDistance : 1);
 
             //Only float if falling while jump button is held
             isFloating = (!shouldJump && canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
@@ -174,7 +182,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Set horizontal movement of the vector
-        moveVector.x = Mathf.Lerp(moveVector.x, inputX * moveSpeed, acceleration);
+        moveVector.x = inputX * currentMoveSpeed;
 
         //Preserve gravity, but limit fall velocity if necessary
         if (body.velocity.y > terminalVelocity || terminalVelocity == 0)
@@ -289,5 +297,11 @@ public class PlayerControl : MonoBehaviour
             jumpsLeft = jumpAmount;
         else
             jumpsLeft++;
+    }
+
+    public void Reset()
+    {
+        jumpAmount = startJumps;
+        currentMoveSpeed = moveSpeed;
     }
 }
