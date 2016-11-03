@@ -31,6 +31,7 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("How many times the player can jump without touching the ground.")]
     public int jumpAmount = 2;
     private int startJumps;
+    [HideInInspector]
     public int jumpsLeft;
     private bool shouldJump = false;
     [Tooltip("The time after jumping before it can reset jumps - fixes jumping bug.")]
@@ -42,8 +43,14 @@ public class PlayerControl : MonoBehaviour
     public float floatingFallSpeed = 0f;
     [Tooltip("How much oxygen is used per second when floating.")]
     public float floatingOxygenUsage = 5f;
+    [HideInInspector]
     public bool isFloating = false;
-    private bool canFloat = false;
+    //Track whether the player has started falling, so boosting can occur
+    private bool startedFalling = false;
+    private bool shouldFloat = false;
+    [Tooltip("How many seconds after the player starts falling boosting starts (prevents oxygen being used while jumping).")]
+    public float startBoostDelay = 0.25f;
+    private float startBoostTime;
 
     [Space()]
     public ParticleSystem floatingParticles;
@@ -129,13 +136,22 @@ public class PlayerControl : MonoBehaviour
             //Adjust move speed according to acceleration curve
             currentMoveSpeed = moveSpeed + acceleration.Evaluate((transform.position.x < maxAccelerationDistance) ? transform.position.x / maxAccelerationDistance : 1);
 
-            //Only float if falling while jump button is held
-            isFloating = (!shouldJump && canFloat && body.velocity.y < 0 && Input.GetButton("Jump"));
+            if (!startedFalling && body.velocity.y < 0)
+            {
+                startedFalling = true;
+                startBoostTime = Time.time + startBoostDelay;
+            }
 
-            if (Input.GetButtonDown("Jump"))
-                canFloat = true;
+            //Only float if falling while jump button is held
+            isFloating = (!shouldJump && shouldFloat && startedFalling && Input.GetButton("Jump"));
+
+            if (Input.GetButtonDown("Jump") && Time.time > startBoostTime)
+                shouldFloat = true;
             if (Input.GetButtonUp("Jump"))
-                canFloat = false;
+                shouldFloat = false;
+
+            if (isGrounded && startedFalling)
+                startedFalling = false;
         }
         else
         {
@@ -207,6 +223,14 @@ public class PlayerControl : MonoBehaviour
             if (anim)
                 anim.SetTrigger("jump");
         }
+
+        //if (isFloating)
+        //{
+        //    moveVector.y = floatingFallSpeed;
+        //    body.gravityScale = 0;
+        //}
+        //else
+        //    body.gravityScale = gravityScale;
 
         moveVector.y = isFloating ? floatingFallSpeed : moveVector.y;
 
