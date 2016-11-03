@@ -1359,6 +1359,7 @@ GameObject:
   - 50: {fileID: 50000013383368960}
   - 114: {fileID: 114000010184399396}
   - 114: {fileID: 114000013327097606}
+  - 81: {fileID: 81000012539147294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3109,7 +3110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014264063490}
   m_LocalRotation: {x: -0.70441604, y: 0.06162846, z: -0.06162846, w: 0.70441604}
-  m_LocalPosition: {x: -0.2, y: 1.85, z: -0}
+  m_LocalPosition: {x: -0.176, y: 1.984, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -100, y: -90, z: 90}
   m_Children: []
@@ -3772,7 +3773,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -3806,6 +3807,13 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 1.5}
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2}
+--- !u!81 &81000012539147294
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013375508610}
+  m_Enabled: 1
 --- !u!95 &95000012799838942
 Animator:
   serializedVersion: 3
@@ -3835,32 +3843,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
-  maxAccelerationDistance: 2000
+  maxAccelerationDistance: 8000
   acceleration:
     serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    - time: 1
-      value: 10
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 9.951976
+      outSlope: 9.951976
+      tangentMode: 10
+    - time: 0.99854547
+      value: 9.9375
+      inSlope: 9.951976
+      outSlope: 9.951976
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   autoRun: 1
-  jumpForce: 14
+  jumpForce: 18
   jumpAmount: 2
   jumpsLeft: 0
   jumpResetDelay: 0.5
   floatingFallSpeed: 5
   floatingOxygenUsage: 10
   isFloating: 0
-  startBoostDelay: 0.25
+  startBoostDelay: 0.025
   floatingParticles: {fileID: 1000014264063490}
   groundLayer:
     serializedVersion: 2
@@ -4013,7 +4021,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014264063490}
   serializedVersion: 2
-  lengthInSec: 5
+  lengthInSec: 4
   startDelay:
     scalar: 0
     maxCurve:
@@ -4095,7 +4103,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: -5
+      scalar: -2.37
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4218,10 +4226,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.7294118}
       minMaxState: 0
     startSize:
-      scalar: 1.5
+      scalar: 0.82
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4432,7 +4440,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 49
     size3D: 0
     rotation3D: 0
   ShapeModule:
@@ -5502,7 +5510,7 @@ ParticleSystem:
     separateAxes: 0
     range: {x: 0, y: 1}
   ColorBySpeedModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       maxGradient:
