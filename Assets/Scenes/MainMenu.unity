@@ -1085,9 +1085,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &263391278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,16 +1388,22 @@ MonoBehaviour:
     probability: 0.5
     minDistance: 0
     maxDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000012796288728, guid: feb7368e5a968d944b12f77b81537fe3, type: 2}
     probability: 0.25
     minDistance: 0
     maxDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000014020363198, guid: 8189628611ec2a741ba8b51afe9224ba, type: 2}
     probability: 0.25
     minDistance: 0
     maxDistance: 0
+    spacing: 0
+    nextSpawnPos: 0
   startGroup: {fileID: 0}
   player: {fileID: 1403267907}
   lengthAhead: 2
@@ -2587,15 +2611,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &576638372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,15 +2825,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &596553442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,9 +3542,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &760937115
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,9 +3795,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &820511090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,9 +4083,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1016581987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,9 +4177,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1029289199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,9 +4330,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1069470558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,15 +4921,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1210000105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,15 +5068,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1257109510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4957,15 +5215,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1276347283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,15 +6567,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1686615382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,15 +6656,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1687978753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6379,9 +6745,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1720716334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,15 +6810,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1724340982
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,9 +7333,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1876296820
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,15 +7398,51 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.2
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &1909354363
 GameObject:
   m_ObjectHideFlags: 0
@@ -7950,9 +8424,27 @@ MonoBehaviour:
   - prefab: {fileID: 1000013036127100, guid: 0195a4ae40bdd5247ad2945548686554, type: 2}
     probability: 0.1
     minDistance: 0
-    maxChain: 4
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &2097114480
 GameObject:
   m_ObjectHideFlags: 0

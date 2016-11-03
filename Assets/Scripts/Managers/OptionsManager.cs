@@ -24,9 +24,6 @@ public class OptionsManager : MonoBehaviour
         {
             instance = this;
 
-            //Persist between scenes
-            DontDestroyOnLoad(gameObject);
-
             //Add filename onto datapath
             dataPath = Application.persistentDataPath + "/" + fileName + ".xml";
 
