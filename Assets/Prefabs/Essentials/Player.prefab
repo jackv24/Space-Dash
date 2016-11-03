@@ -1902,13 +1902,14 @@ GameObject:
   - 4: {fileID: 4000012571668788}
   - 198: {fileID: 198000011651391536}
   - 199: {fileID: 199000011990539806}
+  - 114: {fileID: 114000011163355356}
   m_Layer: 0
   m_Name: Boost Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000014270520678
 GameObject:
   m_ObjectHideFlags: 1
@@ -3860,7 +3861,7 @@ MonoBehaviour:
   floatingOxygenUsage: 10
   isFloating: 0
   startBoostDelay: 0.25
-  floatingParticles: {fileID: 198000011651391536}
+  floatingParticles: {fileID: 1000014264063490}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -3869,6 +3870,17 @@ MonoBehaviour:
   raysEndX: 0.5
   rayAmount: 3
   anim: {fileID: 95000012799838942}
+--- !u!114 &114000011163355356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014264063490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138566a927be4e14991cc85d03ffd197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013327097606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4041,7 +4053,7 @@ ParticleSystem:
   randomSeed: 1111302376
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   moveWithTransform: 0
   scalingMode: 1
   InitialModule:

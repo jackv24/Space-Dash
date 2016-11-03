@@ -53,7 +53,8 @@ public class PlayerControl : MonoBehaviour
     private float startBoostTime;
 
     [Space()]
-    public ParticleSystem floatingParticles;
+    public GameObject floatingParticles;
+    private GameObject lastFloatingParticles;
 
     //What velocity of the rigidbody is set to
     private Vector2 moveVector;
@@ -136,7 +137,8 @@ public class PlayerControl : MonoBehaviour
             //Adjust move speed according to acceleration curve
             currentMoveSpeed = moveSpeed + acceleration.Evaluate((transform.position.x < maxAccelerationDistance) ? transform.position.x / maxAccelerationDistance : 1);
 
-            if (!startedFalling && body.velocity.y < 0)
+            //Keeps track of when the player started falling, and when they can boost
+            if (!startedFalling && body.velocity.y < 0 && jumpsLeft < jumpAmount)
             {
                 startedFalling = true;
                 startBoostTime = Time.time + startBoostDelay;
@@ -145,7 +147,7 @@ public class PlayerControl : MonoBehaviour
             //Only float if falling while jump button is held
             isFloating = (!shouldJump && shouldFloat && startedFalling && Input.GetButton("Jump"));
 
-            if (Input.GetButtonDown("Jump") && Time.time > startBoostTime)
+            if (Input.GetButton("Jump") && Time.time > startBoostTime)
                 shouldFloat = true;
             if (Input.GetButtonUp("Jump"))
                 shouldFloat = false;
@@ -161,20 +163,27 @@ public class PlayerControl : MonoBehaviour
             isFloating = false;
 
             //Stop floating particles if player can not move (prevents them getting stuck on if boosting before death)
-            floatingParticles.Stop();
+            if (lastFloatingParticles)
+            {
+                lastFloatingParticles.GetComponent<ParticleSystem>().Stop();
+                lastFloatingParticles = null;
+            }
         }
 
         //Starts and stop particle system at the start and end of floating
-        if (isFloating && floatingParticles.isStopped)
+        if (isFloating && !lastFloatingParticles)
         {
-            floatingParticles.Play();
+            lastFloatingParticles = (GameObject)Instantiate(floatingParticles, floatingParticles.transform.position, floatingParticles.transform.rotation);
+            lastFloatingParticles.transform.parent = transform;
+            lastFloatingParticles.SetActive(true);
 
             if (SoundManager.instance)
                 SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.boosting);
         }
-        else if (!isFloating && !floatingParticles.isStopped)
+        else if (!isFloating && lastFloatingParticles)
         {
-            floatingParticles.Stop();
+            lastFloatingParticles.GetComponent<ParticleSystem>().Stop();
+            lastFloatingParticles = null;
 
             if (SoundManager.instance)
                 SoundManager.instance.SetPlayerLoop(null);
