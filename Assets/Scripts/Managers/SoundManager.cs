@@ -79,7 +79,7 @@ public class SoundManager : MonoBehaviour
         }
 
         playerLoopSource.clip = clip.clip;
-        playerLoopSource.volume *= clip.volume;
+        playerLoopSource.volume = clip.volume;
         playerLoopSource.Play();
     }
 

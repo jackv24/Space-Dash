@@ -138,7 +138,7 @@ public class PlayerControl : MonoBehaviour
             currentMoveSpeed = moveSpeed + acceleration.Evaluate((transform.position.x < maxAccelerationDistance) ? transform.position.x / maxAccelerationDistance : 1);
 
             //Keeps track of when the player started falling, and when they can boost
-            if (!startedFalling && body.velocity.y < 0 && jumpsLeft < jumpAmount)
+            if ((!startedFalling || shouldJump) && body.velocity.y < 0 && jumpsLeft < jumpAmount)
             {
                 startedFalling = true;
                 startBoostTime = Time.time + startBoostDelay;
