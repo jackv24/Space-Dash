@@ -158,9 +158,16 @@ public class HUDControl : MonoBehaviour
 
             //Hide and show start game text
             if (GameManager.instance.IsGamePlaying)
-                startText.CrossFadeAlpha(0f, fadeDuration, false);
+            {
+                //Handle extra text objects that may be children
+                foreach(Text text in startText.GetComponentsInChildren<Text>())
+                    text.CrossFadeAlpha(0f, fadeDuration, false);
+            }
             else
-                startText.CrossFadeAlpha(1f, fadeDuration, false);
+            {
+                foreach (Text text in startText.GetComponentsInChildren<Text>())
+                    text.CrossFadeAlpha(1f, fadeDuration, false);
+            }
         }
         else
             Debug.Log("No player transform assigned to HUDControl");
