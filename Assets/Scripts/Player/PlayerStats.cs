@@ -17,7 +17,12 @@ public class PlayerStats : MonoBehaviour
     [Header("Oxygen")]
     public int currentOxygen = 100;
     public int maxOxygen = 100;
+    [HideInInspector]
+    public int oldMaxOxygen;
     private int startOxygen;
+
+    public delegate void OxygenIncreased();
+    public event OxygenIncreased OnOxygenIncrease;
 
     [Space()]
     [Tooltip("How much oxygen should be depleted per second.")]
@@ -109,7 +114,12 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseOxygen(int amount, bool fillOxygen)
     {
+        oldMaxOxygen = maxOxygen;
         maxOxygen += amount;
+
+        //Call event handler
+        if (OnOxygenIncrease != null)
+            OnOxygenIncrease();
 
         if (fillOxygen)
             AddOxygen(maxOxygen);

@@ -22,6 +22,8 @@ public class HUDControl : MonoBehaviour
     [Space()]
     [Tooltip("The slider to display oxygen level.")]
     public Slider oxygenSlider;
+    public float o2IncreaseAnimLength = 0.5f;
+    public float o2IncreaseMultiplier = 10f;
     [Tooltip("The fill image for the slider, of which to change the colour.")]
     public Image barImage;
     [Tooltip("The gradient from which to colour the bar.")]
@@ -84,6 +86,10 @@ public class HUDControl : MonoBehaviour
             playerStats = player.GetComponent<PlayerStats>();
             playerControl = player.GetComponent<PlayerControl>();
         }
+
+        //Register event handler for oxygen bar increase
+        if (oxygenSlider)
+            playerStats.OnOxygenIncrease += delegate { StartCoroutine("ResizeO2Bar", playerStats.maxOxygen / playerStats.oldMaxOxygen); };
 
         if (jumpsPanel)
             UpdateJumpAmount();
@@ -190,5 +196,36 @@ public class HUDControl : MonoBehaviour
         }
 
         jumpAmount = jumpsIcons.Count;
+    }
+
+    IEnumerator ResizeO2Bar(float amount)
+    {
+        float animationTime = o2IncreaseAnimLength;
+        float animTime = 0;
+
+        //amount is usually the percentage which is very small, so a multiplier makes it more noticeable
+        amount *= o2IncreaseMultiplier;
+
+        RectTransform bar = oxygenSlider.GetComponent<RectTransform>();
+        Vector2 initialSize = bar.sizeDelta;
+
+        while (animTime < animationTime)
+        {
+            yield return new WaitForEndOfFrame();
+
+            Vector2 size = bar.sizeDelta;
+            size.x = EaseOut(animTime, initialSize.x, amount, animationTime);
+            bar.sizeDelta = size;
+
+            animTime += Time.deltaTime;
+        }
+    }
+
+    //Ease out function - source=http://www.timotheegroleau.com/Flash/experiments/easing_function_generator.htm
+    float EaseOut(float t, float b, float c, float d)
+    {
+        var ts = (t /= d) * t;
+        var tc = ts * t;
+        return b + c * (56 * tc * ts + -175 * ts * ts + 200 * tc + -100 * ts + 20 * t);
     }
 }
