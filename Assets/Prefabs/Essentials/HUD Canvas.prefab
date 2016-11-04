@@ -21,7 +21,7 @@ GameObject:
   - 224: {fileID: 224000013519527974}
   - 222: {fileID: 222000011643875962}
   - 114: {fileID: 114000013265540082}
-  - 114: {fileID: 114000013806095926}
+  - 114: {fileID: 114000012591854732}
   m_Layer: 5
   m_Name: StartPromptText
   m_TagString: Untagged
@@ -755,6 +755,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000012591854732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010174960718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38d7ed0c073de640b1a55e84fe3e8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleStrings:
+  - Herp
+  - Derp
+  - Schmerp
+  - Oh god please help me
+  - Yo
 --- !u!114 &114000012656225472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -846,7 +863,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9d81bf1ec739b7545832ad40dadab128, type: 3}
-    m_FontSize: 133
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -857,9 +874,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: '<size=28>head for the drop ship
-
-    </size>'
+  m_Text: '{0}'
 --- !u!114 &114000013374982104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -928,20 +943,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0.17647058, g: 0.4330628, b: 0.5, a: 1}
   m_EffectDistance: {x: 2, y: 2}
-  m_UseGraphicAlpha: 1
---- !u!114 &114000013806095926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010174960718}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.065321095, g: 0.12900913, b: 0.178, a: 0}
-  m_EffectDistance: {x: 5.17, y: 2.41}
   m_UseGraphicAlpha: 1
 --- !u!114 &114000013875135338
 MonoBehaviour:
