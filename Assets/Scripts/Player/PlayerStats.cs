@@ -21,8 +21,9 @@ public class PlayerStats : MonoBehaviour
     public int oldMaxOxygen;
     private int startOxygen;
 
-    public delegate void OxygenIncreased();
-    public event OxygenIncreased OnOxygenIncrease;
+    public delegate void Event();
+    public event Event OnOxygenIncrease;
+    public event Event OnReset;
 
     [Space()]
     [Tooltip("How much oxygen should be depleted per second.")]
@@ -193,6 +194,10 @@ public class PlayerStats : MonoBehaviour
         maxOxygen = startOxygen;
         currentOxygen = maxOxygen;
         score = 0;
+
+        //Invoke OnReset events
+        if (OnReset != null)
+            OnReset();
 
         //Start oxygen depletion (should have stopped when the player's oxygen reached 0)
         StopCoroutine("DepleteOxygen");

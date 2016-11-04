@@ -22,8 +22,9 @@ public class HUDControl : MonoBehaviour
     [Space()]
     [Tooltip("The slider to display oxygen level.")]
     public Slider oxygenSlider;
+    public AnimationCurve o2IncreaseAnim;
     public float o2IncreaseAnimLength = 0.5f;
-    public float o2IncreaseMultiplier = 10f;
+    private Vector2 initialO2BarSize;
     [Tooltip("The fill image for the slider, of which to change the colour.")]
     public Image barImage;
     [Tooltip("The gradient from which to colour the bar.")]
@@ -89,7 +90,14 @@ public class HUDControl : MonoBehaviour
 
         //Register event handler for oxygen bar increase
         if (oxygenSlider)
+        {
+            //Event handler to animate oxygen bar when oxygen is increased
             playerStats.OnOxygenIncrease += delegate { StartCoroutine("ResizeO2Bar", playerStats.maxOxygen / playerStats.oldMaxOxygen); };
+
+            //Cache initial bar size and setup event handler to reset
+            initialO2BarSize = oxygenSlider.GetComponent<RectTransform>().sizeDelta;
+            playerStats.OnReset += delegate { oxygenSlider.GetComponent<RectTransform>().sizeDelta = initialO2BarSize; };
+        }
 
         if (jumpsPanel)
             UpdateJumpAmount();
@@ -210,29 +218,18 @@ public class HUDControl : MonoBehaviour
         float animationTime = o2IncreaseAnimLength;
         float animTime = 0;
 
-        //amount is usually the percentage which is very small, so a multiplier makes it more noticeable
-        amount *= o2IncreaseMultiplier;
-
         RectTransform bar = oxygenSlider.GetComponent<RectTransform>();
         Vector2 initialSize = bar.sizeDelta;
 
-        while (animTime < animationTime)
+        while (animTime <= animationTime)
         {
             yield return new WaitForEndOfFrame();
 
-            Vector2 size = bar.sizeDelta;
-            size.x = EaseOut(animTime, initialSize.x, amount, animationTime);
+            Vector2 size = initialSize;
+            size.x += o2IncreaseAnim.Evaluate(animTime / animationTime);
             bar.sizeDelta = size;
 
             animTime += Time.deltaTime;
         }
-    }
-
-    //Ease out function - source=http://www.timotheegroleau.com/Flash/experiments/easing_function_generator.htm
-    float EaseOut(float t, float b, float c, float d)
-    {
-        var ts = (t /= d) * t;
-        var tc = ts * t;
-        return b + c * (56 * tc * ts + -175 * ts * ts + 200 * tc + -100 * ts + 20 * t);
     }
 }
