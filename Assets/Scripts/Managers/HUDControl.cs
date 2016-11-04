@@ -144,6 +144,9 @@ public class HUDControl : MonoBehaviour
 
             if (scoreText)
             {
+                if (playerStats.Score > bestScore)
+                    bestScore = playerStats.Score;
+
                 //Plug distance into string, using original string's formatting
                 scoreText.text = string.Format(scoreTextString, playerStats.Score, bestScore);
             }
@@ -206,7 +209,7 @@ public class HUDControl : MonoBehaviour
         //Remove unneeded copies
         for (int i = jumpsIcons.Count - 1; i >= playerControl.jumpAmount; i--)
         {
-            Destroy(jumpsIcons[i]);
+            Destroy(jumpsIcons[i].gameObject);
             jumpsIcons.RemoveAt(i);
         }
 
