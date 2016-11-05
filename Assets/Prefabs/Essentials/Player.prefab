@@ -716,6 +716,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011527451138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010169816796}
+  - 81: {fileID: 81000010548530036}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011550693262
 GameObject:
   m_ObjectHideFlags: 1
@@ -1359,7 +1375,6 @@ GameObject:
   - 50: {fileID: 50000013383368960}
   - 114: {fileID: 114000010184399396}
   - 114: {fileID: 114000013327097606}
-  - 81: {fileID: 81000012539147294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2060,6 +2075,19 @@ Transform:
   - {fileID: 4000013645428538}
   m_Father: {fileID: 4000010930583138}
   m_RootOrder: 0
+--- !u!4 &4000010169816796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011527451138}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.7, y: 1.1, z: -0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011904174496}
+  m_RootOrder: 2
 --- !u!4 &4000010220734536
 Transform:
   m_ObjectHideFlags: 1
@@ -2783,6 +2811,7 @@ Transform:
   m_Children:
   - {fileID: 4000012571668788}
   - {fileID: 4000013562517778}
+  - {fileID: 4000010169816796}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000011916930758
@@ -3807,12 +3836,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 1.5}
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2}
---- !u!81 &81000012539147294
+--- !u!81 &81000010548530036
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013375508610}
+  m_GameObject: {fileID: 1000011527451138}
   m_Enabled: 1
 --- !u!95 &95000012799838942
 Animator:
@@ -3889,6 +3918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138566a927be4e14991cc85d03ffd197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 1
 --- !u!114 &114000013327097606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3905,6 +3935,7 @@ MonoBehaviour:
   respawnTime: 0
   currentOxygen: 100
   maxOxygen: 100
+  oldMaxOxygen: 0
   depletionRate: 2
   anim: {fileID: 95000012799838942}
 --- !u!137 &137000012920677360

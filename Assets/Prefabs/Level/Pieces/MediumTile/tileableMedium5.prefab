@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000011734368086}
   m_IsPrefabParent: 1
+--- !u!1 &1000010008973850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013470555280}
+  - 82: {fileID: 82000011434181466}
+  m_Layer: 8
+  m_Name: BubblingGoop01 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011734368086
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +96,7 @@ Transform:
   m_Children:
   - {fileID: 4000011778850732}
   - {fileID: 4000012758997196}
+  - {fileID: 4000013470555280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000011778850732
@@ -108,6 +125,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010946999514}
   m_RootOrder: 1
+--- !u!4 &4000013470555280
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010008973850}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.6, y: -7.2, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010946999514}
+  m_RootOrder: 2
 --- !u!23 &23000012645450096
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -225,6 +255,80 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 34.978, y: 3.4999998}
+--- !u!82 &82000011434181466
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010008973850}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7255da836c3ff134e8249dbce636893c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 5
+  MinDistance: 22.198019
+  MaxDistance: 33.97627
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 1
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -0.032924403
+      outSlope: -0.032924403
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -2.170499
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000011225382490
 Animator:
   serializedVersion: 3
@@ -380,18 +484,72 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000013803469598, guid: 5427c686c2496f44797be568ed388d1c, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     probability: 0.5
     minDistance: 0
-    maxChain: 1
-    chainDirection: 1
+    spacing: 0
+    nextSpawnPos: 0
+    chainLength: 1
     chainSpacing: 2
+    chainDirection: 1
+    chainCurve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
