@@ -24,7 +24,7 @@ public class ItemSpawn : MonoBehaviour
 
         //If item is within the generation range, add it to the list
         foreach (LevelItem i in items)
-            if (transform.position.x >= i.minDistance)
+            if (transform.position.x >= i.minDistance || !Application.isPlaying)
             {
                 bool canAdd = true;
 
@@ -121,7 +121,7 @@ public class ItemSpawn : MonoBehaviour
                         break;
                 }
 
-                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, Quaternion.identity);
+                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, levelItem.keepRotation ? levelItem.prefab.transform.rotation : transform.rotation);
                 item.name = levelItem.prefab.name;
                 //Item replaces this gameobject in heirarchy, so they should have the same parent
                 item.transform.SetParent(parent ? transform : transform.parent);
@@ -156,6 +156,8 @@ public class LevelItem
 {
     [Tooltip("The game object that will be instantiated.")]
     public GameObject prefab;
+    [Tooltip("If false, rotation will be that of the item spawn.")]
+    public bool keepRotation = false;
 
     [Tooltip("How likely it is that this item will be generated (try and make all items probability add up to 1, otherwise it is hard to visualise).")]
     public float probability = 1f;
