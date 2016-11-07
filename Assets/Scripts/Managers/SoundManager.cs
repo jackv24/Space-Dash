@@ -5,6 +5,9 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
+    public delegate void VolumeChangedEvent(float volume);
+    public VolumeChangedEvent OnGameVolumeChanged;
+
     [Header("Music")]
     [Range(0, 1f)]
     public float musicVolume = 1f;
@@ -79,7 +82,7 @@ public class SoundManager : MonoBehaviour
         }
 
         playerLoopSource.clip = clip.clip;
-        playerLoopSource.volume = clip.volume;
+        playerLoopSource.volume = clip.volume * gameVolume;
         playerLoopSource.Play();
     }
 
@@ -92,7 +95,10 @@ public class SoundManager : MonoBehaviour
     public void SetGameVolume(float value)
     {
         gameVolume = value;
-        gameSource.volume = gameVolume;
-        playerLoopSource.volume = gameVolume;
+        gameSource.volume = value;
+        playerLoopSource.volume = value;
+
+        //Call events from game audio source scripts
+        OnGameVolumeChanged(value);
     }
 }

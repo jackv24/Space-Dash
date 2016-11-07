@@ -53,6 +53,11 @@ public class PlayerControl : MonoBehaviour
     private float startBoostTime;
 
     [Space()]
+    [Tooltip("Player will not be able to boost above this height. Please note that this is not the height above the ground, but simply the player's height on the y axis.")]
+    public float maxHeight = 50f;
+    private float currentFallSpeed = 0f;
+
+    [Space()]
     public GameObject floatingParticles;
     private GameObject lastFloatingParticles;
 
@@ -98,6 +103,7 @@ public class PlayerControl : MonoBehaviour
 
         startJumps = jumpAmount;
         currentMoveSpeed = moveSpeed;
+        currentFallSpeed = floatingFallSpeed;
 
         StartCoroutine("UseOxygen");
     }
@@ -233,15 +239,13 @@ public class PlayerControl : MonoBehaviour
                 anim.SetTrigger("jump");
         }
 
-        //if (isFloating)
-        //{
-        //    moveVector.y = floatingFallSpeed;
-        //    body.gravityScale = 0;
-        //}
-        //else
-        //    body.gravityScale = gravityScale;
+        //Cap player's height
+        if (transform.position.y > maxHeight)
+            currentFallSpeed = 0f;
+        else
+            currentFallSpeed = floatingFallSpeed;
 
-        moveVector.y = isFloating ? floatingFallSpeed : moveVector.y;
+        moveVector.y = isFloating ? currentFallSpeed : moveVector.y;
 
         if (anim)
             anim.SetBool("boosting", isFloating);

@@ -48,6 +48,8 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
+            HUDControl.instance.ShowPickupText(value, transform.position);
+
             //Destroy gameobject so it has been "picked up"
             Destroy(gameObject);
         }

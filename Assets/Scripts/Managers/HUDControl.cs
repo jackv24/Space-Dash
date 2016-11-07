@@ -42,6 +42,13 @@ public class HUDControl : MonoBehaviour
     public Text highScoreText;
 
     [Space()]
+    public Text scorePickupText;
+    private string scorePickupTextString;
+    public AnimationCurve scorePickupYAnim;
+    public float pickupAnimLength = 2f;
+    public Gradient pickupTextColor;
+
+    [Space()]
     public GameObject jumpsPanel;
     private List<Image> jumpsIcons = new List<Image>();
     private int jumpAmount = 0;
@@ -76,6 +83,8 @@ public class HUDControl : MonoBehaviour
             oxygenTextString = oxygenText.text;
         if (scoreText)
             scoreTextString = scoreText.text;
+        if (scorePickupText)
+            scorePickupTextString = scorePickupText.text;
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
@@ -190,6 +199,48 @@ public class HUDControl : MonoBehaviour
             else
                 debugText.text = "";
         }
+    }
+
+    public void ShowPickupText(int value, Vector3 pickupPos)
+    {
+        if (scorePickupText)
+        {
+            Vector2 screenPos = Camera.main.WorldToScreenPoint(pickupPos);
+
+            GameObject textObj = (GameObject)Instantiate(scorePickupText.gameObject, scorePickupText.transform.parent);
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
+            Text text = textObj.GetComponent<Text>();
+
+            textRect.position = screenPos;
+            text.text = string.Format(scorePickupTextString, value);
+
+            textObj.SetActive(true);
+
+            StartCoroutine("AnimatePickupText", textRect);
+        }
+    }
+
+    IEnumerator AnimatePickupText(RectTransform rect)
+    {
+        float counter = 0;
+        Vector2 initialPos = rect.position;
+        Text text = rect.GetComponent<Text>();
+
+        while (counter < pickupAnimLength)
+        {
+            yield return new WaitForEndOfFrame();
+
+            counter += Time.deltaTime;
+
+            Vector2 newPos = initialPos;
+            newPos.y += scorePickupYAnim.Evaluate(counter / pickupAnimLength);
+
+            rect.position = newPos;
+
+            text.color = pickupTextColor.Evaluate(counter / pickupAnimLength);
+        }
+
+        Destroy(rect.gameObject);
     }
 
     void UpdateJumpAmount()
