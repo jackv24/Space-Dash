@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013520608142}
   - 114: {fileID: 114000010372109888}
-  - 58: {fileID: 58000012977794498}
+  - 60: {fileID: 60000014137157638}
   m_Layer: 0
   m_Name: Shard_Sa_01
   m_TagString: Untagged
@@ -265,8 +265,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010617498924}
   m_Mesh: {fileID: 4300000, guid: 9c4dc778d7f8a394c8eea25c87b7dee5, type: 3}
---- !u!58 &58000012977794498
-CircleCollider2D:
+--- !u!60 &60000014137157638
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -277,8 +277,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.25
+  m_Points:
+    m_Paths:
+    - - {x: -0.57092285, y: 0.8954541}
+      - {x: -0.17473984, y: 0.5828365}
+      - {x: 0.036441803, y: 0.9656861}
+      - {x: 0.1443367, y: 0.75251555}
+      - {x: 0.42328644, y: 0.8021625}
+      - {x: 0.4995613, y: 0.42522496}
+      - {x: 1.1380882, y: 0.578905}
+      - {x: 1.04249, y: -0.01590097}
+      - {x: 1.3853722, y: -0.33229864}
+      - {x: -1.3487015, y: -0.33229876}
+      - {x: -0.87771416, y: 0.47561038}
 --- !u!82 &82000010002490702
 AudioSource:
   m_ObjectHideFlags: 1
