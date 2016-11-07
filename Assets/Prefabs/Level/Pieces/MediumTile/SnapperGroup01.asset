@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: SnapperGroup01
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000010654582984, guid: 739534fc75b3e8343bba28fdc969930b, type: 2}
+  tiles:
+  - prefab: {fileID: 1000010654582984, guid: 739534fc75b3e8343bba28fdc969930b, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010948916516, guid: 1e57a5d929b8b614f9875c611e8b91e7, type: 2}
+    probability: 1
+  endTile: {fileID: 1000010654582984, guid: 739534fc75b3e8343bba28fdc969930b, type: 2}
+  length: 5

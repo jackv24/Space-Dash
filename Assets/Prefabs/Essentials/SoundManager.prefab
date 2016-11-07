@@ -288,14 +288,22 @@ MonoBehaviour:
   playerLoopSource: {fileID: 82000012250461378}
   sounds:
     running:
-      clip: {fileID: 0}
-      volume: 1
+      clip: {fileID: 8300000, guid: c712bf9b1bf4a284ea66be54afdef784, type: 3}
+      volume: 0.09
     jumps:
-    - clip: {fileID: 8300000, guid: 59a4200460d7bab4d9b6ba7326f18c1b, type: 3}
+    - clip: {fileID: 8300000, guid: 30923162400dee04987c2065ae75d7f8, type: 3}
+      volume: 0.65
+    - clip: {fileID: 8300000, guid: 30923162400dee04987c2065ae75d7f8, type: 3}
+      volume: 0.65
+    - clip: {fileID: 8300000, guid: d25a168fc59804f4ea66ea114fe9746c, type: 3}
+      volume: 0.2
+    - clip: {fileID: 8300000, guid: 5ade87d309a11244790b866d2fe7dd3e, type: 3}
+      volume: 0.2
+    - clip: {fileID: 8300000, guid: 5ade87d309a11244790b866d2fe7dd3e, type: 3}
       volume: 0.36
     landing:
-      clip: {fileID: 8300000, guid: 3f4cb3a3c14aed640bcef6136a51246f, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: a1305105c69c87a4e9974717da60fabc, type: 3}
+      volume: 0.17
     boosting:
       clip: {fileID: 8300000, guid: 010bcddcd5d14aa4a97e3f3e0cb5a5df, type: 3}
       volume: 0.42
