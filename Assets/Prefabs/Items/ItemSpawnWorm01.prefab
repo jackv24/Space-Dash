@@ -171,7 +171,7 @@ GameObject:
   - 4: {fileID: 4000013769211684}
   - 114: {fileID: 114000012688001358}
   m_Layer: 0
-  m_Name: ItemSpawn (1)
+  m_Name: ItemSpawnWorm01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1710,6 +1710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
+    keepRotation: 0
     probability: 0.5
     minDistance: 0
     spacing: 0
