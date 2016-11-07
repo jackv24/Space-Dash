@@ -125,6 +125,7 @@ public class ItemSpawn : MonoBehaviour
                 item.name = levelItem.prefab.name;
                 //Item replaces this gameobject in heirarchy, so they should have the same parent
                 item.transform.SetParent(parent ? transform : transform.parent);
+                item.transform.localScale *= levelItem.scale;
 
                 distance += levelItem.chainSpacing;
             }
@@ -158,6 +159,8 @@ public class LevelItem
     public GameObject prefab;
     [Tooltip("If false, rotation will be that of the item spawn.")]
     public bool keepRotation = false;
+
+    public float scale = 1f;
 
     [Tooltip("How likely it is that this item will be generated (try and make all items probability add up to 1, otherwise it is hard to visualise).")]
     public float probability = 1f;
