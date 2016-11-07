@@ -24,11 +24,8 @@ GameObject:
   - 114: {fileID: 114000012120553722}
   - 114: {fileID: 114000012070711262}
   - 61: {fileID: 61000010001744984}
-  - 61: {fileID: 61000010748672576}
-  - 61: {fileID: 61000010957151650}
   - 61: {fileID: 61000011022637380}
   - 61: {fileID: 61000011901491846}
-  - 61: {fileID: 61000011010271104}
   - 114: {fileID: 114000010799432338}
   m_Layer: 8
   m_Name: tileableExpertVolcanoLava2
@@ -1150,48 +1147,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.05153588}
   serializedVersion: 2
   m_Size: {x: 3.8852234, y: 0.9492581}
---- !u!61 &61000010748672576
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010527832442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.16394615, y: -9.045168}
-  serializedVersion: 2
-  m_Size: {x: 2.016922, y: 1.8875065}
---- !u!61 &61000010957151650
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010527832442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 8.9321995, y: 1.379554}
-  serializedVersion: 2
-  m_Size: {x: 1.7960615, y: 3.9194412}
---- !u!61 &61000011010271104
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010527832442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -7.3044276, y: 5.0481005}
-  serializedVersion: 2
-  m_Size: {x: 2.387473, y: 1.9264736}
 --- !u!61 &61000011022637380
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1203,7 +1158,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 6.4806223, y: -6.615679}
+  m_Offset: {x: 7.85, y: -4.87}
   serializedVersion: 2
   m_Size: {x: 1.5751972, y: 1.2690907}
 --- !u!61 &61000011901491846
@@ -1217,9 +1172,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 1.9848815, y: 8.706745}
+  m_Offset: {x: 1.34, y: 8.65}
   serializedVersion: 2
-  m_Size: {x: 3.4193046, y: 1.8760014}
+  m_Size: {x: 3.34, y: 1.64}
 --- !u!61 &61000012073272864
 BoxCollider2D:
   m_ObjectHideFlags: 1
