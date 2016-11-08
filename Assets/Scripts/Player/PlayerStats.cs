@@ -29,6 +29,10 @@ public class PlayerStats : MonoBehaviour
     [Tooltip("How much oxygen should be depleted per second.")]
     public int depletionRate = 1;
 
+    [Space()]
+    [Tooltip("The player will die if they fall below this height.")]
+    public float minHeight = -20f;
+
     //Returns true if health and oxygen are above zero, false otherwise
     public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0) ? true : false; } }
     private bool hasAlreadyDied = false;
@@ -55,6 +59,9 @@ public class PlayerStats : MonoBehaviour
             DebugInfo.currentOxygen = currentOxygen;
             DebugInfo.maxOxygen = maxOxygen;
         }
+
+        if (transform.position.y < minHeight)
+            Die();
     }
 
     public void AddHealth(int amount)
