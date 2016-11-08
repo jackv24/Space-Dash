@@ -99,6 +99,7 @@ public class SoundManager : MonoBehaviour
         playerLoopSource.volume = value;
 
         //Call events from game audio source scripts
-        OnGameVolumeChanged(value);
+        if(OnGameVolumeChanged != null)
+            OnGameVolumeChanged(value);
     }
 }
