@@ -18,6 +18,8 @@ public class ItemPickup : MonoBehaviour
     public bool reset = false;
 
     public int pointsValue = 10;
+    public Color pickupTextColor = Color.white;
+    public float pickupTextScale = 1f;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -48,7 +50,7 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
-            HUDControl.instance.ShowPickupText(pointsValue, transform.position);
+            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale);
 
             //Destroy gameobject so it has been "picked up"
             Destroy(gameObject);

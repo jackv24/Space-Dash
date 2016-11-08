@@ -201,7 +201,7 @@ public class HUDControl : MonoBehaviour
         }
     }
 
-    public void ShowPickupText(int value, Vector3 pickupPos)
+    public void ShowPickupText(int value, Vector3 pickupPos, Color color, float scale)
     {
         if (scorePickupText)
         {
@@ -212,7 +212,9 @@ public class HUDControl : MonoBehaviour
             Text text = textObj.GetComponent<Text>();
 
             textRect.position = screenPos;
+            textRect.localScale *= scale;
             text.text = string.Format(scorePickupTextString, value);
+            text.color = color;
 
             textObj.SetActive(true);
 
@@ -225,6 +227,7 @@ public class HUDControl : MonoBehaviour
         float counter = 0;
         Vector2 initialPos = rect.position;
         Text text = rect.GetComponent<Text>();
+        Color startColor = text.color;
 
         while (counter < pickupAnimLength)
         {
@@ -237,7 +240,7 @@ public class HUDControl : MonoBehaviour
 
             rect.position = newPos;
 
-            text.color = pickupTextColor.Evaluate(counter / pickupAnimLength);
+            text.color = startColor * pickupTextColor.Evaluate(counter / pickupAnimLength);
         }
 
         Destroy(rect.gameObject);
