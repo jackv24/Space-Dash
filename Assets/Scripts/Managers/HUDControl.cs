@@ -54,6 +54,7 @@ public class HUDControl : MonoBehaviour
     private int jumpAmount = 0;
 
     private int bestScore;
+    private bool playedScoreSound = false;
 
     [Space()]
     public Text debugText;
@@ -88,7 +89,7 @@ public class HUDControl : MonoBehaviour
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
-        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        bestScore = 100;//PlayerPrefs.GetInt("BestScore", 0);
 
         //Get PlayerStats from player
         if (player)
@@ -124,9 +125,19 @@ public class HUDControl : MonoBehaviour
             {
                 //Show high score text if high score has been passed
                 if (playerStats.Score >= bestScore)
+                {
                     highScoreText.gameObject.SetActive(true);
-                else if (highScoreText)
+                    if (SoundManager.instance && !playedScoreSound)
+                    {
+                        playedScoreSound = true;
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.newHighScore);
+                    }
+                }
+                else
+                {
+                    playedScoreSound = false;
                     highScoreText.gameObject.SetActive(false);
+                }
             }
 
             //Check that distancetext is assigned

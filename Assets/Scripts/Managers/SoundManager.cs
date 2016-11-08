@@ -39,6 +39,10 @@ public class SoundManager : MonoBehaviour
         public Clip landing;
         public Clip boosting;
         public Clip pickupOxygen;
+        public Clip pickupOxygenPowerup;
+        public Clip pickupJumpPowerup;
+
+        public Clip newHighScore;
 
         public Clip[] deaths;
         public Clip RandomDeath { get { return deaths[Random.Range(0, deaths.Length)]; } }

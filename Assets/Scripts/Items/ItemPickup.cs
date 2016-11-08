@@ -42,9 +42,13 @@ public class ItemPickup : MonoBehaviour
                     break;
                 case Type.ExtraJump:
                     control.AddJump(reset);
+                    if (SoundManager.instance)
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.pickupJumpPowerup);
                     break;
                 case Type.ExtraOxygen:
                     stats.IncreaseOxygen(value, reset);
+                    if (SoundManager.instance)
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.pickupOxygenPowerup);
                     break;
             }
 

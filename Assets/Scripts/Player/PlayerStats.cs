@@ -150,7 +150,10 @@ public class PlayerStats : MonoBehaviour
 
             //Play random death sound on death
             if (SoundManager.instance)
+            {
                 SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomDeath);
+                SoundManager.instance.SetPlayerLoop(null);
+            }
 
             //Start respawn countdown
             StartCoroutine("Respawn", respawnTime);
