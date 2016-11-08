@@ -140,6 +140,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000012591854732, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: possibleStrings.Array.size
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 224000010205706106, guid: a372273bfd7002445a118044f0c99a84,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -239,6 +244,26 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012591854732, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: possibleStrings.Array.data[17]
+      value: "My Name is Dash   \xEDronic eh"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012591854732, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: possibleStrings.Array.data[18]
+      value: Smash that high score
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012591854732, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: possibleStrings.Array.data[22]
+      value: Treat people with respect
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012591854732, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: possibleStrings.Array.data[23]
+      value: Throw your heart out in front and chase it
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
@@ -532,7 +557,7 @@ Prefab:
         type: 2}
       propertyPath: tiles.Array.data[6].prefab
       value: 
-      objectReference: {fileID: 1000010514266708, guid: ad4f813c4d31c9e4197714c158c8f616,
+      objectReference: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292,
         type: 2}
     - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
@@ -866,7 +891,7 @@ Prefab:
         type: 2}
       propertyPath: tiles.Array.data[14].prefab
       value: 
-      objectReference: {fileID: 1000011742971392, guid: 9d3cc010442c31045883a1367661e67c,
+      objectReference: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292,
         type: 2}
     - target: {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
