@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010663121308}
   - 82: {fileID: 82000010622938048}
+  - 114: {fileID: 114000013619827488}
   m_Layer: 8
   m_Name: BubblingGoop01 (4)
   m_TagString: Untagged
@@ -1567,7 +1568,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013879624722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18059999, y: -0.015499999, z: 0}
+  m_LocalPosition: {x: -0.2263, y: 0.0492, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1970,7 +1971,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013429794176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0506, y: -0.0028, z: 0}
+  m_LocalPosition: {x: 0.0736, y: -0.0443, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -4037,6 +4038,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000010347538776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4052,6 +4055,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000010502593894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4067,6 +4072,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000010744445474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4082,6 +4089,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000010755407812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4097,6 +4106,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011325124644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4112,6 +4123,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011456069628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4155,6 +4168,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011898110346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4234,6 +4249,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011923225966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4263,6 +4280,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000012727533836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4278,6 +4297,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000012851120706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4307,6 +4328,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013309718556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4322,6 +4345,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013326305600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4337,6 +4362,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013463101842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4352,6 +4379,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013594172434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4444,6 +4473,17 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   lavaSpeed: 0.05
+--- !u!114 &114000013619827488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010475198096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013885414016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4473,6 +4513,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000014102261990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4488,6 +4530,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000014281166138
 MonoBehaviour:
   m_ObjectHideFlags: 1

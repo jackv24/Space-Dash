@@ -98,6 +98,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014115992726, guid: 68505410bd830694c9c95ce9381f3a19, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -128,6 +133,56 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014115992726, guid: 68505410bd830694c9c95ce9381f3a19, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 998c35c2c86d0884bb7fd43c33d6f5e1, type: 3}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[1].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cfd4443181219d4a8582898fb5e594d, type: 3}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[2].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53c1fc57aa4689443bd5ef7fb0af5655, type: 3}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.deaths.Array.data[3].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.pickupOxygenPowerup.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e2fe423bc9ea2fc418ae848faaf061f7, type: 3}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.pickupJumpPowerup.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75fbd171ce210d047badc7097aced4da, type: 3}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.pickupJumpPowerup.volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.pickupOxygenPowerup.volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -444,7 +499,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000013132301178, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &726901777
@@ -636,6 +692,266 @@ Transform:
   - {fileID: 1194285606}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1987068935 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013654189948, guid: d696361f2d618db4398a5835d7105c58,
+    type: 2}
+  m_PrefabInternal: {fileID: 458672386}
+--- !u!114 &1987068936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987068935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539e15a797637a743a64cee26c090c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileLength: 50
+  tiles:
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 686d8e7469590854297ad63fdbcced8b, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: ae200d96cba44964ca47693d38e25a1c, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 32674045a2c52db48967e3bb06ac1528, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 8fa987d8777a1e34eba9640363f6a436, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 68b175a6806c65542ae6d812b02819e6, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010514266708, guid: 4b1adb73f9127c841866331f8a834f80, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010552218418, guid: 7f3f04c4a3bab084c807f7aed1899b76, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010501614620, guid: cf7ad71b77347154c8896b7efc6ad2c2, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011981416748, guid: 7104bf11b0d11054aac6ce8cb31e8c94, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012331703460, guid: d286fb1f1a93b1946af48f8a9578023e, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010864126628, guid: 392abf07d8e254c41a1cacdc18a97d80, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014020363198, guid: 5e0bd6580aa31014cbcaae1aec08af6d, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 5
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010948916516, guid: 3cca897b5ee445c44b68b995b7179944, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010563124232, guid: 8c8e8111161b6474fb4325f81e09e0e4, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011288166356, guid: be70202b3fe24d846bcf4f42db70ecd1, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014145994946, guid: e0e0084fc70601445bc6975287a1f862, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011734368086, guid: af7faa250ba29bc4db4d4b5bc283178a, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012654660922, guid: 418ebbae5da831f45b5e182d55333138, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011960644468, guid: 2891acba763315a43bd0a12798d2170b, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012654660922, guid: c57d1154e6b871448a367cf291db455e, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010389231282, guid: 936d11ed836ef60499872ce39fe8f374, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: ba15d85d5cab717419f17f1a682ad21e, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: b3565e7532d745448b2fcc7a8b3e2e2a, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012314778098, guid: 5d67d82d4db8b084b8e72d78d4973603, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012398733588, guid: 8e24bd3f0d972b54b9c692306bd3213e, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000013984782924, guid: 48c232ee23e6eee4788d3a7df0fd3001, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: b74892ab4fb14534fa0d8ece0e52f778, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 28588ecd0ea3eff4b9e326f6dbbf4e1f, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 0155669530ac02d40bd845fa9212a72a, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 1500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 38311e6d94c6dcf4982fa89488c288b9, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 2500
+    maxDistance: 0
+    spacing: 6
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 0d1be3c96cf66ad40a3d3388394e346e, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2500
+    maxDistance: 0
+    spacing: 50
+    nextSpawnPos: 0
+  startGroup: {fileID: 11400000, guid: 862b318c9f8f3634d89548f59c8b291c, type: 2}
+  player: {fileID: 0}
+  lengthAhead: 2
+  maxLoadedTiles: 5
 --- !u!1001 &2057816824
 Prefab:
   m_ObjectHideFlags: 0

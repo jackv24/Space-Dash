@@ -202,6 +202,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010727980400}
   - 82: {fileID: 82000012708966554}
+  - 114: {fileID: 114000013765650954}
   m_Layer: 8
   m_Name: BubblingGoop01 (2)
   m_TagString: Untagged
@@ -1355,6 +1356,17 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000013765650954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013488164150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013795265880
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -238,6 +238,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013815413992}
   - 82: {fileID: 82000010634948698}
+  - 114: {fileID: 114000013717172650}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -781,7 +782,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1082,3 +1083,14 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000013717172650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013231175564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

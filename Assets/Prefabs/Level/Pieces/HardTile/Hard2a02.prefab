@@ -123,6 +123,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013909193600}
   - 82: {fileID: 82000012968557838}
+  - 114: {fileID: 114000011742084928}
   m_Layer: 8
   m_Name: BubblingGoop01 (2)
   m_TagString: Untagged
@@ -1296,6 +1297,17 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   lavaSpeed: 0.05
+--- !u!114 &114000011742084928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011176364034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012005379382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1455,6 +1467,8 @@ MonoBehaviour:
   value: 20
   reset: 0
   pointsValue: 100
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000014287030912
 MonoBehaviour:
   m_ObjectHideFlags: 1

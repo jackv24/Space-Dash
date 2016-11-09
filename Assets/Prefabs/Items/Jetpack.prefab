@@ -55,6 +55,7 @@ GameObject:
   - 4: {fileID: 4000011996131884}
   - 58: {fileID: 58000011274531308}
   - 114: {fileID: 114000011888817808}
+  - 114: {fileID: 114000014227169344}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Untagged
@@ -219,3 +220,22 @@ MonoBehaviour:
   value: 0
   reset: 1
   pointsValue: 1000
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+--- !u!114 &114000014227169344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013471171038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3ac85a00a44b741beeb3bb7f330cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeedMin: 180
+  rotateSpeedMax: 180
+  rotateX: 0
+  rotateY: 1
+  rotateZ: 0
+  randomStartRotation: 0

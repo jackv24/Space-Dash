@@ -119,6 +119,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011531553042}
   - 82: {fileID: 82000012082804358}
+  - 114: {fileID: 114000010862076776}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -168,6 +169,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013765624454}
   - 82: {fileID: 82000011179734426}
+  - 114: {fileID: 114000011848320216}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -247,6 +249,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010936381446}
   - 82: {fileID: 82000011792290774}
+  - 114: {fileID: 114000011154952540}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -364,6 +367,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010153273858}
   - 82: {fileID: 82000011076110000}
+  - 114: {fileID: 114000012746243378}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -1481,7 +1485,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014020363198}
-  m_Mesh: {fileID: 4300000, guid: b8f31871ac25fec46b2f77c34555ce5f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2e883aba538bcbd45a76d628679afc98, type: 3}
 --- !u!33 &33000013359575732
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1709,7 +1713,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1783,7 +1787,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1857,7 +1861,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1931,7 +1935,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2311,6 +2315,28 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000010862076776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011110764084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000011154952540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012051975638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000011404942564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2349,6 +2375,17 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000011848320216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011268953518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012030259352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2415,6 +2452,17 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000012746243378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012652155366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013023792518
 MonoBehaviour:
   m_ObjectHideFlags: 1

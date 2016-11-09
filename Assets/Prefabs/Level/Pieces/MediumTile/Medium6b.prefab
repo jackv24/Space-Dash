@@ -224,6 +224,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013203426194}
   - 82: {fileID: 82000014190329856}
+  - 114: {fileID: 114000012045295192}
   m_Layer: 8
   m_Name: BubblingGoop01 (2)
   m_TagString: Untagged
@@ -401,6 +402,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012791374856}
   - 82: {fileID: 82000013904116156}
+  - 114: {fileID: 114000011550492364}
   m_Layer: 8
   m_Name: AlienPumpSound
   m_TagString: Untagged
@@ -1935,6 +1937,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetDelta: {x: 0, y: -1}
+--- !u!114 &114000011550492364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013894679672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000012045295192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012222349256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012183779082
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013444207032}
   - 82: {fileID: 82000012945571370}
+  - 114: {fileID: 114000010420027960}
   m_Layer: 8
   m_Name: BubblingGoop01 (2)
   m_TagString: Untagged
@@ -1837,6 +1838,17 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000010420027960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013450272678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010450025094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1916,6 +1928,8 @@ MonoBehaviour:
   value: 20
   reset: 0
   pointsValue: 100
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000012108545728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2023,6 +2037,8 @@ MonoBehaviour:
   value: 20
   reset: 0
   pointsValue: 100
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013174234822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2038,6 +2054,8 @@ MonoBehaviour:
   value: 20
   reset: 0
   pointsValue: 100
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013311545184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2053,6 +2071,8 @@ MonoBehaviour:
   value: 20
   reset: 0
   pointsValue: 100
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013897198028
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010402749092}
   - 82: {fileID: 82000010158811862}
+  - 114: {fileID: 114000010662990096}
   m_Layer: 8
   m_Name: BubblingGoop01 (2)
   m_TagString: Untagged
@@ -2403,6 +2404,19 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+--- !u!114 &114000010662990096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010931309788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010923177380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2432,6 +2446,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011289389334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2447,6 +2463,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000011556906998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2567,6 +2585,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000012143420396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2582,6 +2602,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000012307162570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2727,6 +2749,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013012581310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2836,6 +2860,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000014259826586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2851,6 +2877,8 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!198 &198000010845556454
 ParticleSystem:
   m_ObjectHideFlags: 1
