@@ -15,8 +15,7 @@ public class CameraFollow : MonoBehaviour
 
     //For lerping between positions
     [Space()]
-    [Range(0f, 1f)]
-    [Tooltip("How closely the camera follows the target.\n1 follows perfectly, less than one is smooth.")]
+    [Tooltip("How quickly the camera follows the target.")]
     public float smoothing = 0.5f;
 
     [Header("Follow Ahead")]
@@ -85,14 +84,14 @@ public class CameraFollow : MonoBehaviour
 
                 if (!IsVisible(hit.point) && hit.point.y > minFloorHeight)
                 {
-                    targetPosition.z -= outStep;
+                    targetPosition.z -= outStep * Time.deltaTime;
                 }
                 else
-                    targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothIn);
+                    targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothIn * Time.deltaTime);
             }
 
             //Lerp camera position
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
         }
     }
 

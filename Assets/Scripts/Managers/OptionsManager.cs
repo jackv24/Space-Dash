@@ -36,6 +36,7 @@ public class OptionsManager : MonoBehaviour
         //Apply screen options
         Resolution res = currentOptions.screenResolution;
         Screen.SetResolution(res.width, res.height, currentOptions.isFullScreen);
+        QualitySettings.vSyncCount = currentOptions.vSyncOn ? 1 : 0;
 
         //Enable or disable components on camera for imageeffects
         Camera.main.GetComponent<Bloom>().enabled = currentOptions.hasBloom;
@@ -88,6 +89,7 @@ public class Options
     //Default screen resolution is the max available resolution
     public Resolution screenResolution = Screen.resolutions[Screen.resolutions.Length - 1];
     public bool isFullScreen = true;
+    public bool vSyncOn = true;
     
     //By default all image effects are on
     public bool hasBloom = true;

@@ -385,7 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 5}
-  smoothing: 0.1
+  smoothing: 10
   followAhead: 1
   distanceAhead: 8
   pullAheadSpeed: 2
@@ -396,8 +396,8 @@ MonoBehaviour:
     m_Bits: 256
   minFloorHeight: -10
   padding: 0.1
-  outStep: 0.1
-  smoothIn: 0.05
+  outStep: 8
+  smoothIn: 5
 --- !u!114 &114000013558996846
 MonoBehaviour:
   m_ObjectHideFlags: 1

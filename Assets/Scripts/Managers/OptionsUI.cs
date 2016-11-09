@@ -14,6 +14,7 @@ public class OptionsUI : MonoBehaviour
     private Resolution[] resolutions;
 
     public Toggle fullscreenToggle;
+    public Toggle vSyncToggle;
 
     [Header("Image Effects")]
     public Toggle bloomToggle;
@@ -92,6 +93,7 @@ public class OptionsUI : MonoBehaviour
         if(hasResolutionChanged)
             options.currentOptions.screenResolution = resolutions[resolutionDropdown.value];
         options.currentOptions.isFullScreen = fullscreenToggle.isOn;
+        options.currentOptions.vSyncOn = vSyncToggle.isOn;
 
         //Image effects
         options.currentOptions.hasBloom = bloomToggle.isOn;
@@ -149,6 +151,7 @@ public class OptionsUI : MonoBehaviour
         //Load options into UI elements
         resolutionDropdown.captionText.text = options.screenResolution.ToString();
         fullscreenToggle.isOn = options.isFullScreen;
+        vSyncToggle.isOn = options.vSyncOn;
 
         bloomToggle.isOn = options.hasBloom;
         vignetteToggle.isOn = options.hasVignette;
