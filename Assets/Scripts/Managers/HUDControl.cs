@@ -58,7 +58,8 @@ public class HUDControl : MonoBehaviour
     private int jumpAmount = 0;
     public float jumpPickupDelay = 1f;
 
-    private int bestScore;
+    [HideInInspector]
+    public int bestScore;
     private bool playedScoreSound = false;
 
     [Space()]

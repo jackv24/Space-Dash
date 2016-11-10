@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private bool isGamePlaying = false;
     public bool IsGamePlaying { get { return isGamePlaying; } }
 
+    public bool isGamePaused = false;
+
     void Awake()
     {
         if (instance)
