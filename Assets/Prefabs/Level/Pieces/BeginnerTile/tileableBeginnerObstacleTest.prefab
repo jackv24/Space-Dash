@@ -376,6 +376,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010394447274}
   - 82: {fileID: 82000011241416740}
+  - 114: {fileID: 114000012164679782}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -538,6 +539,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011891339618}
   - 82: {fileID: 82000011626753052}
+  - 114: {fileID: 114000014277035906}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -570,6 +572,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013334202734}
   - 82: {fileID: 82000012211076318}
+  - 114: {fileID: 114000013378194650}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -1230,6 +1233,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013287755436}
   - 82: {fileID: 82000011802606434}
+  - 114: {fileID: 114000011272458838}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -1279,6 +1283,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012866255750}
   - 82: {fileID: 82000012193661960}
+  - 114: {fileID: 114000013071352596}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -1326,6 +1331,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012053082914}
   - 82: {fileID: 82000013671255544}
+  - 114: {fileID: 114000010820632128}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -5142,6 +5148,17 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000010820632128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014139274428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010847001322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5211,6 +5228,17 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000011272458838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013857038434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000011301032532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5359,6 +5387,17 @@ MonoBehaviour:
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
+--- !u!114 &114000012164679782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011147852052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012288356510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5390,6 +5429,17 @@ MonoBehaviour:
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
+--- !u!114 &114000013071352596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013964424626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013087307066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5480,6 +5530,17 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000013378194650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011524112306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013384223900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5612,3 +5673,14 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000014277035906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011464037634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

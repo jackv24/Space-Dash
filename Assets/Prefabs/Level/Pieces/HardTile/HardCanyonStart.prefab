@@ -1568,9 +1568,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.6}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 0.8475572
 --- !u!58 &58000013455995348
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1633,9 +1633,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 10.8, y: 6.33}
+  m_Offset: {x: 10.944309, y: 6.33}
   serializedVersion: 2
-  m_Size: {x: 28.360369, y: 0.4680332}
+  m_Size: {x: 28.07175, y: 0.46803284}
 --- !u!61 &61000012905929776
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -2386,6 +2386,8 @@ MonoBehaviour:
   value: 10
   reset: 0
   pointsValue: 50
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013468566944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2401,6 +2403,8 @@ MonoBehaviour:
   value: 10
   reset: 0
   pointsValue: 50
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
 --- !u!114 &114000013545427520
 MonoBehaviour:
   m_ObjectHideFlags: 1

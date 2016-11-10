@@ -287,7 +287,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1518991557}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -295,31 +295,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.7425165
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.2668576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.37051022
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.35881677
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.15788317
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.84204847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000011904174496, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
         type: 2}
@@ -620,6 +620,16 @@ Prefab:
       propertyPath: possibleStrings.Array.data[17]
       value: My name is Dash!
       objectReference: {fileID: 0}
+    - target: {fileID: 224000013576496968, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.7000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013576496968, guid: a372273bfd7002445a118044f0c99a84,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -18.600002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372273bfd7002445a118044f0c99a84, type: 2}
   m_IsPrefabParent: 0
@@ -688,10 +698,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 47.5, y: -46.16, z: 0}
-  m_Children:
-  - {fileID: 1194285606}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1987068935 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013654189948, guid: d696361f2d618db4398a5835d7105c58,
@@ -710,7 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileLength: 50
   tiles:
-  - group: {fileID: 0}
+  - group: {fileID: 11400000, guid: 0d1be3c96cf66ad40a3d3388394e346e, type: 2}
     prefab: {fileID: 1000010654582984, guid: 686d8e7469590854297ad63fdbcced8b, type: 2}
     probability: 0.5
     minDistance: 0
@@ -774,14 +783,14 @@ MonoBehaviour:
     spacing: 6
     nextSpawnPos: 0
   - group: {fileID: 0}
-    prefab: {fileID: 1000011981416748, guid: 7104bf11b0d11054aac6ce8cb31e8c94, type: 2}
+    prefab: {fileID: 1000013310432838, guid: 57bffd42a6789134f95730fc244ef126, type: 2}
     probability: 0.5
     minDistance: 500
     maxDistance: 0
     spacing: 6
     nextSpawnPos: 0
   - group: {fileID: 0}
-    prefab: {fileID: 1000012331703460, guid: d286fb1f1a93b1946af48f8a9578023e, type: 2}
+    prefab: {fileID: 1000012770079008, guid: d286fb1f1a93b1946af48f8a9578023e, type: 2}
     probability: 0.5
     minDistance: 500
     maxDistance: 0

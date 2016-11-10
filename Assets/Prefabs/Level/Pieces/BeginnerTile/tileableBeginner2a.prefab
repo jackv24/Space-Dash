@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011334020950}
   - 82: {fileID: 82000013635541250}
+  - 114: {fileID: 114000012353912826}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -106,6 +107,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012190581872}
   - 82: {fileID: 82000012728222656}
+  - 114: {fileID: 114000013518894168}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -536,6 +538,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013062962916}
   - 82: {fileID: 82000013353923974}
+  - 114: {fileID: 114000014262842538}
   m_Layer: 0
   m_Name: CrytalCrackAudio
   m_TagString: Untagged
@@ -2465,6 +2468,17 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &114000012353912826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010848395202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012579238878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2551,6 +2565,17 @@ MonoBehaviour:
   pointsValue: 100
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
+--- !u!114 &114000013518894168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011053115610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013761373686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2655,3 +2680,14 @@ MonoBehaviour:
   damage: 100
   damageType: 0
   targetTag: Player
+--- !u!114 &114000014262842538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013649426254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
