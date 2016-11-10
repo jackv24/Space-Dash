@@ -85,6 +85,7 @@ public class PlayerControl : MonoBehaviour
 
     //Reference to the player's rigidbody
     private Rigidbody2D body;
+    private Vector2 oldVelocity;
     private PlayerStats playerStats;
 
     private CameraFollow cameraFollow;
@@ -106,6 +107,10 @@ public class PlayerControl : MonoBehaviour
         currentFallSpeed = floatingFallSpeed;
 
         StartCoroutine("UseOxygen");
+
+        //Subscribe to pause events
+        GameManager.instance.OnGamePaused += PausePhysics;
+        GameManager.instance.OnGameResumed += ResumePhysics;
     }
 
     void Update()
@@ -120,7 +125,7 @@ public class PlayerControl : MonoBehaviour
             anim.SetBool("grounded", isGrounded);
 
         //Can only move if player is alive
-        if (playerStats.IsAlive && GameManager.instance.IsGamePlaying && !GameManager.instance.isGamePaused)
+        if (playerStats.IsAlive && GameManager.instance.IsGamePlaying && !GameManager.instance.IsGamePaused)
         {
             //Get inputs every frame
             if (Input.GetButtonDown("Jump"))
@@ -200,6 +205,18 @@ public class PlayerControl : MonoBehaviour
             Time.timeScale = 5f;
         else if (Input.GetKeyUp(KeyCode.F))
             Time.timeScale = 1f;
+    }
+
+    void PausePhysics()
+    {
+        oldVelocity = body.velocity;
+        body.isKinematic = true;
+    }
+
+    void ResumePhysics()
+    {
+        body.isKinematic = false;
+        body.velocity = oldVelocity;
     }
 
     //Update with the physics engine (since it is using a rigidbody)

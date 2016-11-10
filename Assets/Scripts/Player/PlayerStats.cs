@@ -177,7 +177,7 @@ public class PlayerStats : MonoBehaviour
             yield return new WaitForSeconds(1/(float)depletionRate);
 
             //Only deplete oxygen if game is running
-            if(GameManager.instance.IsGamePlaying && !GameManager.instance.isGamePaused)
+            if(GameManager.instance.IsGamePlaying && !GameManager.instance.IsGamePaused)
                 RemoveOxygen(1);
         }
     }

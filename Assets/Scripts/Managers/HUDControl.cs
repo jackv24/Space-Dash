@@ -242,8 +242,11 @@ public class HUDControl : MonoBehaviour
     public void ShowPickupIcon(GameObject iconPrefab)
     {
         GameObject camera = GameObject.Find(pickupUICamera.name);
-        if(camera == null)
+        if (camera == null)
+        {
             camera = Instantiate(pickupUICamera);
+            camera.name = pickupUICamera.name;
+        }
 
         if (camera)
         {
@@ -255,8 +258,10 @@ public class HUDControl : MonoBehaviour
                 icon.SetActive(true);
             }
             else
+            {
                 icon = Instantiate(iconPrefab);
-
+                icon.name = iconPrefab.name;
+            }
         }
         else
             Debug.Log("No pickup UI camera prefab assigned to HUD Control");

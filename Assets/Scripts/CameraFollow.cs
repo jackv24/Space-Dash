@@ -34,7 +34,7 @@ public class CameraFollow : MonoBehaviour
     [Header("Zoom Out")]
     public bool zoomOut = false;
     public LayerMask groundLayer;
-    public float minFloorHeight = -20f;
+    public float maxZoomDistance = -40f;
     [Tooltip("How much padding there should be for detecting if ground is visible.")]
     [Range(0, 1f)]
     public float padding;
@@ -65,7 +65,7 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         //Make sure there is a target to follow
-        if (target && Time.timeScale > 0)
+        if (target && !GameManager.instance.IsGamePaused)
         {
             //Set position with offset
             targetPosition.x = target.position.x + offset.x;
@@ -82,9 +82,12 @@ public class CameraFollow : MonoBehaviour
             {
                 RaycastHit2D hit = Physics2D.Raycast(target.position, Vector2.down, 1000f, groundLayer);
 
-                if (!IsVisible(hit.point) && hit.point.y > minFloorHeight)
+                if (!IsVisible(hit.point))
                 {
                     targetPosition.z -= outStep * Time.deltaTime;
+
+                    if (targetPosition.z < maxZoomDistance)
+                        targetPosition.z = maxZoomDistance;
                 }
                 else
                     targetPosition.z = Mathf.Lerp(targetPosition.z, initialDistance, smoothIn * Time.deltaTime);

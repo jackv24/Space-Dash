@@ -2804,7 +2804,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013375508610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3802,7 +3802,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 5.5
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -3872,33 +3872,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
-  maxAccelerationDistance: 8000
+  maxAccelerationDistance: 10000
   acceleration:
     serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 14.980737
-      outSlope: 14.980737
+      inSlope: 20.018486
+      outSlope: 20.018486
       tangentMode: 10
-    - time: 0.99854547
-      value: 14.958947
-      inSlope: 14.980737
-      outSlope: 14.980737
+    - time: 1.003443
+      value: 20.08741
+      inSlope: 20.018486
+      outSlope: 20.018486
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   autoRun: 1
-  jumpForce: 18
+  jumpForce: 22
   jumpAmount: 2
   jumpsLeft: 0
   jumpResetDelay: 0.5
-  floatingFallSpeed: 5
+  floatingFallSpeed: 9
   floatingOxygenUsage: 10
   isFloating: 0
   startBoostDelay: 0.25
-  maxHeight: 30
+  maxHeight: 40
   floatingParticles: {fileID: 1000014264063490}
   groundLayer:
     serializedVersion: 2

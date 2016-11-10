@@ -9,7 +9,30 @@ public class GameManager : MonoBehaviour
     private bool isGamePlaying = false;
     public bool IsGamePlaying { get { return isGamePlaying; } }
 
-    public bool isGamePaused = false;
+    private bool isGamePaused = false;
+    public bool IsGamePaused
+    {
+        get { return isGamePaused; }
+        set
+        {
+            isGamePaused = value;
+
+            if (isGamePaused)
+            {
+                if (OnGamePaused != null)
+                    OnGamePaused();
+            }
+            else
+            {
+                if (OnGameResumed != null)
+                    OnGameResumed();
+            }
+        }
+    }
+
+    public delegate void Event();
+    public event Event OnGamePaused;
+    public event Event OnGameResumed;
 
     void Awake()
     {
