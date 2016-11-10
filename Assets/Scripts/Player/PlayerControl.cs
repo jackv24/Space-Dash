@@ -211,6 +211,7 @@ public class PlayerControl : MonoBehaviour
     {
         oldVelocity = body.velocity;
         body.isKinematic = true;
+        isFloating = false;
     }
 
     void ResumePhysics()

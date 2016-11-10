@@ -65,7 +65,7 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         //Make sure there is a target to follow
-        if (target && !GameManager.instance.IsGamePaused)
+        if (target && (!GameManager.instance || !GameManager.instance.IsGamePaused))
         {
             //Set position with offset
             targetPosition.x = target.position.x + offset.x;
