@@ -22,6 +22,7 @@ public class HUDControl : MonoBehaviour
     [Space()]
     [Tooltip("The slider to display oxygen level.")]
     public Slider oxygenSlider;
+    public float o2IncreaseDelay = 1f;
     public AnimationCurve o2IncreaseAnim;
     public float o2IncreaseAnimLength = 0.5f;
     private Vector2 initialO2BarSize;
@@ -49,11 +50,16 @@ public class HUDControl : MonoBehaviour
     public Gradient pickupTextColor;
 
     [Space()]
+    public GameObject pickupUICamera;
+
+    [Space()]
     public GameObject jumpsPanel;
     private List<Image> jumpsIcons = new List<Image>();
     private int jumpAmount = 0;
+    public float jumpPickupDelay = 1f;
 
-    private int bestScore;
+    [HideInInspector]
+    public int bestScore;
     private bool playedScoreSound = false;
 
     [Space()]
@@ -110,7 +116,7 @@ public class HUDControl : MonoBehaviour
         }
 
         if (jumpsPanel)
-            UpdateJumpAmount();
+            StartCoroutine("DelayJumpIncrease", 0);
     }
 
     void Update()
@@ -233,6 +239,29 @@ public class HUDControl : MonoBehaviour
         }
     }
 
+    public void ShowPickupIcon(GameObject iconPrefab)
+    {
+        GameObject camera = GameObject.Find(pickupUICamera.name);
+        if(camera == null)
+            camera = Instantiate(pickupUICamera);
+
+        if (camera)
+        {
+            GameObject icon = GameObject.Find(iconPrefab.name);
+
+            if (icon)
+            {
+                icon.SetActive(false);
+                icon.SetActive(true);
+            }
+            else
+                icon = Instantiate(iconPrefab);
+
+        }
+        else
+            Debug.Log("No pickup UI camera prefab assigned to HUD Control");
+    }
+
     IEnumerator AnimatePickupText(RectTransform rect)
     {
         float counter = 0;
@@ -259,6 +288,13 @@ public class HUDControl : MonoBehaviour
 
     void UpdateJumpAmount()
     {
+        StartCoroutine("DelayJumpIncrease", jumpPickupDelay);
+    }
+
+    IEnumerator DelayJumpIncrease(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         //Get the existing jump icon to copy
         GameObject icon = jumpsPanel.transform.GetChild(0).gameObject;
         icon.SetActive(false);
@@ -288,6 +324,8 @@ public class HUDControl : MonoBehaviour
 
         RectTransform bar = oxygenSlider.GetComponent<RectTransform>();
         Vector2 initialSize = bar.sizeDelta;
+
+        yield return new WaitForSeconds(o2IncreaseDelay);
 
         while (animTime <= animationTime)
         {

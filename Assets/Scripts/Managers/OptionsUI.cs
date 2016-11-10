@@ -136,12 +136,20 @@ public class OptionsUI : MonoBehaviour
         {
             bool isVisible = !pauseMenu.activeSelf;
 
-            pauseMenu.SetActive(isVisible);
+            GameManager.instance.isGamePaused = isVisible;
 
-            Time.timeScale = isVisible ? 0 : 1f;
+            pauseMenu.SetActive(isVisible);
 
             backgroundPanel.SetActive(isVisible);
         }
+    }
+
+    public void ResetPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+
+        if (HUDControl.instance)
+            HUDControl.instance.bestScore = 0;
     }
 
     public void LoadOptions()

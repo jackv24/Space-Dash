@@ -120,7 +120,7 @@ public class PlayerControl : MonoBehaviour
             anim.SetBool("grounded", isGrounded);
 
         //Can only move if player is alive
-        if (playerStats.IsAlive && GameManager.instance.IsGamePlaying)
+        if (playerStats.IsAlive && GameManager.instance.IsGamePlaying && !GameManager.instance.isGamePaused)
         {
             //Get inputs every frame
             if (Input.GetButtonDown("Jump"))
