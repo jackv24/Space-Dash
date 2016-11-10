@@ -41,7 +41,11 @@ public class OptionsManager : MonoBehaviour
         //Enable or disable components on camera for imageeffects
         Camera.main.GetComponent<Bloom>().enabled = currentOptions.hasBloom;
         Camera.main.GetComponent<VignetteAndChromaticAberration>().enabled = currentOptions.hasVignette;
-        Camera.main.GetComponent<Antialiasing>().enabled = currentOptions.hasAntialiasing;
+
+        //Set aa on all cameras
+        Antialiasing[] aaObjects = FindObjectsOfType<Antialiasing>();
+        foreach (var aa in aaObjects)
+            aa.enabled = currentOptions.hasAntialiasing;
 
         //If there is a soundmanager
         if (SoundManager.instance)

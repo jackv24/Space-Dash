@@ -720,6 +720,7 @@ MonoBehaviour:
   player: {fileID: 0}
   distanceText: {fileID: 0}
   oxygenSlider: {fileID: 114000011372768244}
+  o2IncreaseDelay: 1.8
   o2IncreaseAnim:
     serializedVersion: 2
     m_Curve:
@@ -855,7 +856,10 @@ MonoBehaviour:
     atime7: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
+  pickupUICamera: {fileID: 1000011052528064, guid: af95a6fa9ae7b79458b483be36f4679a,
+    type: 2}
   jumpsPanel: {fileID: 1000011540794148}
+  jumpPickupDelay: 1.8
   debugText: {fileID: 114000012126233270}
   startText: {fileID: 114000011906398490}
   fadeDuration: 0.25
@@ -915,9 +919,9 @@ MonoBehaviour:
   - I can do this
   - I just want to get home to my family
   - stay alive and collect items to boost your score
-  - my mother named me dash, and I've ended up staring in a game called 'Space Dash'
+  - My name is Dash!
   - Smash that weak high score
-  - how could you possilbly tell what I look like while I have this suit on
+  - Thanks Richard for this awesome space suit
   - where did I put my hawaiian shirt
   - dont get close to that purple shit
 --- !u!114 &114000012656225472
@@ -1560,9 +1564,9 @@ RectTransform:
   - {fileID: 224000014259921912}
   m_Father: {fileID: 224000010205706106}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1235, y: -30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -30}
   m_SizeDelta: {x: 150, y: 32}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &224000011882214198

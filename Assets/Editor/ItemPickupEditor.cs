@@ -31,5 +31,8 @@ public class ItemPickupEditor : Editor
         t.pointsValue = EditorGUILayout.IntField("Points Value", t.pointsValue);
         t.pickupTextColor = EditorGUILayout.ColorField("Pickup Text Color", t.pickupTextColor);
         t.pickupTextScale = EditorGUILayout.FloatField("Text Scale", t.pickupTextScale);
+
+        EditorGUILayout.Space();
+        t.pickupIconPrefab = (GameObject)EditorGUILayout.ObjectField("Icon Prefab", t.pickupIconPrefab, typeof(GameObject), false);
     }
 }

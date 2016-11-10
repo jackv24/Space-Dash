@@ -18,6 +18,7 @@ public class GameSound : MonoBehaviour
 
     void UpdateVolume(float volume)
     {
-        source.volume = volume;
+        if(source)
+            source.volume = volume;
     }
 }
