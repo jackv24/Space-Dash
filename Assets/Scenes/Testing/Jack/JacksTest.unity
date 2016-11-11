@@ -480,6 +480,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82000012250461378, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013379846038, guid: 68505410bd830694c9c95ce9381f3a19,
+        type: 2}
+      propertyPath: sounds.buttonClick.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd9c4234cac46a544b3f25db6987de9b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68505410bd830694c9c95ce9381f3a19, type: 2}
   m_IsPrefabParent: 0
@@ -3151,52 +3161,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1001 &141264066
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012063396552, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010311754482, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-      propertyPath: m_Name
-      value: OxygenCan (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &144148792
 GameObject:
   m_ObjectHideFlags: 0

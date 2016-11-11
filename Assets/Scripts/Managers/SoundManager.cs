@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class SoundManager : MonoBehaviour
     public float gameVolume = 1f;
     public AudioSource gameSource;
     public AudioSource playerLoopSource;
+    private GameSounds.Clip playerLoopClip;
 
     [System.Serializable]
     public class GameSounds
@@ -46,6 +49,8 @@ public class SoundManager : MonoBehaviour
 
         public Clip[] deaths;
         public Clip RandomDeath { get { return deaths[Random.Range(0, deaths.Length)]; } }
+
+        public Clip buttonClick;
     }
     public GameSounds sounds;
 
@@ -61,6 +66,15 @@ public class SoundManager : MonoBehaviour
     {
         //Play looping background music on start
         StartBackgroundMusic();
+    }
+
+    void Update()
+    {
+        //Play sound whenever a button is clicked
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.GetComponent<Button>() != null)
+        {
+            PlaySound(sounds.buttonClick);
+        }
     }
 
     public void StartBackgroundMusic()
@@ -85,6 +99,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
+        playerLoopClip = clip;
         playerLoopSource.clip = clip.clip;
         playerLoopSource.volume = clip.volume * gameVolume;
         playerLoopSource.Play();
@@ -101,6 +116,9 @@ public class SoundManager : MonoBehaviour
         gameVolume = value;
         gameSource.volume = value;
         playerLoopSource.volume = value;
+
+        if (playerLoopClip != null)
+            playerLoopSource.volume *= playerLoopClip.volume;
 
         //Call events from game audio source scripts
         if(OnGameVolumeChanged != null)
