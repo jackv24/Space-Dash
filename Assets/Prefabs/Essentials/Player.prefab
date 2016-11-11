@@ -3965,7 +3965,7 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   respawnTime: 1
-  returnControlTime: 1
+  returnControlTime: 5
   currentOxygen: 100
   maxOxygen: 100
   oldMaxOxygen: 0
@@ -6777,11 +6777,11 @@ ParticleSystem:
         m_Curve:
         - time: 0
           value: 1
-          inSlope: 0
-          outSlope: 0
+          inSlope: 4.467949
+          outSlope: 4.467949
           tangentMode: 0
         - time: 1
-          value: 0
+          value: 1
           inSlope: -2
           outSlope: -2
           tangentMode: 0
@@ -6845,7 +6845,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
   ForceModule:
-    enabled: 0
+    enabled: 1
     x:
       scalar: 0
       maxCurve:
@@ -6917,7 +6917,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 0
+      scalar: 12
       maxCurve:
         serializedVersion: 2
         m_Curve:
