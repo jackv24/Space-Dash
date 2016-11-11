@@ -82,7 +82,7 @@ MonoBehaviour:
     minOffset: {x: -20, y: -5, z: 0}
     maxOffset: {x: 20, y: 0, z: 10}
   - prefab: {fileID: 1000012882047274, guid: e9169a360cb287240b1fe5bc4c484fa1, type: 2}
-    probability: 1
+    probability: 0.2
     minDistance: 0
     maxDistance: 0
     maxRotation: 360
@@ -302,49 +302,56 @@ MonoBehaviour:
     probability: 0.1
     minDistance: 500
     maxDistance: 0
-    spacing: 6
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: b12334d5f2c4cdf428498141b5a1611b, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.1
+    minDistance: 100
+    maxDistance: 0
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 28588ecd0ea3eff4b9e326f6dbbf4e1f, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 1000
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 0155669530ac02d40bd845fa9212a72a, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 1500
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 38311e6d94c6dcf4982fa89488c288b9, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 2000
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: d2da0c625f6497b47b9b25d0f45d50bc, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 2000
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 62910b45d260b74479b8d01d23abe0a3, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 2000
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c, type: 2}
     prefab: {fileID: 0}
     probability: 0.1
     minDistance: 2500
     maxDistance: 0
-    spacing: 6
+    spacing: 12
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 0d1be3c96cf66ad40a3d3388394e346e, type: 2}
     prefab: {fileID: 0}
@@ -353,7 +360,7 @@ MonoBehaviour:
     maxDistance: 0
     spacing: 50
     nextSpawnPos: 0
-  startGroup: {fileID: 11400000, guid: 862b318c9f8f3634d89548f59c8b291c, type: 2}
+  startGroup: {fileID: 11400000, guid: 1ebc35e581d8a7e4d9eb77173c3d0097, type: 2}
   player: {fileID: 0}
   lengthAhead: 2
   maxLoadedTiles: 5
