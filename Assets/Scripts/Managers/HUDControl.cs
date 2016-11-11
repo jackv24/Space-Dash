@@ -44,7 +44,7 @@ public class HUDControl : MonoBehaviour
 
     [Space()]
     public Text scorePickupText;
-    private string scorePickupTextString;
+    public Text oxygenPickupText;
     public AnimationCurve scorePickupYAnim;
     public float pickupAnimLength = 2f;
     public Gradient pickupTextColor;
@@ -90,8 +90,6 @@ public class HUDControl : MonoBehaviour
             oxygenTextString = oxygenText.text;
         if (scoreText)
             scoreTextString = scoreText.text;
-        if (scorePickupText)
-            scorePickupTextString = scorePickupText.text;
 
         //Load data
         bestDistance = PlayerPrefs.GetFloat("BestDistance", 0);
@@ -102,6 +100,12 @@ public class HUDControl : MonoBehaviour
         {
             playerStats = player.GetComponent<PlayerStats>();
             playerControl = player.GetComponent<PlayerControl>();
+
+            //Fade start game text back in on reset
+            playerStats.OnReset += delegate {
+                foreach (Text text in startText.GetComponentsInChildren<Text>())
+                    text.CrossFadeAlpha(1f, fadeDuration, false);
+            };
         }
 
         //Register event handler for oxygen bar increase
@@ -200,11 +204,6 @@ public class HUDControl : MonoBehaviour
                 foreach(Text text in startText.GetComponentsInChildren<Text>())
                     text.CrossFadeAlpha(0f, fadeDuration, false);
             }
-            else
-            {
-                foreach (Text text in startText.GetComponentsInChildren<Text>())
-                    text.CrossFadeAlpha(1f, fadeDuration, false);
-            }
         }
         else
             Debug.Log("No player transform assigned to HUDControl");
@@ -230,8 +229,24 @@ public class HUDControl : MonoBehaviour
 
             textRect.position = screenPos;
             textRect.localScale *= scale;
-            text.text = string.Format(scorePickupTextString, value);
+            text.text = string.Format(text.text, value);
             text.color = color;
+
+            textObj.SetActive(true);
+
+            StartCoroutine("AnimatePickupText", textRect);
+        }
+    }
+
+    public void ShowOxygenText(int value)
+    {
+        if (oxygenPickupText)
+        {
+            GameObject textObj = (GameObject)Instantiate(oxygenPickupText.gameObject, oxygenPickupText.transform.parent);
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
+            Text text = textObj.GetComponent<Text>();
+
+            text.text = string.Format(text.text, value);
 
             textObj.SetActive(true);
 

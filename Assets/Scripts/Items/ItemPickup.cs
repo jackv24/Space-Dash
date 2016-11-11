@@ -41,6 +41,7 @@ public class ItemPickup : MonoBehaviour
                     stats.AddOxygen(value);
                     if (SoundManager.instance)
                         SoundManager.instance.PlaySound(SoundManager.instance.sounds.pickupOxygen);
+                    HUDControl.instance.ShowOxygenText(value);
                     break;
                 case Type.ExtraJump:
                     control.AddJump(reset);
@@ -57,7 +58,7 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
-            HUDControl.instance.ShowPickupText(value, transform.position, pickupTextColor, pickupTextScale);
+            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale);
 
             if (pickupIconPrefab)
                 HUDControl.instance.ShowPickupIcon(pickupIconPrefab);

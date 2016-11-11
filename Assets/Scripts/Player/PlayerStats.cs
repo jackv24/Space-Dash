@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour
     [Space()]
     [Tooltip("How many second after dying until the player respawns.")]
     public float respawnTime = 1f;
+    [Tooltip("How long after respawning until the player can assume control again.")]
+    public float returnControlTime = 0.5f;
+    private float nextControlTime = 0;
 
     [Header("Oxygen")]
     public int currentOxygen = 100;
@@ -34,7 +37,7 @@ public class PlayerStats : MonoBehaviour
     public float minHeight = -20f;
 
     //Returns true if health and oxygen are above zero, false otherwise
-    public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0) ? true : false; } }
+    public bool IsAlive { get { return (currentHealth > 0 && currentOxygen > 0 && Time.time > nextControlTime) ? true : false; } }
     private bool hasAlreadyDied = false;
 
     [Space()]
@@ -222,10 +225,6 @@ public class PlayerStats : MonoBehaviour
         if (playerMesh)
             playerMesh.SetActive(true);
 
-        //Invoke OnReset events
-        if (OnReset != null)
-            OnReset();
-
         //Start oxygen depletion (should have stopped when the player's oxygen reached 0)
         StopCoroutine("DepleteOxygen");
         StartCoroutine("DepleteOxygen");
@@ -238,5 +237,13 @@ public class PlayerStats : MonoBehaviour
         //Stop game on respawn
         GameManager.instance.StopGame();
         GameManager.instance.ResetGame();
+
+        nextControlTime = Time.time + returnControlTime;
+
+        //Only reset after player has gained control
+        yield return new WaitForSeconds(returnControlTime);
+        //Invoke OnReset events
+        if (OnReset != null)
+            OnReset();
     }
 }
