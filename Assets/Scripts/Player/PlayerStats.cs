@@ -39,6 +39,8 @@ public class PlayerStats : MonoBehaviour
 
     [Space()]
     public Animator anim;
+    public GameObject deathParticles;
+    public GameObject playerMesh;
 
     private Vector3 initialPosition;
 
@@ -48,6 +50,9 @@ public class PlayerStats : MonoBehaviour
         initialPosition = transform.position;
 
         startOxygen = maxOxygen;
+
+        if (deathParticles)
+            deathParticles.SetActive(false);
 
         StartCoroutine("DepleteOxygen");
     }
@@ -155,6 +160,12 @@ public class PlayerStats : MonoBehaviour
                 SoundManager.instance.SetPlayerLoop(null);
             }
 
+            if (deathParticles)
+                deathParticles.SetActive(true);
+
+            if (playerMesh)
+                playerMesh.SetActive(false);
+
             //Start respawn countdown
             StartCoroutine("Respawn", respawnTime);
 
@@ -204,6 +215,12 @@ public class PlayerStats : MonoBehaviour
         maxOxygen = startOxygen;
         currentOxygen = maxOxygen;
         score = 0;
+
+        if (deathParticles)
+            deathParticles.SetActive(false);
+
+        if (playerMesh)
+            playerMesh.SetActive(true);
 
         //Invoke OnReset events
         if (OnReset != null)

@@ -136,7 +136,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectMaterial: {fileID: 2100000, guid: 003718ffc9767d2498908c71f2926f4a, type: 2}
   cutoffAmount: 0
-  transitionTime: 0.5
-  waitTime: 0.5
+  transitionTime: 0.25
+  waitTime: 0.25
   playStart: 1
   playEnd: 1
 --- !u!114 &114000011700119368
@@ -394,7 +394,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  minFloorHeight: -10
+  maxZoomDistance: -40
   padding: 0.1
   outStep: 8
   smoothIn: 5
