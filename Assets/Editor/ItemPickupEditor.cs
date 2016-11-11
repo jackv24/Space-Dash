@@ -5,34 +5,55 @@ using UnityEditor;
 [CustomEditor(typeof(ItemPickup))]
 public class ItemPickupEditor : Editor
 {
+    SerializedProperty typeProp;
+    SerializedProperty valueProp;
+    SerializedProperty resetProp;
+    SerializedProperty pointsProp;
+    SerializedProperty colorProp;
+    SerializedProperty scaleProp;
+    SerializedProperty prefabProp;
+
+    void OnEnable()
+    {
+        typeProp = serializedObject.FindProperty("type");
+        valueProp = serializedObject.FindProperty("value");
+        resetProp = serializedObject.FindProperty("reset");
+        pointsProp = serializedObject.FindProperty("pointsValue");
+        colorProp = serializedObject.FindProperty("pickupTextColor");
+        scaleProp = serializedObject.FindProperty("pickupTextScale");
+        prefabProp = serializedObject.FindProperty("pickupIconPrefab");
+    }
+
     public override void OnInspectorGUI()
     {
-        ItemPickup t = (ItemPickup)target;
+        serializedObject.Update();
 
-        t.type = (ItemPickup.Type)EditorGUILayout.EnumPopup("Type", t.type);
+        EditorGUILayout.PropertyField(typeProp, new GUIContent("Type"));
 
         EditorGUILayout.Space();
-        switch (t.type)
+        switch ((ItemPickup.Type)typeProp.enumValueIndex)
         {
             case ItemPickup.Type.Health:
             case ItemPickup.Type.Oxygen:
-                t.value = EditorGUILayout.IntField("Value", t.value);
+                EditorGUILayout.PropertyField(valueProp, new GUIContent("Value"));
                 break;
             case ItemPickup.Type.ExtraJump:
-                t.reset = EditorGUILayout.Toggle("Reset Jumps", t.reset);
+                EditorGUILayout.PropertyField(resetProp, new GUIContent("Reset Jumps"));
                 break;
             case ItemPickup.Type.ExtraOxygen:
-                t.value = EditorGUILayout.IntField("Value", t.value);
-                t.reset = EditorGUILayout.Toggle("Reset Oxygen", t.reset);
+                EditorGUILayout.PropertyField(valueProp, new GUIContent("Value"));
+                EditorGUILayout.PropertyField(resetProp, new GUIContent("Reset Oxygen"));
                 break;
         }
 
         EditorGUILayout.Space();
-        t.pointsValue = EditorGUILayout.IntField("Points Value", t.pointsValue);
-        t.pickupTextColor = EditorGUILayout.ColorField("Pickup Text Color", t.pickupTextColor);
-        t.pickupTextScale = EditorGUILayout.FloatField("Text Scale", t.pickupTextScale);
+        EditorGUILayout.PropertyField(pointsProp, new GUIContent("Points Value"));
+        EditorGUILayout.PropertyField(colorProp, new GUIContent("Pickup Text Color"));
+        EditorGUILayout.PropertyField(scaleProp, new GUIContent("Pickup Text Scale"));
 
         EditorGUILayout.Space();
-        t.pickupIconPrefab = (GameObject)EditorGUILayout.ObjectField("Icon Prefab", t.pickupIconPrefab, typeof(GameObject), false);
+        EditorGUILayout.PropertyField(prefabProp, new GUIContent("Pickup Icon Prefab"));
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
