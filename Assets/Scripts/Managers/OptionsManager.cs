@@ -31,6 +31,11 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        ApplyOptions();
+    }
+
     public void ApplyOptions()
     {
         //Apply screen options

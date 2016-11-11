@@ -44,8 +44,9 @@ public class HUDControl : MonoBehaviour
 
     [Space()]
     public Text scorePickupText;
-    public Text oxygenPickupText;
     public AnimationCurve scorePickupYAnim;
+    public Text oxygenPickupText;
+    public AnimationCurve oxygenPickupYAnim;
     public float pickupAnimLength = 2f;
     public Gradient pickupTextColor;
 
@@ -234,7 +235,7 @@ public class HUDControl : MonoBehaviour
 
             textObj.SetActive(true);
 
-            StartCoroutine("AnimatePickupText", textRect);
+            StartCoroutine("AnimateScoreText", textRect);
         }
     }
 
@@ -250,7 +251,7 @@ public class HUDControl : MonoBehaviour
 
             textObj.SetActive(true);
 
-            StartCoroutine("AnimatePickupText", textRect);
+            StartCoroutine("AnimateOxygenText", textRect);
         }
     }
 
@@ -282,7 +283,7 @@ public class HUDControl : MonoBehaviour
             Debug.Log("No pickup UI camera prefab assigned to HUD Control");
     }
 
-    IEnumerator AnimatePickupText(RectTransform rect)
+    IEnumerator AnimateScoreText(RectTransform rect)
     {
         float counter = 0;
         Vector2 initialPos = rect.position;
@@ -297,6 +298,30 @@ public class HUDControl : MonoBehaviour
 
             Vector2 newPos = initialPos;
             newPos.y += scorePickupYAnim.Evaluate(counter / pickupAnimLength);
+
+            rect.position = newPos;
+
+            text.color = startColor * pickupTextColor.Evaluate(counter / pickupAnimLength);
+        }
+
+        Destroy(rect.gameObject);
+    }
+
+    IEnumerator AnimateOxygenText(RectTransform rect)
+    {
+        float counter = 0;
+        Vector2 initialPos = rect.position;
+        Text text = rect.GetComponent<Text>();
+        Color startColor = text.color;
+
+        while (counter < pickupAnimLength)
+        {
+            yield return new WaitForEndOfFrame();
+
+            counter += Time.deltaTime;
+
+            Vector2 newPos = initialPos;
+            newPos.y += oxygenPickupYAnim.Evaluate(counter / pickupAnimLength);
 
             rect.position = newPos;
 

@@ -747,14 +747,14 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - time: 0.1
-      value: 20
-      inSlope: 85
-      outSlope: 85
+      value: 50
+      inSlope: 197.5
+      outSlope: 197.5
       tangentMode: 10
     - time: 0.5
       value: 8
-      inSlope: -13
-      outSlope: -13
+      inSlope: -50.5
+      outSlope: -50.5
       tangentMode: 10
     - time: 1
       value: 10
@@ -813,7 +813,6 @@ MonoBehaviour:
   scoreText: {fileID: 114000013875135338}
   highScoreText: {fileID: 114000011250013312}
   scorePickupText: {fileID: 114000013143389584}
-  oxygenPickupText: {fileID: 114000013167402198}
   scorePickupYAnim:
     serializedVersion: 2
     m_Curve:
@@ -826,6 +825,33 @@ MonoBehaviour:
       value: 50
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  oxygenPickupText: {fileID: 114000013167402198}
+  oxygenPickupYAnim:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0.20248502
+      outSlope: 0.20248502
+      tangentMode: 0
+    - time: 0.3384735
+      value: 0.15950346
+      inSlope: 1.873076
+      outSlope: 1.873076
+      tangentMode: 0
+    - time: 0.75
+      value: 30
+      inSlope: 1.077652
+      outSlope: 1.077652
+      tangentMode: 0
+    - time: 1
+      value: 30
+      inSlope: 0.021680478
+      outSlope: 0.021680478
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

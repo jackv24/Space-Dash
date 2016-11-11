@@ -137,6 +137,7 @@ public class OptionsUI : MonoBehaviour
             bool isVisible = !pauseMenu.activeSelf;
 
             GameManager.instance.IsGamePaused = isVisible;
+            SoundManager.instance.playerLoopSource.enabled = !isVisible;
 
             pauseMenu.SetActive(isVisible);
 
