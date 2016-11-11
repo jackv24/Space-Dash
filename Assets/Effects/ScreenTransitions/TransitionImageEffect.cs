@@ -5,6 +5,8 @@ public class TransitionImageEffect : MonoBehaviour
 {
     public Material effectMaterial;
 
+    public Texture2D[] transitionTextures;
+
     [Space()]
     [Range(0f, 1f)]
     public float cutoffAmount = 0f;
@@ -34,6 +36,8 @@ public class TransitionImageEffect : MonoBehaviour
 
     public void PlayTransition()
     {
+        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[Random.Range(0, transitionTextures.Length)]);
+
         StartCoroutine("Transition");
     }
 
