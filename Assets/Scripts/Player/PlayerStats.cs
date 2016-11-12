@@ -47,6 +47,13 @@ public class PlayerStats : MonoBehaviour
 
     private Vector3 initialPosition;
 
+    private PlayerControl playerControl;
+
+    void Awake()
+    {
+        playerControl = GetComponent<PlayerControl>();
+    }
+
     void Start()
     {
         //Cache initial position
@@ -181,6 +188,8 @@ public class PlayerStats : MonoBehaviour
             //Save high score
             if (Score > PlayerPrefs.GetInt("BestScore"))
                 PlayerPrefs.SetInt("BestScore", Score);
+
+            playerControl.PausePhysics();
         }
     }
 
@@ -209,6 +218,8 @@ public class PlayerStats : MonoBehaviour
 
             yield return new WaitForSeconds(effect.transitionTime);
         }
+
+        playerControl.ResumePhysics();
 
         //Reset position
         transform.position = initialPosition;

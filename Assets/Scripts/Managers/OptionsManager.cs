@@ -54,6 +54,8 @@ public class OptionsManager : MonoBehaviour
         foreach (var aa in aaObjects)
             aa.enabled = currentOptions.hasAntialiasing;
 
+        QualitySettings.SetQualityLevel(currentOptions.qualityLevel, true);
+
         //If there is a soundmanager
         if (SoundManager.instance)
         {
@@ -108,6 +110,9 @@ public class Options
     public bool hasBloom = true;
     public bool hasVignette = true;
     public bool hasAntialiasing = true;
+
+    //Max quality by default
+    public int qualityLevel = QualitySettings.names.Length - 1;
 #endif
 
 #if UNITY_ANDROID || UNITY_IOS
@@ -115,6 +120,9 @@ public class Options
     public bool hasBloom = false;
     public bool hasVignette = false;
     public bool hasAntialiasing = false;
+
+    //Worse quality by default on mobile
+    public int qualityLevel = 0;
 #endif
 
     //Volume is max by default
