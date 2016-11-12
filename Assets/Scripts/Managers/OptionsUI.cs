@@ -20,6 +20,7 @@ public class OptionsUI : MonoBehaviour
     public Toggle vSyncToggle;
 
     [Header("Image Effects")]
+    public Dropdown qualityDropdown;
     public Toggle bloomToggle;
     public Toggle vignetteToggle;
     public Toggle antialiasingToggle;
@@ -76,6 +77,11 @@ public class OptionsUI : MonoBehaviour
         vSyncToggle.gameObject.SetActive(false);
 #endif
 
+        qualityDropdown.options.Clear();
+
+        foreach (string name in QualitySettings.names)
+            qualityDropdown.options.Add(new Dropdown.OptionData(name));
+
         //Cache text for formatting
         soundTextString = soundText.text;
         musicTextString = musicText.text;
@@ -114,6 +120,8 @@ public class OptionsUI : MonoBehaviour
         options.currentOptions.hasBloom = bloomToggle.isOn;
         options.currentOptions.hasVignette = vignetteToggle.isOn;
         options.currentOptions.hasAntialiasing = antialiasingToggle.isOn;
+
+        options.currentOptions.qualityLevel = qualityDropdown.value;
 
         //Sounds
         options.currentOptions.musicVolume = musicSlider.value;
@@ -186,6 +194,8 @@ public class OptionsUI : MonoBehaviour
         bloomToggle.isOn = options.hasBloom;
         vignetteToggle.isOn = options.hasVignette;
         antialiasingToggle.isOn = options.hasAntialiasing;
+
+        qualityDropdown.value = options.qualityLevel;
 
         musicSlider.value = options.musicVolume;
         soundSlider.value = options.gameVolume;
