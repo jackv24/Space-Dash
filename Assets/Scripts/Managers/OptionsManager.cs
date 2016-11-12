@@ -39,9 +39,11 @@ public class OptionsManager : MonoBehaviour
     public void ApplyOptions()
     {
         //Apply screen options
+#if !UNITY_ANDROID && !UNITY_IOS
         Resolution res = currentOptions.screenResolution;
         Screen.SetResolution(res.width, res.height, currentOptions.isFullScreen);
         QualitySettings.vSyncCount = currentOptions.vSyncOn ? 1 : 0;
+#endif
 
         //Enable or disable components on camera for imageeffects
         Camera.main.GetComponent<Bloom>().enabled = currentOptions.hasBloom;
@@ -96,14 +98,24 @@ public class OptionsManager : MonoBehaviour
 public class Options
 {
     //Default screen resolution is the max available resolution
+
+#if !UNITY_ANDROID && !UNITY_IOS
     public Resolution screenResolution = Screen.resolutions[Screen.resolutions.Length - 1];
     public bool isFullScreen = true;
     public bool vSyncOn = true;
-    
+
     //By default all image effects are on
     public bool hasBloom = true;
     public bool hasVignette = true;
     public bool hasAntialiasing = true;
+#endif
+
+#if UNITY_ANDROID || UNITY_IOS
+    //By default all image effects are off for mobile
+    public bool hasBloom = false;
+    public bool hasVignette = false;
+    public bool hasAntialiasing = false;
+#endif
 
     //Volume is max by default
     public float musicVolume = 1f;

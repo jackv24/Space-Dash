@@ -128,6 +128,13 @@ public class ItemSpawn : MonoBehaviour
                 item.transform.localScale *= levelItem.scale;
 
                 distance += levelItem.chainSpacing;
+
+#if UNITY_ANDROID || UNITY_IOS
+                Light[] lights = item.GetComponentsInChildren<Light>();
+
+                foreach (Light light in lights)
+                    light.enabled = false;
+#endif
             }
 
             //Prevent items from spawnng for some time, if needed

@@ -9,9 +9,12 @@ public class OptionsUI : MonoBehaviour
     public GameObject pauseMenu;
 
     [Header("Resolution")]
+    public Text resolutionText;
     public Dropdown resolutionDropdown;
+#if !UNITY_ANDROID && !UNITY_IOS
     private bool hasResolutionChanged = false;
     private Resolution[] resolutions;
+#endif
 
     public Toggle fullscreenToggle;
     public Toggle vSyncToggle;
@@ -40,7 +43,9 @@ public class OptionsUI : MonoBehaviour
     void Start()
     {
         //Add listeners to events
+#if !UNITY_ANDROID && !UNITY_IOS
         resolutionDropdown.onValueChanged.AddListener(delegate { hasResolutionChanged = true; });
+#endif
 
         musicSlider.onValueChanged.AddListener(delegate { UpdateSliders(); });
         soundSlider.onValueChanged.AddListener(delegate { UpdateSliders(); });
@@ -53,6 +58,7 @@ public class OptionsUI : MonoBehaviour
         cancelButton.onClick.AddListener(delegate { ToggleOptions(); OptionsManager.instance.ApplyOptions(); LoadOptions(); });
 
         //Load resolutions
+#if !UNITY_ANDROID && !UNITY_IOS
         resolutions = Screen.resolutions;
 
         resolutionDropdown.options.Clear();
@@ -62,6 +68,13 @@ public class OptionsUI : MonoBehaviour
         {
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolutions[i].ToString()));
         }
+#endif
+#if UNITY_ANDROID || UNITY_IOS
+        resolutionText.gameObject.SetActive(false);
+        resolutionDropdown.gameObject.SetActive(false);
+        fullscreenToggle.gameObject.SetActive(false);
+        vSyncToggle.gameObject.SetActive(false);
+#endif
 
         //Cache text for formatting
         soundTextString = soundText.text;
@@ -90,10 +103,12 @@ public class OptionsUI : MonoBehaviour
         OptionsManager options = OptionsManager.instance;
 
         //Only change resolution if dropdown value has changed, otherwise it may be wrong
+#if !UNITY_ANDROID && !UNITY_IOS
         if(hasResolutionChanged)
             options.currentOptions.screenResolution = resolutions[resolutionDropdown.value];
         options.currentOptions.isFullScreen = fullscreenToggle.isOn;
         options.currentOptions.vSyncOn = vSyncToggle.isOn;
+#endif
 
         //Image effects
         options.currentOptions.hasBloom = bloomToggle.isOn;
@@ -132,7 +147,7 @@ public class OptionsUI : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        if (pauseMenu)
+        if (pauseMenu && GameManager.instance)
         {
             bool isVisible = !pauseMenu.activeSelf;
 
@@ -143,6 +158,10 @@ public class OptionsUI : MonoBehaviour
 
             backgroundPanel.SetActive(isVisible);
         }
+#if UNITY_ANDROID || UNITY_IOS
+        else
+            Application.Quit();
+#endif
     }
 
     public void ResetPrefs()
@@ -158,9 +177,11 @@ public class OptionsUI : MonoBehaviour
         Options options = OptionsManager.instance.currentOptions;
 
         //Load options into UI elements
+#if !UNITY_ANDROID && !UNITY_IOS
         resolutionDropdown.captionText.text = options.screenResolution.ToString();
         fullscreenToggle.isOn = options.isFullScreen;
         vSyncToggle.isOn = options.vSyncOn;
+#endif
 
         bloomToggle.isOn = options.hasBloom;
         vignetteToggle.isOn = options.hasVignette;
