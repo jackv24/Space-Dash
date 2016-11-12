@@ -6,17 +6,27 @@ public class ItemSpawn : MonoBehaviour
 {
     //List of possible items to spawn
     public List<LevelItem> items = new List<LevelItem>();
+    [HideInInspector]
+    public List<GameObject> spawnedItems = new List<GameObject>();
 
     private static List<LevelItem> cantSpawnItems = new List<LevelItem>();
 
     void Start()
     {
-        Spawn(false);
-
-        //Destroy this spawning object, even if no item was spawned
-        Destroy(gameObject);
+        Spawn(true);
     }
-    
+
+    void OnDestroy()
+    {
+        Debug.Log("Item Spawner destroying");
+
+        //When this item spawner is about to be destroyed, return child objects to pools
+        foreach (GameObject obj in spawnedItems)
+        {
+            ObjectPooler.ReturnToPool(obj);
+        }
+    }
+
     LevelItem ChooseItem()
     {
         //List of items, to be sorted
@@ -86,7 +96,7 @@ public class ItemSpawn : MonoBehaviour
         return item;
     }
 
-    public void Spawn(bool parent)
+    public void Spawn(bool pool)
     {
         //Delete preview preview object
         while(transform.childCount > 0)
@@ -121,11 +131,17 @@ public class ItemSpawn : MonoBehaviour
                         break;
                 }
 
-                GameObject item = (GameObject)Instantiate(levelItem.prefab, transform.position + offset, levelItem.keepRotation ? levelItem.prefab.transform.rotation : transform.rotation);
+                GameObject item = pool ? ObjectPooler.Spawn(levelItem.prefab.name, levelItem.prefab) : Instantiate(levelItem.prefab);
+                spawnedItems.Add(item);
+                item.transform.position = transform.position + offset;
+                item.transform.rotation = levelItem.keepRotation ? levelItem.prefab.transform.rotation : transform.rotation;
+
                 item.name = levelItem.prefab.name;
-                //Item replaces this gameobject in heirarchy, so they should have the same parent
-                item.transform.SetParent(parent ? transform : transform.parent);
-                item.transform.localScale *= levelItem.scale;
+                item.transform.localScale = levelItem.prefab.transform.localScale * levelItem.scale;
+
+                ItemPickup itemPickup = item.GetComponent<ItemPickup>();
+                if (itemPickup)
+                    itemPickup.spawner = this;
 
                 distance += levelItem.chainSpacing;
 

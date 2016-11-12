@@ -23,6 +23,8 @@ public class ItemPickup : MonoBehaviour
 
     public GameObject pickupIconPrefab;
 
+    public ItemSpawn spawner;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         PlayerStats stats = col.gameObject.GetComponent<PlayerStats>();
@@ -64,7 +66,9 @@ public class ItemPickup : MonoBehaviour
                 HUDControl.instance.ShowPickupIcon(pickupIconPrefab);
 
             //Destroy gameobject so it has been "picked up"
-            Destroy(gameObject);
+            if(spawner)
+                spawner.spawnedItems.Remove(gameObject);
+            ObjectPooler.ReturnToPool(gameObject);
         }
     }
 }

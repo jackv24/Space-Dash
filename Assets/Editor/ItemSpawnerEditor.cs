@@ -14,7 +14,7 @@ public class ItemSpawnerEditor : Editor
 
         if (GUILayout.Button("Preview"))
         {
-            ((ItemSpawn)target).Spawn(true);
+            ((ItemSpawn)target).Spawn(false);
         }
     }
 }

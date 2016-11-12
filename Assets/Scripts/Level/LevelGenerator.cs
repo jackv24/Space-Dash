@@ -97,6 +97,8 @@ public class LevelGenerator : MonoBehaviour
 
     public void Reset()
     {
+        ObjectPooler.PurgePools();
+
         List<Transform> children = new List<Transform>();
         //Get all children
         foreach (Transform child in transform)
