@@ -207,14 +207,14 @@ public class PlayerControl : MonoBehaviour
             Time.timeScale = 1f;
     }
 
-    void PausePhysics()
+    public void PausePhysics()
     {
         oldVelocity = body.velocity;
         body.isKinematic = true;
         isFloating = false;
     }
 
-    void ResumePhysics()
+    public void ResumePhysics()
     {
         body.isKinematic = false;
         body.velocity = oldVelocity;

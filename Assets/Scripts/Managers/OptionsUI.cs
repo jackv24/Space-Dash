@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class OptionsUI : MonoBehaviour
 {
+    public Vector2 mobileUIResolution = new Vector2(640, 480);
+
     public GameObject backgroundPanel;
     public GameObject optionsPanel;
     public GameObject pauseMenu;
@@ -75,6 +77,8 @@ public class OptionsUI : MonoBehaviour
         resolutionDropdown.gameObject.SetActive(false);
         fullscreenToggle.gameObject.SetActive(false);
         vSyncToggle.gameObject.SetActive(false);
+
+        GetComponent<CanvasScaler>().referenceResolution = mobileUIResolution;
 #endif
 
         qualityDropdown.options.Clear();
@@ -196,6 +200,7 @@ public class OptionsUI : MonoBehaviour
         antialiasingToggle.isOn = options.hasAntialiasing;
 
         qualityDropdown.value = options.qualityLevel;
+        qualityDropdown.captionText.text = QualitySettings.names[options.qualityLevel];
 
         musicSlider.value = options.musicVolume;
         soundSlider.value = options.gameVolume;
