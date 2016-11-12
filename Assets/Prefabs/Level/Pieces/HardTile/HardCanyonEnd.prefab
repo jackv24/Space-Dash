@@ -800,6 +800,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013007031822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010409964794}
+  - 33: {fileID: 33000010686298360}
+  - 23: {fileID: 23000013279351704}
+  - 95: {fileID: 95000012634771940}
+  m_Layer: 8
+  m_Name: mountain1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013007996038
 GameObject:
   m_ObjectHideFlags: 1
@@ -813,6 +831,24 @@ GameObject:
   - 95: {fileID: 95000011378979866}
   m_Layer: 0
   m_Name: Bubble01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013083129820
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010982286542}
+  - 33: {fileID: 33000011582371922}
+  - 23: {fileID: 23000013630736328}
+  - 95: {fileID: 95000013879695162}
+  m_Layer: 0
+  m_Name: mountain1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1306,6 +1342,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014101150830}
   m_RootOrder: 0
+--- !u!4 &4000010409964794
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013007031822}
+  m_LocalRotation: {x: -0, y: -0.008747358, z: -0, w: 0.9999618}
+  m_LocalPosition: {x: -9.07, y: -9.19, z: 16.54}
+  m_LocalScale: {x: 0.74827427, y: 0.44860625, z: 0.48672095}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.97300005, z: 0}
+  m_Children:
+  - {fileID: 4000010982286542}
+  m_Father: {fileID: 4000014063042732}
+  m_RootOrder: 10
 --- !u!4 &4000010471951508
 Transform:
   m_ObjectHideFlags: 1
@@ -1466,6 +1516,19 @@ Transform:
   - {fileID: 4000013946458786}
   - {fileID: 4000010515831094}
   m_Father: {fileID: 4000013843336482}
+  m_RootOrder: 0
+--- !u!4 &4000010982286542
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013083129820}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010409964794}
   m_RootOrder: 0
 --- !u!4 &4000011091472954
 Transform:
@@ -2156,6 +2219,7 @@ Transform:
   - {fileID: 4000010247294462}
   - {fileID: 4000012038235844}
   - {fileID: 4000012316040544}
+  - {fileID: 4000010409964794}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000014074694852
@@ -2785,6 +2849,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000013279351704
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013007031822}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9306a1d70d958d74899cc01801cbaf05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000013430550754
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2887,6 +2980,35 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: bb94d811554218b49bbd6b0f17cafeb0, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &23000013630736328
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013083129820}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9306a1d70d958d74899cc01801cbaf05, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -3017,6 +3139,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013483574286}
   m_Mesh: {fileID: 4300000, guid: 75dbffb46b119984ea7d02346d853b6c, type: 3}
+--- !u!33 &33000010686298360
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013007031822}
+  m_Mesh: {fileID: 4300002, guid: 730f3af34113d3b4aa8a603f7d1c5804, type: 3}
 --- !u!33 &33000011108314080
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3031,6 +3160,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014268939288}
   m_Mesh: {fileID: 4300000, guid: 75dbffb46b119984ea7d02346d853b6c, type: 3}
+--- !u!33 &33000011582371922
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013083129820}
+  m_Mesh: {fileID: 4300004, guid: 730f3af34113d3b4aa8a603f7d1c5804, type: 3}
 --- !u!33 &33000011628219148
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3972,6 +4108,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95000012634771940
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013007031822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 730f3af34113d3b4aa8a603f7d1c5804, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95000013360506596
 Animator:
   serializedVersion: 3
@@ -3999,6 +4152,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 60024657e8e260549bbf4b5e150418f4, type: 3}
   m_Controller: {fileID: 9100000, guid: c0ae8224dfae6b34ebac648fa97ec8ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95000013879695162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013083129820}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 730f3af34113d3b4aa8a603f7d1c5804, type: 3}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4616,6 +4786,9 @@ MonoBehaviour:
   value: 10
   reset: 0
   pointsValue: 50
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010334392464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4645,6 +4818,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010390523508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4660,6 +4836,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010437361444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4675,6 +4854,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010514712638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4690,6 +4872,9 @@ MonoBehaviour:
   value: 10
   reset: 0
   pointsValue: 50
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010648558846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4705,6 +4890,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010691902634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4720,6 +4908,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010765956216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4735,6 +4926,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010817876832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4764,6 +4958,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000010880438256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4779,6 +4976,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000011210281818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4808,6 +5008,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000011692621302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5013,6 +5216,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000013447254164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5042,6 +5248,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000013625959472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5095,6 +5304,9 @@ MonoBehaviour:
   value: 5
   reset: 0
   pointsValue: 10
+  pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupTextScale: 1
+  pickupIconPrefab: {fileID: 0}
 --- !u!114 &114000013754920752
 MonoBehaviour:
   m_ObjectHideFlags: 1
