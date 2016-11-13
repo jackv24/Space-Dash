@@ -3903,19 +3903,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
-  maxAccelerationDistance: 10000
+  maxAccelerationDistance: 6000
   acceleration:
     serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 40.040157
-      outSlope: 40.040157
+      inSlope: 2.8032243
+      outSlope: 2.8032243
       tangentMode: 10
-    - time: 0.99361885
-      value: 39.784657
-      inSlope: 40.040157
-      outSlope: 40.040157
+    - time: 0.6997785
+      value: 1.9616362
+      inSlope: 2.8032243
+      outSlope: 2.8032243
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -3928,7 +3928,7 @@ MonoBehaviour:
   floatingFallSpeed: 9
   floatingOxygenUsage: 10
   isFloating: 0
-  startBoostDelay: 0.25
+  startBoostDelay: 0.15
   maxHeight: 40
   floatingParticles: {fileID: 1000014264063490}
   groundLayer:
