@@ -10,8 +10,8 @@ public class TransitionImageEffect : MonoBehaviour
     [Space()]
     [Range(0f, 1f)]
     public float cutoffAmount = 0f;
-
     public float transitionTime = 0.5f;
+    public AnimationCurve transitionCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
 
     [Space()]
     public float waitTime = 0f;
@@ -47,9 +47,12 @@ public class TransitionImageEffect : MonoBehaviour
         //Play transition forward
         if (playStart)
         {
-            while (cutoffAmount < 0.99f)
+            float time = 0;
+            while (time <= transitionTime)
             {
-                cutoffAmount = Mathf.Lerp(cutoffAmount, 1, (1 / transitionTime) * Time.deltaTime);
+                time += Time.deltaTime;
+
+                cutoffAmount = transitionCurve.Evaluate(time / transitionTime);
 
                 yield return new WaitForEndOfFrame();
             }
@@ -61,9 +64,12 @@ public class TransitionImageEffect : MonoBehaviour
         if (playEnd)
         {
             //Play transition backward
-            while (cutoffAmount > 0.001f)
+            float time = 1;
+            while (time >= 0)
             {
-                cutoffAmount = Mathf.Lerp(cutoffAmount, 0, (1 / transitionTime) * Time.deltaTime);
+                time -= Time.deltaTime;
+
+                cutoffAmount = transitionCurve.Evaluate(time / transitionTime);
 
                 yield return new WaitForEndOfFrame();
             }

@@ -39,7 +39,7 @@ public class OptionsManager : MonoBehaviour
     public void ApplyOptions()
     {
         //Apply screen options
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
         Resolution res = currentOptions.screenResolution;
         Screen.SetResolution(res.width, res.height, currentOptions.isFullScreen);
         QualitySettings.vSyncCount = currentOptions.vSyncOn ? 1 : 0;
@@ -101,7 +101,7 @@ public class Options
 {
     //Default screen resolution is the max available resolution
 
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
     public Resolution screenResolution = Screen.resolutions[Screen.resolutions.Length - 1];
     public bool isFullScreen = true;
     public bool vSyncOn = true;
@@ -115,7 +115,7 @@ public class Options
     public int qualityLevel = QualitySettings.names.Length - 1;
 #endif
 
-#if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
     //By default all image effects are off for mobile
     public bool hasBloom = false;
     public bool hasVignette = false;
