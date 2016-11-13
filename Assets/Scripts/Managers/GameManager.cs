@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool canGameStart = false;
+
     public delegate void Event();
     public event Event OnGamePaused;
     public event Event OnGameResumed;
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
 
         //Reset value for later death transitions
         effect.playStart = true;
+
+        canGameStart = true;
     }
 
     void Update()
@@ -72,7 +76,7 @@ public class GameManager : MonoBehaviour
     //Ensures that all inputs before game starts aren't carried into game start
     void LateUpdate()
     {
-        if (!isGamePlaying && Input.anyKeyDown)
+        if (canGameStart && !isGamePlaying && Input.anyKeyDown)
             StartGame();
     }
 
