@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class OptionsUI : MonoBehaviour
 {
     public Vector2 mobileUIResolution = new Vector2(640, 480);
+    public GameObject quitAppButton;
 
+    [Space()]
     public GameObject backgroundPanel;
     public GameObject optionsPanel;
     public GameObject pauseMenu;
@@ -13,7 +15,7 @@ public class OptionsUI : MonoBehaviour
     [Header("Resolution")]
     public Text resolutionText;
     public Dropdown resolutionDropdown;
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
     private bool hasResolutionChanged = false;
     private Resolution[] resolutions;
 #endif
@@ -46,7 +48,7 @@ public class OptionsUI : MonoBehaviour
     void Start()
     {
         //Add listeners to events
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
         resolutionDropdown.onValueChanged.AddListener(delegate { hasResolutionChanged = true; });
 #endif
 
@@ -61,7 +63,7 @@ public class OptionsUI : MonoBehaviour
         cancelButton.onClick.AddListener(delegate { ToggleOptions(); OptionsManager.instance.ApplyOptions(); LoadOptions(); });
 
         //Load resolutions
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
         resolutions = Screen.resolutions;
 
         resolutionDropdown.options.Clear();
@@ -72,13 +74,17 @@ public class OptionsUI : MonoBehaviour
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolutions[i].ToString()));
         }
 #endif
-#if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
         resolutionText.gameObject.SetActive(false);
         resolutionDropdown.gameObject.SetActive(false);
         fullscreenToggle.gameObject.SetActive(false);
         vSyncToggle.gameObject.SetActive(false);
-
+#endif
+#if UNITY_ANDROID || UNITY_IOS
         GetComponent<CanvasScaler>().referenceResolution = mobileUIResolution;
+#endif
+#if UNITY_WEBGL
+        quitAppButton.SetActive(false);
 #endif
 
         qualityDropdown.options.Clear();
@@ -113,7 +119,7 @@ public class OptionsUI : MonoBehaviour
         OptionsManager options = OptionsManager.instance;
 
         //Only change resolution if dropdown value has changed, otherwise it may be wrong
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
         if(hasResolutionChanged)
             options.currentOptions.screenResolution = resolutions[resolutionDropdown.value];
         options.currentOptions.isFullScreen = fullscreenToggle.isOn;
@@ -167,8 +173,15 @@ public class OptionsUI : MonoBehaviour
             SoundManager.instance.playerLoopSource.enabled = !isVisible;
 
             pauseMenu.SetActive(isVisible);
-
             backgroundPanel.SetActive(isVisible);
+
+            //Make sure all options panels are hidden when needed
+            if (!isVisible)
+            {
+                //Disable all children (hides UI)
+                for (int i = 0; i < transform.childCount; i++)
+                    transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
 #if UNITY_ANDROID || UNITY_IOS
         else
@@ -189,7 +202,7 @@ public class OptionsUI : MonoBehaviour
         Options options = OptionsManager.instance.currentOptions;
 
         //Load options into UI elements
-#if !UNITY_ANDROID && !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS && !UNITY_WEBGL
         resolutionDropdown.captionText.text = options.screenResolution.ToString();
         fullscreenToggle.isOn = options.isFullScreen;
         vSyncToggle.isOn = options.vSyncOn;

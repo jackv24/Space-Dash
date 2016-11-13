@@ -129,7 +129,7 @@ public class ItemSpawn : MonoBehaviour
 
                 distance += levelItem.chainSpacing;
 
-#if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
                 Light[] lights = item.GetComponentsInChildren<Light>();
 
                 foreach (Light light in lights)
