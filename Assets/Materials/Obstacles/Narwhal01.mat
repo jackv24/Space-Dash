@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Narwhal01
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 8e7bd2a91a2d07847a81152c74ad3f68, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -82,6 +82,9 @@ Material:
     - first:
         name: _DstBlend
       second: 0
+    - first:
+        name: _EmissionMultiplier
+      second: 1
     - first:
         name: _GlossMapScale
       second: 1

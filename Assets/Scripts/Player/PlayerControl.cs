@@ -60,6 +60,9 @@ public class PlayerControl : MonoBehaviour
     [Space()]
     public GameObject floatingParticles;
     private GameObject lastFloatingParticles;
+    public GameObject runParticles;
+    public GameObject landParticles;
+    public GameObject jumpParticles;
 
     //What velocity of the rigidbody is set to
     private Vector2 moveVector;
@@ -250,6 +253,9 @@ public class PlayerControl : MonoBehaviour
             if(SoundManager.instance)
                 SoundManager.instance.PlaySound(SoundManager.instance.sounds.RandomJump);
 
+            if (jumpParticles)
+                Instantiate(jumpParticles, transform.position, jumpParticles.transform.rotation);
+
             //Set jump force (dont add, to prevent double jumps launching player)
             moveVector.y = jumpForce;
 
@@ -307,6 +313,12 @@ public class PlayerControl : MonoBehaviour
                         SoundManager.instance.PlaySound(SoundManager.instance.sounds.landing);
                         SoundManager.instance.SetPlayerLoop(SoundManager.instance.sounds.running);
                     }
+
+                    if (landParticles)
+                        Instantiate(landParticles, transform.position, landParticles.transform.rotation);
+
+                    if (runParticles)
+                        runParticles.SetActive(true);
                 }
 
                 return true;
@@ -319,6 +331,9 @@ public class PlayerControl : MonoBehaviour
 
             if (SoundManager.instance)
                 SoundManager.instance.SetPlayerLoop(null);
+
+            if (runParticles)
+                runParticles.SetActive(false);
         }
 
         //Otherwise, player is not grounded

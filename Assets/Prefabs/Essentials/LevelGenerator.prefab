@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013882139736}
   - 114: {fileID: 114000012848317090}
-  - 114: {fileID: 114000013755654954}
+  - 114: {fileID: 114000010142939310}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -41,6 +41,366 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000010142939310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013654189948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539e15a797637a743a64cee26c090c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileLength: 50
+  tiles:
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 686d8e7469590854297ad63fdbcced8b, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 838cafc900c5e3d41835856035e9efbd, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: ae200d96cba44964ca47693d38e25a1c, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 32674045a2c52db48967e3bb06ac1528, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 8fa987d8777a1e34eba9640363f6a436, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 1000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 68b175a6806c65542ae6d812b02819e6, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: 1283098f62ea7864092b3609e13ef619, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 7f1aa23de6ac9364ba41bc6caa42bdb6, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 250
+    spacing: 40
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010514266708, guid: ad4f813c4d31c9e4197714c158c8f616, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010552218418, guid: 7f3f04c4a3bab084c807f7aed1899b76, type: 2}
+    probability: 0.5
+    minDistance: 0
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: d0148adbe12c7f449acd8dc00cdbc595, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 750
+    spacing: 40
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: d2da0c625f6497b47b9b25d0f45d50bc, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 800
+    maxDistance: 1000
+    spacing: 40
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000013310432838, guid: 57bffd42a6789134f95730fc244ef126, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000013310432838, guid: 72614df611eef1a42b3761ffc0e0a4d3, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012770079008, guid: d286fb1f1a93b1946af48f8a9578023e, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010864126628, guid: 392abf07d8e254c41a1cacdc18a97d80, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014020363198, guid: 5e0bd6580aa31014cbcaae1aec08af6d, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014020363198, guid: 086a767457cc31f4ebfd5a3a5735e2b4, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014020363198, guid: 3660df588655a814aad5d417d93c6db5, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292, type: 2}
+    probability: 0.5
+    minDistance: 500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010948916516, guid: 3cca897b5ee445c44b68b995b7179944, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000010563124232, guid: 8c8e8111161b6474fb4325f81e09e0e4, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011288166356, guid: be70202b3fe24d846bcf4f42db70ecd1, type: 2}
+    probability: 0.2
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 100
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011771023086, guid: bbdbcd234e5a1ae46a2703b13565997e, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 100
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014145994946, guid: e0e0084fc70601445bc6975287a1f862, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 3000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011734368086, guid: af7faa250ba29bc4db4d4b5bc283178a, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 3000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012654660922, guid: 418ebbae5da831f45b5e182d55333138, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 3500
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011960644468, guid: 2891acba763315a43bd0a12798d2170b, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 4000
+    spacing: 30
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012654660922, guid: c57d1154e6b871448a367cf291db455e, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 4000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011960644468, guid: 2891acba763315a43bd0a12798d2170b, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 4000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000011734368086, guid: 564ce914cd2e38a4f951d2d37cb79e38, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 4000
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: 41f97376aed4a2d4389bf4d626c43e0d, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: ba15d85d5cab717419f17f1a682ad21e, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014248166028, guid: b3565e7532d745448b2fcc7a8b3e2e2a, type: 2}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012314778098, guid: 5d67d82d4db8b084b8e72d78d4973603, type: 2}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000012398733588, guid: 8e24bd3f0d972b54b9c692306bd3213e, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000013984782924, guid: 48c232ee23e6eee4788d3a7df0fd3001, type: 2}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: b74892ab4fb14534fa0d8ece0e52f778, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: b12334d5f2c4cdf428498141b5a1611b, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 28588ecd0ea3eff4b9e326f6dbbf4e1f, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 1500
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 0155669530ac02d40bd845fa9212a72a, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 1500
+    maxDistance: 2000
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 38311e6d94c6dcf4982fa89488c288b9, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 380fa8ff1d800c545a818582d07488b8, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 3000
+    maxDistance: 0
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 0d1be3c96cf66ad40a3d3388394e346e, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 1000
+    maxDistance: 0
+    spacing: 100
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 6f620c51c78bdf54e94b75bc66fe1d70, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2500
+    maxDistance: 0
+    spacing: 100
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 81232a323a1c6cb4e84ca48f1baa314b, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: d2da0c625f6497b47b9b25d0f45d50bc, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 62910b45d260b74479b8d01d23abe0a3, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2500
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
+  startGroup: {fileID: 11400000, guid: 1ebc35e581d8a7e4d9eb77173c3d0097, type: 2}
+  player: {fileID: 0}
+  lengthAhead: 2
+  maxLoadedTiles: 10
 --- !u!114 &114000012848317090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,279 +448,3 @@ MonoBehaviour:
     maxRotation: 360
     minOffset: {x: -20, y: -5, z: 0}
     maxOffset: {x: 20, y: 0, z: 10}
---- !u!114 &114000013755654954
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013654189948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539e15a797637a743a64cee26c090c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileLength: 50
-  tiles:
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: 686d8e7469590854297ad63fdbcced8b, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 1000
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: ae200d96cba44964ca47693d38e25a1c, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 1000
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: 32674045a2c52db48967e3bb06ac1528, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: 8fa987d8777a1e34eba9640363f6a436, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 1000
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: 68b175a6806c65542ae6d812b02819e6, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 7f1aa23de6ac9364ba41bc6caa42bdb6, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 30
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010514266708, guid: ad4f813c4d31c9e4197714c158c8f616, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010552218418, guid: 7f3f04c4a3bab084c807f7aed1899b76, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: d0148adbe12c7f449acd8dc00cdbc595, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 30
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000013310432838, guid: 57bffd42a6789134f95730fc244ef126, type: 2}
-    probability: 0.5
-    minDistance: 500
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000012770079008, guid: d286fb1f1a93b1946af48f8a9578023e, type: 2}
-    probability: 0.5
-    minDistance: 500
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010864126628, guid: 392abf07d8e254c41a1cacdc18a97d80, type: 2}
-    probability: 0.5
-    minDistance: 500
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000014020363198, guid: 5e0bd6580aa31014cbcaae1aec08af6d, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 0
-    spacing: 5
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010948916516, guid: 3cca897b5ee445c44b68b995b7179944, type: 2}
-    probability: 0.5
-    minDistance: 500
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010654582984, guid: b3dbfe4f7e29c4242bf7ebd127d65292, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010563124232, guid: 8c8e8111161b6474fb4325f81e09e0e4, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000011288166356, guid: be70202b3fe24d846bcf4f42db70ecd1, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000014145994946, guid: e0e0084fc70601445bc6975287a1f862, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000011734368086, guid: af7faa250ba29bc4db4d4b5bc283178a, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000012654660922, guid: 418ebbae5da831f45b5e182d55333138, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000011960644468, guid: 2891acba763315a43bd0a12798d2170b, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000012654660922, guid: c57d1154e6b871448a367cf291db455e, type: 2}
-    probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000011960644468, guid: 2891acba763315a43bd0a12798d2170b, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000014248166028, guid: ba15d85d5cab717419f17f1a682ad21e, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000014248166028, guid: b3565e7532d745448b2fcc7a8b3e2e2a, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 20
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000012314778098, guid: 5d67d82d4db8b084b8e72d78d4973603, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000012398733588, guid: 8e24bd3f0d972b54b9c692306bd3213e, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000013984782924, guid: 48c232ee23e6eee4788d3a7df0fd3001, type: 2}
-    probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 6
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: b74892ab4fb14534fa0d8ece0e52f778, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 500
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: b12334d5f2c4cdf428498141b5a1611b, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 100
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 28588ecd0ea3eff4b9e326f6dbbf4e1f, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 1000
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 0155669530ac02d40bd845fa9212a72a, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 1500
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 38311e6d94c6dcf4982fa89488c288b9, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: d2da0c625f6497b47b9b25d0f45d50bc, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 62910b45d260b74479b8d01d23abe0a3, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 2000
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.1
-    minDistance: 2500
-    maxDistance: 0
-    spacing: 12
-    nextSpawnPos: 0
-  - group: {fileID: 11400000, guid: 0d1be3c96cf66ad40a3d3388394e346e, type: 2}
-    prefab: {fileID: 0}
-    probability: 0.5
-    minDistance: 2500
-    maxDistance: 0
-    spacing: 50
-    nextSpawnPos: 0
-  startGroup: {fileID: 11400000, guid: 1ebc35e581d8a7e4d9eb77173c3d0097, type: 2}
-  player: {fileID: 0}
-  lengthAhead: 2
-  maxLoadedTiles: 5

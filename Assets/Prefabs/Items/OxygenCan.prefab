@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010311754482}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 2, z: 0}
+  m_LocalPosition: {x: 38.5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -223,6 +223,8 @@ MonoBehaviour:
   pickupTextColor: {r: 0, g: 0.7931032, b: 1, a: 1}
   pickupTextScale: 1.2
   pickupIconPrefab: {fileID: 1000010908337296, guid: 22655a04f0536824483578fec692028a,
+    type: 2}
+  pickupParticles: {fileID: 1000010510093384, guid: 48bcd4c8c9e6c504aba74bd86db3b248,
     type: 2}
 --- !u!114 &114000011162586558
 MonoBehaviour:

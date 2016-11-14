@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Narwhal04
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: ancientRune3
+  m_Shader: {fileID: 4800000, guid: 8e7bd2a91a2d07847a81152c74ad3f68, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 853417437dc85364f9583cc686a23d0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d434cfe8f2123ab40adf220a715919d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -82,6 +82,9 @@ Material:
     - first:
         name: _DstBlend
       second: 0
+    - first:
+        name: _EmissionMultiplier
+      second: 1
     - first:
         name: _GlossMapScale
       second: 1

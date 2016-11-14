@@ -22,6 +22,7 @@ public class ItemPickup : MonoBehaviour
     public float pickupTextScale = 1f;
 
     public GameObject pickupIconPrefab;
+    public GameObject pickupParticles;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -62,6 +63,9 @@ public class ItemPickup : MonoBehaviour
 
             if (pickupIconPrefab)
                 HUDControl.instance.ShowPickupIcon(pickupIconPrefab);
+
+            if (pickupParticles)
+                Instantiate(pickupParticles, transform.position, pickupParticles.transform.rotation);
 
             //Destroy gameobject so it has been "picked up"
             Destroy(gameObject);

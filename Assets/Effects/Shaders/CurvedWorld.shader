@@ -21,7 +21,7 @@ Shader "Custom/Curved World"
 
 		CGPROGRAM
 
-		#pragma surface surf Standard vertex:vert addshadow
+		#pragma surface surf Lambert vertex:vert addshadow
 
 		sampler2D _MainTex;
 		float4 _Color;
@@ -61,7 +61,7 @@ Shader "Custom/Curved World"
 		}
 
 		//Draw surface shader
-		void surf(Input IN, inout SurfaceOutputStandard o)
+		void surf(Input IN, inout SurfaceOutput o)
 		{
 			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
 			o.Albedo *= _Color.rgb;

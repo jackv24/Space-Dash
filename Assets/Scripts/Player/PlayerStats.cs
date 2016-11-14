@@ -256,5 +256,7 @@ public class PlayerStats : MonoBehaviour
         //Invoke OnReset events
         if (OnReset != null)
             OnReset();
+
+        GameManager.instance.canGameStart = true;
     }
 }

@@ -12,6 +12,7 @@ public class ItemPickupEditor : Editor
     SerializedProperty colorProp;
     SerializedProperty scaleProp;
     SerializedProperty prefabProp;
+    SerializedProperty pickupPrefab;
 
     void OnEnable()
     {
@@ -22,6 +23,7 @@ public class ItemPickupEditor : Editor
         colorProp = serializedObject.FindProperty("pickupTextColor");
         scaleProp = serializedObject.FindProperty("pickupTextScale");
         prefabProp = serializedObject.FindProperty("pickupIconPrefab");
+        pickupPrefab = serializedObject.FindProperty("pickupParticles");
     }
 
     public override void OnInspectorGUI()
@@ -53,6 +55,7 @@ public class ItemPickupEditor : Editor
 
         EditorGUILayout.Space();
         EditorGUILayout.PropertyField(prefabProp, new GUIContent("Pickup Icon Prefab"));
+        EditorGUILayout.PropertyField(pickupPrefab, new GUIContent("Pickup Particles"));
 
         serializedObject.ApplyModifiedProperties();
     }
