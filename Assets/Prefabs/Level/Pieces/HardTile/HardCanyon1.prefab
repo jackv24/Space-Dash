@@ -3399,7 +3399,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012712787526}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.36, y: -16.66, z: -3.65}
+  m_LocalPosition: {x: 0.36, y: -15.4, z: -3.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -3561,7 +3561,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 298db59a2a77a8242b8e2d1b44914426, type: 2}
+  - {fileID: 2100000, guid: 9fb32774e7596ef458b5e79ec6fca16d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -7122,6 +7122,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000010261074192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7241,6 +7242,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000010903973868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7387,6 +7389,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011568708992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7405,6 +7408,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011663929344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7423,6 +7427,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011684974222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7507,6 +7512,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011935251888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7612,6 +7618,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012271005424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7644,6 +7651,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012803374020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7662,6 +7670,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012982341404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7718,6 +7727,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013191811394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7736,6 +7746,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013266436776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7792,6 +7803,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013361525034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7810,6 +7822,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013430353812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7828,6 +7841,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013480033194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7846,6 +7860,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013735104568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7864,6 +7879,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013762294728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7934,6 +7950,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000014112502066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7952,6 +7969,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000014123820376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8742,7 +8760,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278332056
+          rgba: 4290729879
         key1:
           serializedVersion: 2
           rgba: 15129578
@@ -10495,7 +10513,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278332056
+          rgba: 4290729879
         key1:
           serializedVersion: 2
           rgba: 15129578

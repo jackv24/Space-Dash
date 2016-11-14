@@ -11,9 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
   m_Name: tileGroupSpaceNarwhal
   m_EditorClassIdentifier: 
-  startTile: {fileID: 1000012072158546, guid: 530ef6f6da19462498d8cb09fbc1dbd2, type: 2}
+  startTile: {fileID: 1000012072158546, guid: 8f57de7c0c0c7a949a4dab71cc54fb6e, type: 2}
   tiles:
   - prefab: {fileID: 1000013787154568, guid: c285776380c16d34d82167ad6c96d9b5, type: 2}
     probability: 1
-  endTile: {fileID: 1000011893498938, guid: 2ffa219c0378915499d46fc6ae252f88, type: 2}
+  - prefab: {fileID: 1000013787154568, guid: 8eac964f9ade37b43ae0746bbda8b120, type: 2}
+    probability: 1
+  endTile: {fileID: 1000011893498938, guid: ba8cdd1d2d6e0444db871742a6fd1593, type: 2}
   length: 4
