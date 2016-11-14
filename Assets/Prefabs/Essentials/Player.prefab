@@ -4329,7 +4329,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.7294118}
+      maxColor: {r: 0.67058825, g: 0.90588236, b: 0.90588236, a: 0.46666667}
       minMaxState: 0
     startSize:
       scalar: 0.82
@@ -4830,7 +4830,7 @@ ParticleSystem:
       minMaxState: 0
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       maxGradient:
@@ -6279,7 +6279,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 1
     rate:
-      scalar: 7.76
+      scalar: 5.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6549,10 +6549,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 2065910712
+          rgba: 4285493174
         key1:
           serializedVersion: 2
-          rgba: 2554154876
+          rgba: 3199520479
         key2:
           serializedVersion: 2
           rgba: 1012479
