@@ -21,7 +21,7 @@ Shader "Custom/Curved World (Transparent)"
 
 		CGPROGRAM
 
-		#pragma surface surf Standard alpha vertex:vert addshadow
+		#pragma surface surf Lambert alpha vertex:vert addshadow
 
 		sampler2D _MainTex;
 		float4 _Color;
@@ -61,7 +61,7 @@ Shader "Custom/Curved World (Transparent)"
 		}
 
 		//Draw surface shader
-		void surf(Input IN, inout SurfaceOutputStandard o)
+		void surf(Input IN, inout SurfaceOutput o)
 		{
 			fixed4 diffuse = tex2D(_MainTex, IN.uv_MainTex).rgba;
 			diffuse *= _Color.rgba * IN.color;

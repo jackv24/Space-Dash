@@ -19,7 +19,7 @@ Shader "Custom/Curved World (Lava)"
 
 		CGPROGRAM
 
-		#pragma surface surf Standard vertex:vert addshadow
+		#pragma surface surf Lambert vertex:vert addshadow
 		
 		sampler2D _TopTex;
 		sampler2D _MainTex;
@@ -54,7 +54,7 @@ Shader "Custom/Curved World (Lava)"
 		}
 
 		//Draw surface shader
-		void surf(Input IN, inout SurfaceOutputStandard o)
+		void surf(Input IN, inout SurfaceOutput o)
 		{
 			//Get textures
 			fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);
