@@ -15,6 +15,9 @@ public class ItemPickup : MonoBehaviour
 
     public int value = 0;
 
+    [Tooltip("How many metres until this item can be spawned again after spawning.")]
+    public float spacing = 0f;
+
     public bool reset = false;
 
     public int pointsValue = 10;
