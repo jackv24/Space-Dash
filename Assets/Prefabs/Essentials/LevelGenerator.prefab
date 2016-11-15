@@ -107,7 +107,7 @@ MonoBehaviour:
     prefab: {fileID: 0}
     probability: 0.5
     minDistance: 0
-    maxDistance: 250
+    maxDistance: 350
     spacing: 40
     nextSpawnPos: 0
   - group: {fileID: 0}
@@ -197,28 +197,28 @@ MonoBehaviour:
   - group: {fileID: 0}
     prefab: {fileID: 1000010948916516, guid: 3cca897b5ee445c44b68b995b7179944, type: 2}
     probability: 0.5
-    minDistance: 1000
+    minDistance: 500
     maxDistance: 0
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000010563124232, guid: 8c8e8111161b6474fb4325f81e09e0e4, type: 2}
     probability: 0.5
-    minDistance: 1000
-    maxDistance: 0
+    minDistance: 300
+    maxDistance: 1500
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000011288166356, guid: be70202b3fe24d846bcf4f42db70ecd1, type: 2}
     probability: 0.2
-    minDistance: 1000
-    maxDistance: 0
+    minDistance: 500
+    maxDistance: 2000
     spacing: 100
     nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000011771023086, guid: bbdbcd234e5a1ae46a2703b13565997e, type: 2}
     probability: 0.5
-    minDistance: 1000
+    minDistance: 500
     maxDistance: 0
     spacing: 100
     nextSpawnPos: 0
@@ -274,21 +274,21 @@ MonoBehaviour:
   - group: {fileID: 0}
     prefab: {fileID: 1000014248166028, guid: 41f97376aed4a2d4389bf4d626c43e0d, type: 2}
     probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
+    minDistance: 750
+    maxDistance: 2000
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000014248166028, guid: ba15d85d5cab717419f17f1a682ad21e, type: 2}
     probability: 0.5
-    minDistance: 2000
-    maxDistance: 0
+    minDistance: 600
+    maxDistance: 2000
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 0}
     prefab: {fileID: 1000014248166028, guid: b3565e7532d745448b2fcc7a8b3e2e2a, type: 2}
     probability: 0.5
-    minDistance: 2000
+    minDistance: 1000
     maxDistance: 0
     spacing: 20
     nextSpawnPos: 0
@@ -344,14 +344,14 @@ MonoBehaviour:
   - group: {fileID: 11400000, guid: 38311e6d94c6dcf4982fa89488c288b9, type: 2}
     prefab: {fileID: 0}
     probability: 0.5
-    minDistance: 2000
+    minDistance: 850
     maxDistance: 0
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 11400000, guid: 380fa8ff1d800c545a818582d07488b8, type: 2}
     prefab: {fileID: 0}
     probability: 0.5
-    minDistance: 3000
+    minDistance: 2000
     maxDistance: 0
     spacing: 20
     nextSpawnPos: 0
@@ -397,10 +397,17 @@ MonoBehaviour:
     maxDistance: 0
     spacing: 12
     nextSpawnPos: 0
+  - group: {fileID: 11400000, guid: 7a08325171d6fd34cb8c3911e0af2842, type: 2}
+    prefab: {fileID: 0}
+    probability: 0.5
+    minDistance: 2000
+    maxDistance: 0
+    spacing: 12
+    nextSpawnPos: 0
   startGroup: {fileID: 11400000, guid: 1ebc35e581d8a7e4d9eb77173c3d0097, type: 2}
   player: {fileID: 0}
   lengthAhead: 2
-  maxLoadedTiles: 10
+  maxLoadedTiles: 12
 --- !u!114 &114000012848317090
 MonoBehaviour:
   m_ObjectHideFlags: 1
