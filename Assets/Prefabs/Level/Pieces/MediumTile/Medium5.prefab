@@ -219,6 +219,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012289961696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012127606854}
+  m_Layer: 8
+  m_Name: ancientRune1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012648823056
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010721642390}
+  - 33: {fileID: 33000010765058730}
+  - 23: {fileID: 23000011049415696}
+  m_Layer: 8
+  m_Name: pCube1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000012777100820
 GameObject:
   m_ObjectHideFlags: 1
@@ -383,6 +415,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010946999514}
   m_RootOrder: 7
+--- !u!4 &4000010721642390
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012648823056}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012127606854}
+  m_RootOrder: 0
 --- !u!4 &4000010946999514
 Transform:
   m_ObjectHideFlags: 1
@@ -405,6 +450,7 @@ Transform:
   - {fileID: 4000013567441782}
   - {fileID: 4000012779028812}
   - {fileID: 4000013997068778}
+  - {fileID: 4000012127606854}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000010964578526
@@ -472,6 +518,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010946999514}
   m_RootOrder: 6
+--- !u!4 &4000012127606854
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012289961696}
+  m_LocalRotation: {x: 0.108759515, y: 0.16291186, z: -0.018133659, w: 0.9804603}
+  m_LocalPosition: {x: 3.92, y: -1.39, z: -7.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 12.6050005, y: 18.570002, z: -0.007}
+  m_Children:
+  - {fileID: 4000010721642390}
+  m_Father: {fileID: 4000010946999514}
+  m_RootOrder: 11
 --- !u!4 &4000012261869516
 Transform:
   m_ObjectHideFlags: 1
@@ -694,6 +754,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000011049415696
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012648823056}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: cae3efcdb4aebc04bbf6cb7dbe05c1b4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000011278184916
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -781,6 +870,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!33 &33000010765058730
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012648823056}
+  m_Mesh: {fileID: 4300000, guid: 9117723fd60a74e499099c8845531d72, type: 3}
 --- !u!33 &33000011514858820
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1187,6 +1283,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013216966888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1205,6 +1302,7 @@ MonoBehaviour:
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 1
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013411277084
 MonoBehaviour:
   m_ObjectHideFlags: 1
