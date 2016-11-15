@@ -7,7 +7,7 @@ public class ItemSpawn : MonoBehaviour
     //List of possible items to spawn
     public List<LevelItem> items = new List<LevelItem>();
 
-    private static List<LevelItem> cantSpawnItems = new List<LevelItem>();
+    private static List<LevelItem> cantSpawn = new List<LevelItem>();
 
     void Start()
     {
@@ -28,8 +28,10 @@ public class ItemSpawn : MonoBehaviour
             {
                 bool canAdd = true;
 
+                LevelItem removeItem = null;
+
                 //Loop through items that cant be spawned
-                foreach (LevelItem j in cantSpawnItems)
+                foreach (var j in cantSpawn)
                 {
                     //If this item is in the list, and past the distance it can be spawned
                     if (j.prefab == i.prefab)
@@ -37,15 +39,20 @@ public class ItemSpawn : MonoBehaviour
                         if (transform.position.x > j.nextSpawnPos)
                         {
                             possibleItems.Add(i);
-                            cantSpawnItems.Remove(j);
+                            removeItem = j;
                         }
 
                         canAdd = false;
                     }
                 }
 
+                if (removeItem != null)
+                    cantSpawn.Remove(removeItem);
+
                 if (canAdd)
+                {
                     possibleItems.Add(i);
+                }
             }
 
         //Sort the list by probability (since it is using cumulative probability)
@@ -137,11 +144,13 @@ public class ItemSpawn : MonoBehaviour
 #endif
             }
 
+            ItemPickup pickup = levelItem.prefab.GetComponent<ItemPickup>();
+
             //Prevent items from spawnng for some time, if needed
-            if (levelItem.spacing > 0)
+            if (pickup && pickup.spacing > 0)
             {
-                levelItem.nextSpawnPos = transform.position.x + levelItem.spacing;
-                cantSpawnItems.Add(levelItem);
+                levelItem.nextSpawnPos = transform.position.x + pickup.spacing;
+                cantSpawn.Add(levelItem);
             }
         }
     }
@@ -169,17 +178,12 @@ public class LevelItem
 
     public float scale = 1f;
 
+    public float nextSpawnPos = 0f;
+
     [Tooltip("How likely it is that this item will be generated (try and make all items probability add up to 1, otherwise it is hard to visualise).")]
     public float probability = 1f;
     [Tooltip("This item will not start generating until this distance has been reached.")]
     public float minDistance = 0f;
-
-    [Space()]
-    [Tooltip("How many metres until this item can be spawned again after spawning.")]
-    public float spacing = 0f;
-    //When this can next be spawned
-    [HideInInspector]
-    public float nextSpawnPos = 0f;
 
     [Space()]
     [Tooltip("The minimum amount of this item that will be generated in a chain.")]
