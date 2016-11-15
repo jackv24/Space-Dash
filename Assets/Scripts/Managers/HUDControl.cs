@@ -222,13 +222,10 @@ public class HUDControl : MonoBehaviour
     {
         if (scorePickupText)
         {
-            Vector2 screenPos = Camera.main.WorldToScreenPoint(pickupPos);
-
             GameObject textObj = (GameObject)Instantiate(scorePickupText.gameObject, scorePickupText.transform.parent);
             RectTransform textRect = textObj.GetComponent<RectTransform>();
             Text text = textObj.GetComponent<Text>();
 
-            textRect.position = screenPos;
             textRect.localScale *= scale;
             text.text = string.Format(text.text, value);
             text.color = color;
