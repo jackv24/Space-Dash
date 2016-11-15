@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: EasyTileGroup
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000013310432838, guid: 72614df611eef1a42b3761ffc0e0a4d3, type: 2}
+  tiles:
+  - prefab: {fileID: 1000013310432838, guid: 72614df611eef1a42b3761ffc0e0a4d3, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000014020363198, guid: 5e0bd6580aa31014cbcaae1aec08af6d, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000011742971392, guid: 9d3cc010442c31045883a1367661e67c, type: 2}
+    probability: 1
+  endTile: {fileID: 1000014020363198, guid: 3660df588655a814aad5d417d93c6db5, type: 2}
+  length: 5

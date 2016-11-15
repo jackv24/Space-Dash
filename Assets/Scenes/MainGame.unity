@@ -347,41 +347,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: maxAccelerationDistance
-      value: 6000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[0].inSlope
-      value: 12.684259
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[0].outSlope
-      value: 12.684259
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[1].value
-      value: 10.178822
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[1].inSlope
-      value: 12.684259
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[1].outSlope
-      value: 12.684259
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010184399396, guid: 18ad586dc10495f409fda7070a4890f5,
-        type: 2}
-      propertyPath: acceleration.m_Curve.Array.data[1].time
-      value: 0.80247664
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ad586dc10495f409fda7070a4890f5, type: 2}
   m_IsPrefabParent: 0
@@ -454,6 +419,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.size
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013882139736, guid: d696361f2d618db4398a5835d7105c58, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -488,73 +458,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[7].maxDistance
-      value: 350
-      objectReference: {fileID: 0}
+      propertyPath: tiles.Array.data[48].group
+      value: 
+      objectReference: {fileID: 11400000, guid: ec4f538e1deca4e4f80b51935ff307f4,
+        type: 2}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[20].minDistance
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[21].minDistance
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[22].minDistance
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[23].minDistance
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[22].maxDistance
+      propertyPath: tiles.Array.data[48].minDistance
       value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[21].maxDistance
-      value: 1500
+      propertyPath: tiles.Array.data[49].group
+      value: 
+      objectReference: {fileID: 11400000, guid: ca35e6b25f6c09a40b4d12b8484e577c,
+        type: 2}
+    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[49].minDistance
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[31].minDistance
-      value: 750
+      propertyPath: tiles.Array.data[50].group
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a08325171d6fd34cb8c3911e0af2842,
+        type: 2}
+    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
+        type: 2}
+      propertyPath: tiles.Array.data[50].probability
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[31].maxDistance
+      propertyPath: tiles.Array.data[50].minDistance
       value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
         type: 2}
-      propertyPath: tiles.Array.data[32].minDistance
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[32].maxDistance
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[33].minDistance
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[41].minDistance
-      value: 850
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010142939310, guid: d696361f2d618db4398a5835d7105c58,
-        type: 2}
-      propertyPath: tiles.Array.data[42].minDistance
-      value: 2000
+      propertyPath: tiles.Array.data[50].spacing
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d696361f2d618db4398a5835d7105c58, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: HardSpikeySection01
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000010654582984, guid: 7597a06cd352d1c42bf0463220e84c5c, type: 2}
+  tiles:
+  - prefab: {fileID: 1000010654582984, guid: 32674045a2c52db48967e3bb06ac1528, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010514266708, guid: ad4f813c4d31c9e4197714c158c8f616, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010654582984, guid: 8fa987d8777a1e34eba9640363f6a436, type: 2}
+    probability: 1
+  endTile: {fileID: 1000010654582984, guid: 495af4f84768881439a4070ba992811e, type: 2}
+  length: 5

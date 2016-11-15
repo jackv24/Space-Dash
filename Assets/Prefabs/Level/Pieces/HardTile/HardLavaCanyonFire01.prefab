@@ -1695,7 +1695,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013820019476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 2.01, z: 0}
+  m_LocalPosition: {x: 0.28, y: -3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1716,7 +1716,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014076009778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.65, y: -0.11, z: 0}
+  m_LocalPosition: {x: -15.65, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -3771,6 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3790,6 +3791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3809,6 +3811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3828,6 +3831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3847,6 +3851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3866,6 +3871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3885,6 +3891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3906,10 +3913,9 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 8
     chainSpacing: 2
     chainDirection: 1
@@ -3932,10 +3938,9 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 8
     chainSpacing: 2
     chainDirection: 1
@@ -3968,6 +3973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3987,6 +3993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4098,6 +4105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4119,10 +4127,9 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.2
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 8
     chainSpacing: 2
     chainDirection: 1
@@ -4145,10 +4152,9 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.2
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 8
     chainSpacing: 2
     chainDirection: 1
@@ -4181,6 +4187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4200,6 +4207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4230,6 +4238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4263,6 +4272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4282,6 +4292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4301,6 +4312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 5
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
