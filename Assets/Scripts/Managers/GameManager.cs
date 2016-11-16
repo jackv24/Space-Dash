@@ -30,11 +30,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [HideInInspector]
     public bool canGameStart = false;
 
     public delegate void Event();
     public event Event OnGamePaused;
     public event Event OnGameResumed;
+
+    public float pickupChainBonus = 0.5f;
+    public int minPickupChain = 4;
 
     void Awake()
     {

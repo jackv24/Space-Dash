@@ -15,6 +15,9 @@ public class ItemPickupEditor : Editor
     SerializedProperty prefabProp;
     SerializedProperty pickupPrefab;
 
+    SerializedProperty bonusColour;
+    SerializedProperty bonusScale;
+
     void OnEnable()
     {
         typeProp = serializedObject.FindProperty("type");
@@ -26,6 +29,9 @@ public class ItemPickupEditor : Editor
         scaleProp = serializedObject.FindProperty("pickupTextScale");
         prefabProp = serializedObject.FindProperty("pickupIconPrefab");
         pickupPrefab = serializedObject.FindProperty("pickupParticles");
+
+        bonusColour = serializedObject.FindProperty("chainScoreColor");
+        bonusScale = serializedObject.FindProperty("pickupBonusScale");
     }
 
     public override void OnInspectorGUI()
@@ -57,6 +63,10 @@ public class ItemPickupEditor : Editor
         EditorGUILayout.PropertyField(pointsProp, new GUIContent("Points Value"));
         EditorGUILayout.PropertyField(colorProp, new GUIContent("Pickup Text Color"));
         EditorGUILayout.PropertyField(scaleProp, new GUIContent("Pickup Text Scale"));
+
+        EditorGUILayout.Space();
+        EditorGUILayout.PropertyField(bonusColour, new GUIContent("Chain Bonus Color"));
+        EditorGUILayout.PropertyField(bonusScale, new GUIContent("Chain Bonus Scale"));
 
         EditorGUILayout.Space();
         EditorGUILayout.PropertyField(prefabProp, new GUIContent("Pickup Icon Prefab"));

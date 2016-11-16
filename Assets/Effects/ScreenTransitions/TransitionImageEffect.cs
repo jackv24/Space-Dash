@@ -38,11 +38,7 @@ public class TransitionImageEffect : MonoBehaviour
 
     public void PlayTransition()
     {
-        int index = Random.Range(0, transitionTextures.Length);
-
-        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[index]);
-
-        Debug.Log("Played " + transitionTextures[index].name);
+        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[Random.Range(0, transitionTextures.Length)]);
 
         StartCoroutine("Transition");
     }

@@ -28,7 +28,8 @@ public class ItemPickup : MonoBehaviour
 
     private List<GameObject> chainObjects = new List<GameObject>();
     private int chainBonus = 0;
-    private Color chainScoreColor;
+    public Color chainScoreColor = Color.white;
+    public float pickupBonusScale = 1.5f;
 
     public GameObject pickupIconPrefab;
     public GameObject pickupParticles;
@@ -68,10 +69,10 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
-            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale);
+            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale, false);
 
             //Award score if entire chain was picked up
-            if (chainObjects.Count > 0)
+            if (chainObjects.Count >= GameManager.instance.minPickupChain - 1)
             {
                 int collectedItems = 0;
 
@@ -88,7 +89,7 @@ public class ItemPickup : MonoBehaviour
                     if (SoundManager.instance)
                         SoundManager.instance.PlaySound(SoundManager.instance.sounds.chainBonus);
 
-                    HUDControl.instance.ShowPickupText(chainBonus, transform.position, chainScoreColor, pickupTextScale * 2);
+                    HUDControl.instance.ShowPickupText(chainBonus, transform.position, chainScoreColor, pickupBonusScale, true);
                 }
             }
 
@@ -103,10 +104,10 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    public void SetChainEnd(List<GameObject> chain, int bonus, Color color)
+    public void SetChainEnd(List<GameObject> chain)
     {
         chainObjects = chain;
-        chainBonus = bonus;
-        chainScoreColor = color;
+
+        chainBonus = Mathf.CeilToInt(pointsValue * (chain.Count + 1) * GameManager.instance.pickupChainBonus);
     }
 }
