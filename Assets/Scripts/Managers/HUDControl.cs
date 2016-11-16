@@ -32,6 +32,13 @@ public class HUDControl : MonoBehaviour
     public Gradient barColour;
 
     [Space()]
+    public Image o2Image;
+    public Sprite o2LowBarSprite;
+    public float o2FlashInterval = 0.5f;
+    [Range(0, 1f)]
+    public float o2WarningLevel = 0.1f;
+
+    [Space()]
     [Tooltip("The text to be used to display oxygen level.")]
     public Text oxygenText;
     private string oxygenTextString;
@@ -122,6 +129,9 @@ public class HUDControl : MonoBehaviour
 
         if (jumpsPanel)
             StartCoroutine("DelayJumpIncrease", 0);
+
+        if (o2Image && o2LowBarSprite)
+            StartCoroutine("AnimateO2Sprite");
     }
 
     void Update()
@@ -278,6 +288,30 @@ public class HUDControl : MonoBehaviour
         }
         else
             Debug.Log("No pickup UI camera prefab assigned to HUD Control");
+    }
+
+    IEnumerator AnimateO2Sprite()
+    {
+        Sprite normalSprite = o2Image.sprite;
+
+        bool normal = true;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(o2FlashInterval);
+
+            if (((float)playerStats.currentOxygen / playerStats.maxOxygen) <= o2WarningLevel)
+            {
+                normal = !normal;
+
+                if (normal)
+                    o2Image.sprite = normalSprite;
+                else
+                    o2Image.sprite = o2LowBarSprite;
+            }
+            else
+                o2Image.sprite = normalSprite;
+        }
     }
 
     IEnumerator AnimateScoreText(RectTransform rect)

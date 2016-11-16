@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class ItemPickup : MonoBehaviour
         Health,
         Oxygen,
         ExtraJump,
-        ExtraOxygen
+        ExtraOxygen,
+        Nothing
     }
     [Tooltip("The type of value to affect.")]
     public Type type;
@@ -23,6 +25,10 @@ public class ItemPickup : MonoBehaviour
     public int pointsValue = 10;
     public Color pickupTextColor = Color.white;
     public float pickupTextScale = 1f;
+
+    private List<GameObject> chainObjects = new List<GameObject>();
+    private int chainBonus = 0;
+    private Color chainScoreColor;
 
     public GameObject pickupIconPrefab;
     public GameObject pickupParticles;
@@ -64,6 +70,28 @@ public class ItemPickup : MonoBehaviour
 
             HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale);
 
+            //Award score if entire chain was picked up
+            if (chainObjects.Count > 0)
+            {
+                int collectedItems = 0;
+
+                foreach (var item in chainObjects)
+                {
+                    if (item == null)
+                        collectedItems++;
+                }
+
+                if (collectedItems == chainObjects.Count)
+                {
+                    stats.AddScore(chainBonus);
+
+                    if (SoundManager.instance)
+                        SoundManager.instance.PlaySound(SoundManager.instance.sounds.chainBonus);
+
+                    HUDControl.instance.ShowPickupText(chainBonus, transform.position, chainScoreColor, pickupTextScale * 2);
+                }
+            }
+
             if (pickupIconPrefab)
                 HUDControl.instance.ShowPickupIcon(pickupIconPrefab);
 
@@ -73,5 +101,12 @@ public class ItemPickup : MonoBehaviour
             //Destroy gameobject so it has been "picked up"
             Destroy(gameObject);
         }
+    }
+
+    public void SetChainEnd(List<GameObject> chain, int bonus, Color color)
+    {
+        chainObjects = chain;
+        chainBonus = bonus;
+        chainScoreColor = color;
     }
 }

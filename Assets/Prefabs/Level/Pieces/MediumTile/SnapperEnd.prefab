@@ -105,6 +105,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000010379976826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013555321478}
+  - 61: {fileID: 61000013469101940}
+  - 114: {fileID: 114000012352736574}
+  m_Layer: 0
+  m_Name: SnapperScorePickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010386107432
 GameObject:
   m_ObjectHideFlags: 1
@@ -1782,6 +1799,7 @@ Transform:
   - {fileID: 4000012180819706}
   - {fileID: 4000011703105070}
   - {fileID: 4000013918079378}
+  - {fileID: 4000013555321478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000013141987452
@@ -1855,6 +1873,19 @@ Transform:
   - {fileID: 4000014135692760}
   m_Father: {fileID: 4000011219162272}
   m_RootOrder: 2
+--- !u!4 &4000013555321478
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010379976826}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 8, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013124526720}
+  m_RootOrder: 7
 --- !u!4 &4000013559391394
 Transform:
   m_ObjectHideFlags: 1
@@ -2538,6 +2569,20 @@ BoxCollider2D:
   m_Offset: {x: -0.14, y: 1.8997043}
   serializedVersion: 2
   m_Size: {x: 0.4185231, y: 3.1303651}
+--- !u!61 &61000013469101940
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010379976826}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 50}
 --- !u!82 &82000012994109142
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3050,6 +3095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3127,6 +3173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3148,12 +3195,12 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 4
     chainSpacing: 2
+    chainScore: 0
     chainDirection: 1
     chainCurve:
       serializedVersion: 2
@@ -3186,12 +3233,12 @@ MonoBehaviour:
   - prefab: {fileID: 1000013471171038, guid: 517d04670159e3844ba4884d4594cc8b, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 1
     chainSpacing: 2
+    chainScore: 0
     chainDirection: 1
     chainCurve:
       serializedVersion: 2
@@ -3212,12 +3259,12 @@ MonoBehaviour:
   - prefab: {fileID: 1000010311754482, guid: 8af8c900993c87e4ebb4b14c4a1a47ad, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 1
     chainSpacing: 2
+    chainScore: 0
     chainDirection: 1
     chainCurve:
       serializedVersion: 2
@@ -3238,12 +3285,12 @@ MonoBehaviour:
   - prefab: {fileID: 1000013784656000, guid: 12bceec6b38a0554bab0a17ec59874e1, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 1
     chainSpacing: 2
+    chainScore: 0
     chainDirection: 1
     chainCurve:
       serializedVersion: 2
@@ -3291,10 +3338,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
+--- !u!114 &114000012352736574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010379976826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216dcef5b56970145965e0190273ee07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  value: 0
+  spacing: 0
+  reset: 0
+  pointsValue: 1000
+  pickupTextColor: {r: 0, g: 1, b: 0.25517225, a: 1}
+  pickupTextScale: 2
   pickupIconPrefab: {fileID: 0}
   pickupParticles: {fileID: 0}
 --- !u!114 &114000012405376632
@@ -3310,6 +3378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3330,6 +3399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3349,6 +3419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   value: 0
+  spacing: 0
   reset: 1
   pointsValue: 1000
   pickupTextColor: {r: 1, g: 0.9724138, b: 0, a: 1}
@@ -3372,12 +3443,12 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 2
     chainSpacing: 2
+    chainScore: 0
     chainDirection: 1
     chainCurve:
       serializedVersion: 2
@@ -3408,6 +3479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}

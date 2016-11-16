@@ -107,6 +107,9 @@ public class ItemSpawn : MonoBehaviour
         {
             float distance = 0;
 
+            List<GameObject> chain = new List<GameObject>();
+            GameObject lastObj = null;
+
             for (int i = 0; i < levelItem.chainLength; i++)
             {
                 Vector3 offset = Vector3.zero;
@@ -136,6 +139,11 @@ public class ItemSpawn : MonoBehaviour
 
                 distance += levelItem.chainSpacing;
 
+                if (lastObj)
+                    chain.Add(lastObj);
+
+                lastObj = item;
+
 #if UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
                 Light[] lights = item.GetComponentsInChildren<Light>();
 
@@ -144,12 +152,19 @@ public class ItemSpawn : MonoBehaviour
 #endif
             }
 
-            ItemPickup pickup = levelItem.prefab.GetComponent<ItemPickup>();
+            ItemPickup pickup = lastObj.GetComponent<ItemPickup>();
+
+            if (pickup)
+            {
+                pickup.SetChainEnd(chain, levelItem.chainScore, levelItem.chainScoreColor);
+            }
+
+            ItemPickup pickupPrefab = levelItem.prefab.GetComponent<ItemPickup>();
 
             //Prevent items from spawnng for some time, if needed
-            if (pickup && pickup.spacing > 0)
+            if (pickupPrefab && pickupPrefab.spacing > 0)
             {
-                levelItem.nextSpawnPos = transform.position.x + pickup.spacing;
+                levelItem.nextSpawnPos = transform.position.x + pickupPrefab.spacing;
                 cantSpawn.Add(levelItem);
             }
         }
@@ -191,6 +206,10 @@ public class LevelItem
 
     [Tooltip("How much space between items in the chain.")]
     public float chainSpacing = 2f;
+
+    [Tooltip("Score reward for collecting whole chain. (Only works for item pickups of course)")]
+    public int chainScore = 0;
+    public Color chainScoreColor = Color.green;
 
     public enum Direction { Left, Right, Up, Down }
     [Space()]

@@ -44,6 +44,7 @@ public class SoundManager : MonoBehaviour
         public Clip pickupOxygen;
         public Clip pickupOxygenPowerup;
         public Clip pickupJumpPowerup;
+        public Clip chainBonus;
 
         public Clip newHighScore;
 
