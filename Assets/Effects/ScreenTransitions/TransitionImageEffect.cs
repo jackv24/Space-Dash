@@ -22,7 +22,9 @@ public class TransitionImageEffect : MonoBehaviour
 
     void OnDisable()
     {
+        //Reset so material asset isn't affected
         effectMaterial.SetFloat("_Cutoff", 0);
+        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[0]);
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dst)
@@ -36,7 +38,11 @@ public class TransitionImageEffect : MonoBehaviour
 
     public void PlayTransition()
     {
-        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[Random.Range(0, transitionTextures.Length)]);
+        int index = Random.Range(0, transitionTextures.Length);
+
+        effectMaterial.SetTexture("_TransitionTexture", transitionTextures[index]);
+
+        Debug.Log("Played " + transitionTextures[index].name);
 
         StartCoroutine("Transition");
     }
