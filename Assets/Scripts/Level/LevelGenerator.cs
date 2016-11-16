@@ -19,6 +19,11 @@ public class LevelGenerator : MonoBehaviour
     //The index in the current group
     private int currentGroupIndex = 0;
 
+    [Space()]
+    public GameObject distanceMonolithTile;
+    private float bestPlayerDistance;
+    private bool hasGeneratedMonolith = false;
+
     [Header("Tracking Player")]
     public Transform player;
     [Tooltip("How many tiles ahead to generate from the player.")]
@@ -118,6 +123,9 @@ public class LevelGenerator : MonoBehaviour
 
         //Reset threshold
         nextGeneratePlayerPos = tileLength * -lengthAhead;
+
+        bestPlayerDistance = PlayerPrefs.GetFloat("BestDistance", 0);
+        hasGeneratedMonolith = false;
     }
 
     public void GeneratePreview(int levelLength)
@@ -150,6 +158,14 @@ public class LevelGenerator : MonoBehaviour
             prefab = currentGroup.endTile;
         else
             prefab = currentGroup.GetRandomTile();
+
+        //Generate distance monolith, but only once
+        if (distanceMonolithTile && lastTileIndex * tileLength >= bestPlayerDistance && !hasGeneratedMonolith && bestPlayerDistance > 0)
+        {
+            hasGeneratedMonolith = true;
+
+            prefab = distanceMonolithTile;
+        }
 
         //Instantiate tile at correct position
         GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y + transform.position.y, 0), Quaternion.identity);
