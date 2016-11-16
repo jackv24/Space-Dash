@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         else
             instance = this;
 
-        DebugInfo.displayDebugInfo = Debug.isDebugBuild;
+        DebugInfo.displayDebugInfo = false;
     }
 
     void Start()

@@ -69,7 +69,7 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
-            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale, false);
+            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale, (type == Type.ExtraJump || type == Type.ExtraOxygen) ? true : false);
 
             //Award score if entire chain was picked up
             if (chainObjects.Count >= GameManager.instance.minPickupChain - 1)
