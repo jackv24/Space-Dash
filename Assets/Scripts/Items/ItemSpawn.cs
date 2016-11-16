@@ -156,7 +156,7 @@ public class ItemSpawn : MonoBehaviour
 
             if (pickup)
             {
-                pickup.SetChainEnd(chain, levelItem.chainScore, levelItem.chainScoreColor);
+                pickup.SetChainEnd(chain);
             }
 
             ItemPickup pickupPrefab = levelItem.prefab.GetComponent<ItemPickup>();
@@ -206,10 +206,6 @@ public class LevelItem
 
     [Tooltip("How much space between items in the chain.")]
     public float chainSpacing = 2f;
-
-    [Tooltip("Score reward for collecting whole chain. (Only works for item pickups of course)")]
-    public int chainScore = 0;
-    public Color chainScoreColor = Color.green;
 
     public enum Direction { Left, Right, Up, Down }
     [Space()]

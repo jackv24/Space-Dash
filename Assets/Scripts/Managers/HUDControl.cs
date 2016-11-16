@@ -228,7 +228,7 @@ public class HUDControl : MonoBehaviour
         }
     }
 
-    public void ShowPickupText(int value, Vector3 pickupPos, Color color, float scale)
+    public void ShowPickupText(int value, Vector3 pickupPos, Color color, float scale, bool showAtPickupPos)
     {
         if (scorePickupText)
         {
@@ -239,6 +239,11 @@ public class HUDControl : MonoBehaviour
             textRect.localScale *= scale;
             text.text = string.Format(text.text, value);
             text.color = color;
+
+            if (showAtPickupPos)
+            {
+                textRect.position = Camera.main.WorldToScreenPoint(pickupPos);
+            }
 
             textObj.SetActive(true);
 
