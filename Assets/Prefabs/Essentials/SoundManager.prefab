@@ -127,7 +127,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -279,52 +279,47 @@ MonoBehaviour:
   musicVolume: 1
   musicSource: {fileID: 82000010157733496}
   backgroundMusic:
-  - {fileID: 8300000, guid: 8a82db68ce6abd149b478a5df66b7a4c, type: 3}
-  - {fileID: 8300000, guid: 9a996329e6c437a4c9f9876dec1e0945, type: 3}
-  - {fileID: 8300000, guid: 0748f57df63905243a133f07cccbca51, type: 3}
-  - {fileID: 8300000, guid: 0748f57df63905243a133f07cccbca51, type: 3}
+  - {fileID: 8300000, guid: 5660ceb695cd7014bbcabd51244160ca, type: 3}
   gameVolume: 1
   gameSource: {fileID: 82000012727809978}
   playerLoopSource: {fileID: 82000012250461378}
   sounds:
     running:
       clip: {fileID: 8300000, guid: c712bf9b1bf4a284ea66be54afdef784, type: 3}
-      volume: 0.09
+      volume: 0.2
     jumps:
-    - clip: {fileID: 8300000, guid: 30923162400dee04987c2065ae75d7f8, type: 3}
-      volume: 0.65
-    - clip: {fileID: 8300000, guid: 30923162400dee04987c2065ae75d7f8, type: 3}
-      volume: 0.65
-    - clip: {fileID: 8300000, guid: d25a168fc59804f4ea66ea114fe9746c, type: 3}
-      volume: 0.2
     - clip: {fileID: 8300000, guid: 5ade87d309a11244790b866d2fe7dd3e, type: 3}
-      volume: 0.2
-    - clip: {fileID: 8300000, guid: 5ade87d309a11244790b866d2fe7dd3e, type: 3}
-      volume: 0.36
+      volume: 0.3
+    - clip: {fileID: 8300000, guid: 30923162400dee04987c2065ae75d7f8, type: 3}
+      volume: 0.3
     landing:
       clip: {fileID: 8300000, guid: a1305105c69c87a4e9974717da60fabc, type: 3}
-      volume: 0.17
+      volume: 0.3
     boosting:
       clip: {fileID: 8300000, guid: 010bcddcd5d14aa4a97e3f3e0cb5a5df, type: 3}
-      volume: 0.42
+      volume: 0.3
     pickupOxygen:
-      clip: {fileID: 8300000, guid: 1412f25c736f8854cb90113d4777b9c5, type: 3}
-      volume: 0.36
+      clip: {fileID: 8300000, guid: e8bde8173005e9a4499d0205312135bc, type: 3}
+      volume: 0.2
     pickupOxygenPowerup:
-      clip: {fileID: 8300000, guid: cd9c4234cac46a544b3f25db6987de9b, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 3af76ed2e7f90f84b939a4e21be3c257, type: 3}
+      volume: 0.3
     pickupJumpPowerup:
-      clip: {fileID: 8300000, guid: 59a4200460d7bab4d9b6ba7326f18c1b, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 2c4bca2dcd5d36c4aaf8ea220a5c40a2, type: 3}
+      volume: 0.3
     chainBonus:
-      clip: {fileID: 8300000, guid: e2fe423bc9ea2fc418ae848faaf061f7, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 24f98f1a9f5de7e44bab8347fbe97e3b, type: 3}
+      volume: 0.3
     newHighScore:
-      clip: {fileID: 8300000, guid: a1305105c69c87a4e9974717da60fabc, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: f8946e056e3b27248ac1a58955836eb1, type: 3}
+      volume: 0.6
     deaths:
-    - clip: {fileID: 8300000, guid: 35d2dfe5b97590f49b2fc3764b9ff0b5, type: 3}
+    - clip: {fileID: 8300000, guid: 53c1fc57aa4689443bd5ef7fb0af5655, type: 3}
+      volume: 0.4
+    - clip: {fileID: 8300000, guid: 998c35c2c86d0884bb7fd43c33d6f5e1, type: 3}
+      volume: 0.4
+    - clip: {fileID: 8300000, guid: 7cfd4443181219d4a8582898fb5e594d, type: 3}
       volume: 0.4
     buttonClick:
-      clip: {fileID: 8300000, guid: cd9c4234cac46a544b3f25db6987de9b, type: 3}
-      volume: 1
+      clip: {fileID: 8300000, guid: 50ff74ee1c164cf4cbd0f91b217eb311, type: 3}
+      volume: 0.33
