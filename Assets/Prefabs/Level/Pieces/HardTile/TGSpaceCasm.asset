@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: TGSpaceCasm
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000012072158546, guid: 530ef6f6da19462498d8cb09fbc1dbd2, type: 2}
+  tiles:
+  - prefab: {fileID: 1000010501088048, guid: b7acfc17e4faa8f4d9a75b9a10e2718f, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000011075786896, guid: 1ff41e39ec5641645a7635727aebde37, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010522679364, guid: 6673be4b7db9a4a4c9f844a6e28b7981, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010503231866, guid: 08f08c9d7b5396a4e86a5e2886581cd1, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000013229178328, guid: 060a76092c363b04f8881976fb141ad3, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000010522679364, guid: 6673be4b7db9a4a4c9f844a6e28b7981, type: 2}
+    probability: 1
+  endTile: {fileID: 1000011893498938, guid: 2ffa219c0378915499d46fc6ae252f88, type: 2}
+  length: 4

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: TGSpaceSpikes
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000012072158546, guid: 530ef6f6da19462498d8cb09fbc1dbd2, type: 2}
+  tiles:
+  - prefab: {fileID: 1000013433593586, guid: 668173dae7bca9341adc8f6c0968ee45, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000013433593586, guid: f695adad3633c1f429b34e89a4268963, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000013433593586, guid: c0e6b278583fb5a4184c3e1d52e79463, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000011711631540, guid: a777517c309d1bc4a8fab273e7e1606d, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000013526833422, guid: cb0450785d4014449a857c33e09918cb, type: 2}
+    probability: 1
+  endTile: {fileID: 1000011893498938, guid: 2ffa219c0378915499d46fc6ae252f88, type: 2}
+  length: 4

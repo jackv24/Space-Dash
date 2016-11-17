@@ -8036,6 +8036,8 @@ MonoBehaviour:
   pointsValue: 50
   pickupTextColor: {r: 0.78676474, g: 1, b: 0.9911764, a: 1}
   pickupTextScale: 1
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
   pickupParticles: {fileID: 0}
 --- !u!114 &114000011506031056
@@ -8106,6 +8108,8 @@ MonoBehaviour:
   pointsValue: 50
   pickupTextColor: {r: 0.78676474, g: 1, b: 0.9911764, a: 1}
   pickupTextScale: 1
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
   pickupParticles: {fileID: 0}
 --- !u!137 &137000010077475458
@@ -8301,7 +8305,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3cadca4729124e7478212bdb55843a3e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -8692,7 +8696,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3cadca4729124e7478212bdb55843a3e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -8950,7 +8954,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3cadca4729124e7478212bdb55843a3e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
