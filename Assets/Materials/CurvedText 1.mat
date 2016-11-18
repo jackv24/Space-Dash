@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BrightParticle 1
-  m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: CurvedText 1
+  m_Shader: {fileID: 4800000, guid: 954d5df101924f84cabd1e0724deb04d, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -84,7 +84,7 @@ Material:
       second: 0
     - first:
         name: _EmissionMultiplier
-      second: 0
+      second: 1
     - first:
         name: _GlossMapScale
       second: 1
@@ -93,9 +93,6 @@ Material:
       second: 0.5
     - first:
         name: _GlossyReflections
-      second: 1
-    - first:
-        name: _InvFade
       second: 1
     - first:
         name: _Metallic
@@ -109,9 +106,6 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
-    - first:
-        name: _Shininess
-      second: 0.01
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -130,19 +124,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.125, g: 0.006433822, b: 0.006433822, a: 1}
-    - first:
-        name: _EmisColor
-      second: {r: 1, g: 0, b: 0, a: 0.334}
-    - first:
-        name: _Emission
-      second: {r: 0.2647059, g: 0.019463671, b: 0.019463671, a: 0}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 1, g: 0.33088237, b: 0.33088237, a: 1}
-    - first:
-        name: _SpecColor
-      second: {r: 0.2794118, g: 0.026708473, b: 0.026708473, a: 1}
-    - first:
-        name: _TintColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.16403711, g: 0.08055882, b: 0.332, a: 1}
