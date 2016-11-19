@@ -600,7 +600,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010115782176}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.48, y: -22.55, z: -1.4696}
+  m_LocalPosition: {x: -13.48, y: -12.6, z: -1.4696}
   m_LocalScale: {x: 1.490898, y: 1.4908973, z: 1.4908973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -878,7 +878,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013671976778}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 16.62, y: -30.65, z: -1.4696}
+  m_LocalPosition: {x: 16.62, y: -21.5, z: -1.4696}
   m_LocalScale: {x: 1.490898, y: 1.490898, z: 1.490898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -2178,10 +2178,9 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 4
     chainSpacing: 3
     chainDirection: 1
@@ -2204,10 +2203,9 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 4
     chainSpacing: 3
     chainDirection: 1
@@ -2240,11 +2238,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011456169066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2269,11 +2271,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000011968261130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2287,11 +2293,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012072041258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2305,11 +2315,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012414183176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2323,11 +2337,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000012460749092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2341,11 +2359,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013088383866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2359,11 +2381,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000013292516884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2394,11 +2420,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   value: 4
+  spacing: 0
   reset: 0
   pointsValue: 10
   pickupTextColor: {r: 1, g: 1, b: 1, a: 1}
   pickupTextScale: 0.8
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
+  pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 0}
+  pickupParticles: {fileID: 0}
 --- !u!114 &114000014265255310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2414,10 +2444,9 @@ MonoBehaviour:
   - prefab: {fileID: 1000011479031886, guid: 4f4ddf4f4248ad84fac29928a29536d9, type: 2}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 4
     chainSpacing: 3
     chainDirection: 1
@@ -2440,10 +2469,9 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     keepRotation: 0
     scale: 1
+    nextSpawnPos: 0
     probability: 0.5
     minDistance: 0
-    spacing: 0
-    nextSpawnPos: 0
     chainLength: 4
     chainSpacing: 3
     chainDirection: 1
