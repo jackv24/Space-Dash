@@ -56,7 +56,7 @@ MonoBehaviour:
   tiles:
   - group: {fileID: 0}
     prefab: {fileID: 1000010654582984, guid: 686d8e7469590854297ad63fdbcced8b, type: 2}
-    probability: 0.5
+    probability: 1
     minDistance: 0
     maxDistance: 300
     spacing: 20
@@ -152,13 +152,6 @@ MonoBehaviour:
     maxDistance: 350
     spacing: 20
     nextSpawnPos: 0
-  - group: {fileID: 0}
-    prefab: {fileID: 1000010552218418, guid: 7f3f04c4a3bab084c807f7aed1899b76, type: 2}
-    probability: 0.5
-    minDistance: 0
-    maxDistance: 350
-    spacing: 20
-    nextSpawnPos: 0
   - group: {fileID: 11400000, guid: d0148adbe12c7f449acd8dc00cdbc595, type: 2}
     prefab: {fileID: 0}
     probability: 0.5
@@ -209,8 +202,15 @@ MonoBehaviour:
     spacing: 20
     nextSpawnPos: 0
   - group: {fileID: 0}
-    prefab: {fileID: 1000014020363198, guid: 086a767457cc31f4ebfd5a3a5735e2b4, type: 2}
+    prefab: {fileID: 1000011742971392, guid: 9d3cc010442c31045883a1367661e67c, type: 2}
     probability: 0.5
+    minDistance: 250
+    maxDistance: 450
+    spacing: 20
+    nextSpawnPos: 0
+  - group: {fileID: 0}
+    prefab: {fileID: 1000014020363198, guid: 086a767457cc31f4ebfd5a3a5735e2b4, type: 2}
+    probability: 0.2
     minDistance: 300
     maxDistance: 350
     spacing: 20
