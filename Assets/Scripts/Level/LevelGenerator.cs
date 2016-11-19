@@ -20,7 +20,7 @@ public class LevelGenerator : MonoBehaviour
     private int currentGroupIndex = 0;
 
     [Space()]
-    public GameObject distanceMonolithTile;
+    public GameObject distanceMonolith;
     private float bestPlayerDistance;
     private bool hasGeneratedMonolith = false;
 
@@ -159,13 +159,6 @@ public class LevelGenerator : MonoBehaviour
         else
             prefab = currentGroup.GetRandomTile();
 
-        //Generate distance monolith, but only once
-        if (distanceMonolithTile && lastTileIndex * tileLength >= bestPlayerDistance && !hasGeneratedMonolith && bestPlayerDistance > 0)
-        {
-            hasGeneratedMonolith = true;
-
-            prefab = distanceMonolithTile;
-        }
 
         //Instantiate tile at correct position
         GameObject tile = (GameObject)Instantiate(prefab, new Vector3(tileLength * lastTileIndex, prefab.transform.position.y + transform.position.y, 0), Quaternion.identity);
@@ -181,7 +174,15 @@ public class LevelGenerator : MonoBehaviour
             backgroundSpawn = GetComponent<BackgroundSpawn>();
         if(backgroundSpawn)
             backgroundSpawn.GenerateBackground(tile.transform);
-        
+
+        //Generate distance monolith, but only once
+        if (distanceMonolith && !hasGeneratedMonolith && lastTileIndex * tileLength >= bestPlayerDistance && bestPlayerDistance > 0)
+        {
+            hasGeneratedMonolith = true;
+
+            //Parent monolith to most recent tile so that it is deleted correctly
+            Instantiate(distanceMonolith, tile.transform);
+        }
     }
 
     // Returns a random tile based on the probability of all tiles.
