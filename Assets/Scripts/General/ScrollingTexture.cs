@@ -13,9 +13,9 @@ public class ScrollingTexture : MonoBehaviour
         mat = GetComponent<Renderer>().material;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        currentOffset += offsetDelta * Time.deltaTime;
+        currentOffset = offsetDelta * Time.time;
 
         mat.SetTextureOffset("_MainTex", currentOffset);
         mat.SetTextureOffset("_EmissionMap", currentOffset);
