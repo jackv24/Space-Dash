@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8e3c154e6c1e48b18c0311d7a8db0, type: 3}
+  m_Name: TG07HardLavaCanyons01
+  m_EditorClassIdentifier: 
+  startTile: {fileID: 1000012072158546, guid: 78319e0e6a0364d46913b7a0cc6e2dff, type: 2}
+  tiles:
+  - prefab: {fileID: 1000011979925242, guid: 42fe051a97756ac4a9423bed61115976, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000012743402840, guid: af2f2c94f6c255044966c6c8a28c280a, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000013494227826, guid: e5f0fc95d3c2dc941a8f8901a4fab20b, type: 2}
+    probability: 1
+  - prefab: {fileID: 1000012383670206, guid: f4562f20cf664bc49a48481239988576, type: 2}
+    probability: 1
+  endTile: {fileID: 1000011893498938, guid: 6b1bdc5ae08fe044294711f077b04edb, type: 2}
+  length: 4
