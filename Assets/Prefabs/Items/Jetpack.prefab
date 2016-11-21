@@ -56,8 +56,6 @@ GameObject:
   - 58: {fileID: 58000011274531308}
   - 114: {fileID: 114000011888817808}
   - 114: {fileID: 114000014227169344}
-  - 82: {fileID: 82000010933261276}
-  - 114: {fileID: 114000011866295176}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Untagged
@@ -156,80 +154,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!82 &82000010933261276
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013471171038}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 73777601e9b14ec40b26202a7c3cf43a, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 1
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!108 &108000012262434028
 Light:
   m_ObjectHideFlags: 1
@@ -281,17 +205,6 @@ MonoBehaviour:
   rotateY: 1
   rotateZ: 0
   randomStartRotation: 0
---- !u!114 &114000011866295176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013471171038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf032ac57ca870a42ae22da8be808edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000011888817808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,7 +223,8 @@ MonoBehaviour:
   pointsValue: 1000
   pickupTextColor: {r: 1, g: 0.9724138, b: 0, a: 1}
   pickupTextScale: 1.4
-  chainScoreColor: {r: 0, g: 0, b: 0, a: 0}
+  showInHud: 0
+  chainScoreColor: {r: 1, g: 1, b: 1, a: 1}
   pickupBonusScale: 1.5
   pickupIconPrefab: {fileID: 1000012720851314, guid: 96ef81ace1e47bd42881a301d6324486,
     type: 2}

@@ -25,6 +25,7 @@ public class ItemPickup : MonoBehaviour
     public int pointsValue = 10;
     public Color pickupTextColor = Color.white;
     public float pickupTextScale = 1f;
+    public bool showInHud = true;
 
     private List<GameObject> chainObjects = new List<GameObject>();
     private int chainBonus = 0;
@@ -69,7 +70,7 @@ public class ItemPickup : MonoBehaviour
 
             stats.AddScore(pointsValue);
 
-            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale, (type == Type.ExtraJump || type == Type.ExtraOxygen) ? true : false);
+            HUDControl.instance.ShowPickupText(pointsValue, transform.position, pickupTextColor, pickupTextScale, !showInHud);
 
             //Award score if entire chain was picked up
             if (chainObjects.Count >= GameManager.instance.minPickupChain - 1)

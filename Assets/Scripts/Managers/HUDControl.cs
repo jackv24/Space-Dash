@@ -34,6 +34,7 @@ public class HUDControl : MonoBehaviour
     [Space()]
     public Image o2Image;
     public Sprite o2LowBarSprite;
+    [Tooltip("How qickly the bar flashes (lower is faster, 0 is solid).")]
     public float o2FlashInterval = 0.5f;
     [Range(0, 1f)]
     public float o2WarningLevel = 0.1f;
@@ -303,11 +304,15 @@ public class HUDControl : MonoBehaviour
 
         while (true)
         {
+
             yield return new WaitForSeconds(o2FlashInterval);
 
             if (((float)playerStats.currentOxygen / playerStats.maxOxygen) <= o2WarningLevel)
             {
-                normal = !normal;
+                if (o2FlashInterval <= 0)
+                    normal = false;
+                else
+                    normal = !normal;
 
                 if (normal)
                     o2Image.sprite = normalSprite;
