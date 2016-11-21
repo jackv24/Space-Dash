@@ -31,6 +31,7 @@ public class SoundManager : MonoBehaviour
         public class Clip
         {
             public AudioClip clip;
+            [Range(0, 1f)]
             public float volume = 1f;
         }
 

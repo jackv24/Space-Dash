@@ -154,7 +154,7 @@ public class ItemSpawn : MonoBehaviour
 
             ItemPickup pickup = lastObj.GetComponent<ItemPickup>();
 
-            if (pickup)
+            if (pickup && levelItem.chainLength > 0)
             {
                 pickup.SetChainEnd(chain);
             }

@@ -23,21 +23,17 @@ public class DisplayPlayerPrefs : MonoBehaviour
 
     void Start()
     {
-        string value = "";
-
         switch (pref)
         {
             case Pref.Float:
-                value = PlayerPrefs.GetFloat(key, 0).ToString();
+                text.text = string.Format(text.text, PlayerPrefs.GetFloat(key, 0));
                 break;
             case Pref.Int:
-                value = PlayerPrefs.GetInt(key, 0).ToString();
+                text.text = string.Format(text.text, PlayerPrefs.GetInt(key, 0));
                 break;
             case Pref.String:
-                value = PlayerPrefs.GetString(key, "").ToString();
+                text.text = string.Format(text.text, PlayerPrefs.GetString(key, ""));
                 break;
         }
-
-        text.text = string.Format(text.text, value);
     }
 }

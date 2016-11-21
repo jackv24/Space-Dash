@@ -109,6 +109,7 @@ public class ItemPickup : MonoBehaviour
     {
         chainObjects = chain;
 
-        chainBonus = Mathf.CeilToInt(pointsValue * (chain.Count + 1) * GameManager.instance.pickupChainBonus);
+        if(GameManager.instance)
+            chainBonus = Mathf.CeilToInt(pointsValue * (chain.Count + 1) * GameManager.instance.pickupChainBonus);
     }
 }
