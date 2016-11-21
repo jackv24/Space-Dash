@@ -12,6 +12,7 @@ public class ItemPickupEditor : Editor
     SerializedProperty pointsProp;
     SerializedProperty colorProp;
     SerializedProperty scaleProp;
+    SerializedProperty showHudProp;
     SerializedProperty prefabProp;
     SerializedProperty pickupPrefab;
 
@@ -27,6 +28,7 @@ public class ItemPickupEditor : Editor
         pointsProp = serializedObject.FindProperty("pointsValue");
         colorProp = serializedObject.FindProperty("pickupTextColor");
         scaleProp = serializedObject.FindProperty("pickupTextScale");
+        showHudProp = serializedObject.FindProperty("showInHud");
         prefabProp = serializedObject.FindProperty("pickupIconPrefab");
         pickupPrefab = serializedObject.FindProperty("pickupParticles");
 
@@ -63,6 +65,7 @@ public class ItemPickupEditor : Editor
         EditorGUILayout.PropertyField(pointsProp, new GUIContent("Points Value"));
         EditorGUILayout.PropertyField(colorProp, new GUIContent("Pickup Text Color"));
         EditorGUILayout.PropertyField(scaleProp, new GUIContent("Pickup Text Scale"));
+        EditorGUILayout.PropertyField(showHudProp, new GUIContent("Show In HUD"));
 
         EditorGUILayout.Space();
         EditorGUILayout.PropertyField(bonusColour, new GUIContent("Chain Bonus Color"));
