@@ -298,25 +298,34 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3618a2fca87a3694aa35408dc4f153db, type: 3}
   - {fileID: 2800000, guid: e3810875316dc4340a83e1c05688485a, type: 3}
   - {fileID: 2800000, guid: 0da92c143a71aef4bbb8dbf6a3b09927, type: 3}
+  - {fileID: 2800000, guid: 4c2fcbb185b56f4498d1b2c8c10789e6, type: 3}
+  - {fileID: 2800000, guid: 17c5f725a105d5a44b9bf0bd7280ffe4, type: 3}
+  - {fileID: 2800000, guid: 48b633d876b515541b7c9c9341854465, type: 3}
+  - {fileID: 2800000, guid: dfaab9f7366f4c44086c920d25e52606, type: 3}
   cutoffAmount: 1
-  transitionTime: 0.5
+  transitionTime: 1
   transitionCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: 0.0025817556
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: -0.25601584
+      outSlope: -0.25601584
       tangentMode: 10
-    - time: 1
+    - time: 0.004388297
+      value: -0.00046250317
+      inSlope: 0.10719418
+      outSlope: 0.10719418
+      tangentMode: 0
+    - time: 1.0008606
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 3.2188454
+      outSlope: 3.2188454
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  waitTime: 0
+  waitTime: 1
   playStart: 1
   playEnd: 1
 --- !u!114 &114000011700119368
@@ -344,6 +353,14 @@ MonoBehaviour:
   - background: {fileID: 2800000, guid: 9fba266ffb752574f9c9ca6970e5bfa1, type: 3}
     stars: {fileID: 2800000, guid: be8339300a66e5046a9f0064f639e141, type: 3}
   - background: {fileID: 2800000, guid: 383d6ce19f715f9439ae41170878aabd, type: 3}
+    stars: {fileID: 2800000, guid: 5f49e9eccd8a14947a82a872c21d2f75, type: 3}
+  - background: {fileID: 2800000, guid: 0a7dc05cc53b0e44482519b75c494d22, type: 3}
+    stars: {fileID: 2800000, guid: 82c4b187851448b4d964c3c9d8387a50, type: 3}
+  - background: {fileID: 2800000, guid: dedf1e21656745e45a37225aef2adfa5, type: 3}
+    stars: {fileID: 2800000, guid: 744cb03b77b55d44fa689e0252cc4199, type: 3}
+  - background: {fileID: 2800000, guid: 8fa5d853e332a5f429718e88510941ad, type: 3}
+    stars: {fileID: 2800000, guid: be8339300a66e5046a9f0064f639e141, type: 3}
+  - background: {fileID: 2800000, guid: 706fa58a7f64bca4380496af8039f87b, type: 3}
     stars: {fileID: 2800000, guid: 5f49e9eccd8a14947a82a872c21d2f75, type: 3}
 --- !u!114 &114000012410792184
 MonoBehaviour:
