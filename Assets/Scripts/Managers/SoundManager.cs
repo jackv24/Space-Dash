@@ -7,22 +7,15 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    public delegate void VolumeChangedEvent(float volume);
-    public VolumeChangedEvent OnGameVolumeChanged;
-
     [Header("Music")]
-    [Range(0, 1f)]
-    public float musicVolume = 1f;
     public AudioSource musicSource;
     [Tooltip("The background music to play looping, randomly selected.")]
     public AudioClip[] backgroundMusic;
 
     [Header("Game")]
-    [Range(0, 1f)]
-    public float gameVolume = 1f;
     public AudioSource gameSource;
     public AudioSource playerLoopSource;
-    private GameSounds.Clip playerLoopClip;
+    public AudioSource warningSource;
 
     [System.Serializable]
     public class GameSounds
@@ -48,6 +41,8 @@ public class SoundManager : MonoBehaviour
         public Clip chainBonus;
 
         public Clip newHighScore;
+
+        public Clip lowOxygen;
 
         public Clip[] deaths;
         public Clip RandomDeath { get { return deaths[Random.Range(0, deaths.Length)]; } }
@@ -83,7 +78,6 @@ public class SoundManager : MonoBehaviour
     {
         musicSource.loop = true;
         musicSource.clip = backgroundMusic[Random.Range(0, backgroundMusic.Length)];
-        musicSource.volume = musicVolume;
         musicSource.Play();
     }
 
@@ -101,29 +95,23 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        playerLoopClip = clip;
         playerLoopSource.clip = clip.clip;
-        playerLoopSource.volume = clip.volume * gameVolume;
+        playerLoopSource.volume = clip.volume;
         playerLoopSource.Play();
-    }
+    }    
 
-    public void SetMusicVolume(float value)
+    public void PlayWarning(bool shouldPlay)
     {
-        musicVolume = value;
-        musicSource.volume = musicVolume;
-    }
+        if (warningSource && sounds.lowOxygen != null)
+        {
+            warningSource.volume = sounds.lowOxygen.volume;
 
-    public void SetGameVolume(float value)
-    {
-        gameVolume = value;
-        gameSource.volume = value;
-        playerLoopSource.volume = value;
+            warningSource.clip = sounds.lowOxygen.clip;
 
-        if (playerLoopClip != null)
-            playerLoopSource.volume *= playerLoopClip.volume;
-
-        //Call events from game audio source scripts
-        if(OnGameVolumeChanged != null)
-            OnGameVolumeChanged(value);
+            if (shouldPlay)
+                warningSource.Play();
+            else
+                warningSource.Stop();
+        }
     }
 }

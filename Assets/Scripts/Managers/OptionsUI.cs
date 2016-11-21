@@ -96,6 +96,8 @@ public class OptionsUI : MonoBehaviour
         soundTextString = soundText.text;
         musicTextString = musicText.text;
 
+        OptionsManager options = OptionsManager.instance;
+
         //Update UI at start
         LoadOptions();
         UpdateSliders();
@@ -149,8 +151,8 @@ public class OptionsUI : MonoBehaviour
         soundText.text = string.Format(soundTextString, (soundSlider.value * 100));
 
         //Preview sound level before saving
-        SoundManager.instance.SetMusicVolume(musicSlider.value);
-        SoundManager.instance.SetGameVolume(soundSlider.value);
+        OptionsManager.instance.SetMusicVolume(musicSlider.value);
+        OptionsManager.instance.SetGameVolume(soundSlider.value);
     }
 
     public void ToggleOptions()

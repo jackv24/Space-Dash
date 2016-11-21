@@ -4,6 +4,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using UnityStandardAssets.ImageEffects;
+using UnityEngine.Audio;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class OptionsManager : MonoBehaviour
 
     public string fileName = "game-options";
     private string dataPath;
+
+    public AudioMixerGroup gameMixerGroup;
+    public AudioMixerGroup musicMixerGroup;
 
     void Awake()
     {
@@ -56,13 +60,9 @@ public class OptionsManager : MonoBehaviour
 
         QualitySettings.SetQualityLevel(currentOptions.qualityLevel, true);
 
-        //If there is a soundmanager
-        if (SoundManager.instance)
-        {
-            //Set volumes
-            SoundManager.instance.SetMusicVolume(currentOptions.musicVolume);
-            SoundManager.instance.SetGameVolume(currentOptions.gameVolume);
-        }
+        //Set volumes
+        SetMusicVolume(currentOptions.musicVolume);
+        SetGameVolume(currentOptions.gameVolume);
     }
 
     public void SaveOptions()
@@ -94,6 +94,28 @@ public class OptionsManager : MonoBehaviour
         else
             //If file does not exist, create a new one with default options
             currentOptions = new Options();
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        musicMixerGroup.audioMixer.SetFloat("MusicVolume", LinearToDecibel(value));
+    }
+
+    public void SetGameVolume(float value)
+    {
+        gameMixerGroup.audioMixer.SetFloat("GameVolume", LinearToDecibel(value));
+    }
+
+    float LinearToDecibel(float linear)
+    {
+        float dB;
+
+        if (linear != 0)
+            dB = 20.0f * Mathf.Log10(linear);
+        else
+            dB = -144.0f;
+
+        return dB;
     }
 }
 

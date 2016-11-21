@@ -13,20 +13,7 @@ public class GameSound : MonoBehaviour
 
     void Start()
     {
-        SoundManager.instance.OnGameVolumeChanged += UpdateVolume;
-
-        if (source)
-            source.volume = SoundManager.instance.gameVolume;
-    }
-
-    void UpdateVolume(float volume)
-    {
-        if (source)
-            source.volume = volume;
-    }
-
-    void OnDestroy()
-    {
-        SoundManager.instance.OnGameVolumeChanged -= UpdateVolume;
+        if (OptionsManager.instance.gameMixerGroup)
+            source.outputAudioMixerGroup = OptionsManager.instance.gameMixerGroup;
     }
 }

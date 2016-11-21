@@ -301,13 +301,15 @@ public class HUDControl : MonoBehaviour
         Sprite normalSprite = o2Image.sprite;
 
         bool normal = true;
+        bool playWarning = false;
 
         while (true)
         {
-
             yield return new WaitForSeconds(o2FlashInterval);
 
-            if (((float)playerStats.currentOxygen / playerStats.maxOxygen) <= o2WarningLevel)
+            bool warning = ((float)playerStats.currentOxygen / playerStats.maxOxygen) <= o2WarningLevel;
+
+            if (warning)
             {
                 if (o2FlashInterval <= 0)
                     normal = false;
@@ -321,6 +323,19 @@ public class HUDControl : MonoBehaviour
             }
             else
                 o2Image.sprite = normalSprite;
+
+            if (warning && !playWarning)
+            {
+                playWarning = true;
+
+                SoundManager.instance.PlayWarning(true);
+            }
+            else if (!warning && playWarning)
+            {
+                playWarning = false;
+
+                SoundManager.instance.PlayWarning(false);
+            }
         }
     }
 

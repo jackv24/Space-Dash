@@ -55,6 +55,10 @@ public class CameraFollow : MonoBehaviour
             //Start camera at target position
             targetPosition = new Vector3(target.position.x + offset.x, target.position.y + offset.y, transform.position.z);
             transform.position = targetPosition;
+
+            PlayerStats stats = target.GetComponent<PlayerStats>();
+            if (stats)
+                stats.OnReset += Reposition;
         }
         else
             Debug.Log("Camera has no target!");
@@ -108,5 +112,14 @@ public class CameraFollow : MonoBehaviour
         }
 
         return false;
+    }
+
+    void Reposition()
+    {
+        //Position camera at player on respawn (prevents it flying back)
+        targetPosition.x = target.position.x + offset.x;
+        targetPosition.y = target.position.y + offset.y;
+
+        transform.position = targetPosition;
     }
 }
