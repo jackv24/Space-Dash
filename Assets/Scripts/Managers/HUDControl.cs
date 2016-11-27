@@ -9,7 +9,7 @@ public class HUDControl : MonoBehaviour
 
     [Tooltip("The transform of the player. The x coordinate of this transform is the \"distance travelled\".")]
     public Transform player;
-    private PlayerStats playerStats;
+    private PlayerCharStats playerStats;
     private PlayerControl playerControl;
 
     [Header("HUD Elements")]
@@ -107,7 +107,7 @@ public class HUDControl : MonoBehaviour
         //Get PlayerStats from player
         if (player)
         {
-            playerStats = player.GetComponent<PlayerStats>();
+            playerStats = player.GetComponent<PlayerCharStats>();
             playerControl = player.GetComponent<PlayerControl>();
 
             //Fade start game text back in on reset

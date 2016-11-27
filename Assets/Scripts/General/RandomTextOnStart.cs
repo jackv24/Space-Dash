@@ -7,7 +7,7 @@ public class RandomTextOnStart : MonoBehaviour
     [Tooltip("A random string from this list will be chosen on start.")]
     public string[] possibleStrings;
 
-    private PlayerStats playerStats;
+    private PlayerCharStats playerStats;
 
     private Text text;
     private string formatString;
@@ -17,7 +17,7 @@ public class RandomTextOnStart : MonoBehaviour
         //If a player exists, get a reference to its playerstats
         GameObject player = GameObject.FindWithTag("Player");
         if (player)
-            playerStats = player.GetComponent<PlayerStats>();
+            playerStats = player.GetComponent<PlayerCharStats>();
 
         //Randomise text when game resets
         if (playerStats)

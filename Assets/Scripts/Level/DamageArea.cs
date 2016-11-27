@@ -10,15 +10,15 @@ public class DamageArea : MonoBehaviour
 
     public string targetTag = "Player";
 
-    private PlayerStats stats = null;
+    private PlayerCharStats stats = null;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == targetTag)
         {
-            if (stats != other.GetComponent<PlayerStats>())
+            if (stats != other.GetComponent<PlayerCharStats>())
             {
-                stats = other.GetComponent<PlayerStats>();
+                stats = other.GetComponent<PlayerCharStats>();
 
                 switch (damageType)
                 {

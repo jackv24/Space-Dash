@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -26,5 +27,19 @@ public class UIFunctions : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowAchievements()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        Social.ShowAchievementsUI();
+#endif
+    }
+
+    public void ShowLeaderboard()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_high_scores);
+#endif
     }
 }

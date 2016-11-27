@@ -37,7 +37,7 @@ public class ItemPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        PlayerStats stats = col.gameObject.GetComponent<PlayerStats>();
+        PlayerCharStats stats = col.gameObject.GetComponent<PlayerCharStats>();
         PlayerControl control = col.gameObject.GetComponent<PlayerControl>();
 
         //If stats was gotten

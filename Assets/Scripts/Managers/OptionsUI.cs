@@ -6,6 +6,7 @@ public class OptionsUI : MonoBehaviour
 {
     public Vector2 mobileUIResolution = new Vector2(640, 480);
     public GameObject quitAppButton;
+    public GameObject servicesButtons;
 
     [Space()]
     public GameObject backgroundPanel;
@@ -73,6 +74,8 @@ public class OptionsUI : MonoBehaviour
         {
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolutions[i].ToString()));
         }
+
+        servicesButtons.SetActive(false);
 #endif
 #if UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
         resolutionText.gameObject.SetActive(false);
@@ -85,6 +88,7 @@ public class OptionsUI : MonoBehaviour
 #endif
 #if UNITY_WEBGL
         quitAppButton.SetActive(false);
+        servicesButtons.SetActive(false);
 #endif
 
         qualityDropdown.options.Clear();

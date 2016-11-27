@@ -56,7 +56,7 @@ public class CameraFollow : MonoBehaviour
             targetPosition = new Vector3(target.position.x + offset.x, target.position.y + offset.y, transform.position.z);
             transform.position = targetPosition;
 
-            PlayerStats stats = target.GetComponent<PlayerStats>();
+            PlayerCharStats stats = target.GetComponent<PlayerCharStats>();
             if (stats)
                 stats.OnReset += Reposition;
         }

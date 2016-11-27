@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(PlayerStats))]
+[RequireComponent(typeof(PlayerCharStats))]
 public class PlayerControl : MonoBehaviour
 {
     //Input
@@ -89,7 +89,7 @@ public class PlayerControl : MonoBehaviour
     //Reference to the player's rigidbody
     private Rigidbody2D body;
     private Vector2 oldVelocity;
-    private PlayerStats playerStats;
+    private PlayerCharStats playerStats;
 
     private CameraFollow cameraFollow;
 
@@ -98,7 +98,7 @@ public class PlayerControl : MonoBehaviour
         //Get component references
         body = GetComponent<Rigidbody2D>();
 
-        playerStats = GetComponent<PlayerStats>();
+        playerStats = GetComponent<PlayerCharStats>();
     }
 
     void Start()

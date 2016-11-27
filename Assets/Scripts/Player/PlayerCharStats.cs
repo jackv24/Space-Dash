@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerCharStats : MonoBehaviour
 {
     private int score;
     public int Score { get { return score + (int)transform.position.x; } }
@@ -49,6 +51,8 @@ public class PlayerStats : MonoBehaviour
 
     private PlayerControl playerControl;
 
+    private int nextScoreAchievement = 0;
+
     void Awake()
     {
         playerControl = GetComponent<PlayerControl>();
@@ -77,8 +81,38 @@ public class PlayerStats : MonoBehaviour
 
         if (transform.position.y < minHeight)
             Die();
-    }
 
+#if UNITY_ANDROID || UNITY_IOS
+        if (Social.localUser.authenticated && Score >= nextScoreAchievement && nextScoreAchievement >= 0)
+        {
+            if (Score >= 3000)
+            {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_bronze_score, 100.0f, SubmittedAchievement);
+                nextScoreAchievement = 5000;
+            }
+            if (Score >= 5000)
+            {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_silver_score, 100.0f, SubmittedAchievement);
+                nextScoreAchievement = 10000;
+            }
+            if (Score >= 10000)
+            {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_gold_score, 100.0f, SubmittedAchievement);
+                nextScoreAchievement = 20000;
+            }
+            if (Score >= 20000)
+            {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_diamond_score, 100.0f, SubmittedAchievement);
+                nextScoreAchievement = 50000;
+            }
+            if (Score >= 50000)
+            {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_platinum_score, 100.0f, SubmittedAchievement);
+                nextScoreAchievement = -1;
+            }
+        }
+#endif
+    }
     public void AddHealth(int amount)
     {
         //Remove specified amount of health
@@ -187,10 +221,29 @@ public class PlayerStats : MonoBehaviour
 
             //Save high score
             if (Score > PlayerPrefs.GetInt("BestScore"))
+            {
                 PlayerPrefs.SetInt("BestScore", Score);
+            }
+
+#if UNITY_ANDROID || UNITY_IOS
+            if (Social.localUser.authenticated)
+            {
+                Social.ReportScore(Score, GPGSIds.leaderboard_high_scores, SubmittedScore);
+            }
+#endif
 
             playerControl.PausePhysics();
         }
+    }
+
+    void SubmittedAchievement(bool success)
+    {
+        //Do stuff
+    }
+
+    void SubmittedScore(bool success)
+    {
+        //Do stuff
     }
 
     IEnumerator DepleteOxygen()
