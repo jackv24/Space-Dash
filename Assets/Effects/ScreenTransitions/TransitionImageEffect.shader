@@ -1,4 +1,6 @@
-﻿Shader "Custom/Image Effects/TransitionImageEffect"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Image Effects/TransitionImageEffect"
 {
 	Properties
 	{
@@ -42,7 +44,7 @@
 			{
 				//Standard draw vertex
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = v.uv;
 				o.uv1 = v.uv;
 

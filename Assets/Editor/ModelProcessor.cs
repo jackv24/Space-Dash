@@ -8,7 +8,7 @@ public class ModelProcessor : AssetPostprocessor
     {
         ModelImporter importer = (ModelImporter)assetImporter;
 
-        importer.importMaterials = false;
+        importer.materialImportMode = ModelImporterMaterialImportMode.None;
         importer.importNormals = ModelImporterNormals.Calculate;
         importer.normalSmoothingAngle = 0;
     }
